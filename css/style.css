@@ -14,27 +14,35 @@ body {
     padding-right: 0;
 }
 
-/* overide default bootstrap Navbar class */
+/* overide default bootstrap Navbar class setting*/
 .navbar {
     margin-bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.50);
     border: 0;
+
 }
 
-/* overide navbar toggler class */
+/* overide bootsrap navbar toggler class */
 .navbar .navbar-toggler {
     border: 0;
 }
 
 /* Make navbar-brand bold */
 .navbar .navbar-brand {
-    font-weight: bold;
+    font-weight: bolder;
+    color: brown;
 }
 
 /* Make navbar items bold */
 .navbar .navbar-nav a {
-    font-weight: bold;
+    font-weight: bolder;
+    color:black;
+}
+/* Make navbar items bold */
+.navbar .navbar-text {
+    font-weight: bolder;
+    color: black;
 }
 
 /* Buttons */
