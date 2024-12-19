@@ -1,7 +1,73 @@
 body {
     font-family: 'Roboto', sans-serif;
-
 }
+
+.callout-container {
+    height: 100vh;
+    /*Bootstrap 4 is based on flexbox, which allows us to align our content easily by using the align items and the justify content properties*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    /* Vendor specific tags for speciifc prefixes for certian CSS properties  */
+
+    background: url("../images/whiskey-background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    #background-size: cover;
+}
+
+/*.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}*/
+
+/* Block dividers */
+
+.block-divider {
+    width: 75px;
+    height: 5px;
+    border: 0;
+    background-color: black;
+}
+
+/* this class will also be used elsewhere */
+.block-divider--orange {
+    background-color: blue;
+}
+/* this class will also be used elsewhere */
+.block-divider--short {
+    width: 35px;
+}
+
+/* Jumbotron */
+
+.jumbotron {
+    #background-color: transparent;
+    background-color: bisque;
+}
+
+.jumbotron h1 {
+    color: black;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.jumbotron .lead {
+    color: brown;
+    margin: 25px 0;
+}
+
+
+.quotes-container {}
+
+.features-container {}
 
 /* Navbar */
 .navalert-container {
@@ -37,8 +103,9 @@ body {
 /* Make navbar items bold */
 .navbar .navbar-nav a {
     font-weight: bolder;
-    color:black;
+    color: black;
 }
+
 /* Make navbar items bold */
 .navbar .navbar-text {
     font-weight: bolder;
