@@ -17,43 +17,46 @@
 
 <body>
     <!--Navbar -->
-    <!--Allow navbar to be responsive with navbar-expand-sm class -->
-    <nav class="navbar navbar-dark navbar-expand-sm"><!--semantic HTML tags for SEO and improve accesibility-->
-        <a href="/" class="navbar-brand">
-            MUMBAI MAGIC</a> <!--text-based brand name link header -->
-        <!--Compress to a button-->
-        <!-- data-toggle used as trigger for  collapsible element with id used in data-target -->
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false"
-            aria-label="Toggle navigation"><!--aria accessibility for screen readers-->
-            <span class="navbar-toggler-icon"></span></button> <!-- will create the Three bar icon -->
-        <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--id matches data-target in button above -->
-            <ul class="navbar-nav mr-auto">
-                <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item mr-2"><a class="nav-link" href="">About</a></li>
-                <li class="nav-item dropdown"><!-- Create a dropdown-->
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Menu
-                    </a>
-                    <!--Create Dropdown-->
-                    <div class="dropdown-menu" aria-labelledby="navbarNavDropdown">
-                        <!-- Create dropdown items-->
-                        <a class="dropdown-item" href="#">Vegetarian</a>
-                        <a class="dropdown-item" href="#">Non-Veg</a>
-                        <a class="dropdown-item" href="#">Chinese</a>
-                        <a class="dropdown-item" href="#">Vegan</a>
-                    </div>
-                </li>
-                <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="">Sign In / Sign Up</a></li>
-            </ul>
-        </div>
-        <div class="d-none d-md-block"><!--display on medium sized screen resolutions and above -->
-            <p class="navbar-text my-auto mr-2"><i>The way to your soul is through the stomach</i></p>
-            <!-- Create button class for sign in/ sign up-->
-            <a href="/login" class="btn btn--cta btn--red">Sign In / Sign Up</a>
-        </div>
-    </nav>
+    <div class="container-fluid navalert-container">
+        <!--Allow navbar to be responsive with navbar-expand-sm class -->
+        <nav class="navbar navbar-dark navbar-expand-sm"><!--semantic HTML tags for SEO and improve accesibility-->
+            <a href="/" class="navbar-brand">
+                MUMBAI MAGIC</a> <!--text-based brand name link header -->
+            <!--Compress to a button-->
+            <!-- data-toggle used as trigger for  collapsible element with id used in data-target -->
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation"><!--aria accessibility for screen readers-->
+                <span class="navbar-toggler-icon"></span></button> <!-- will create the Three bar icon -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--id matches data-target in button above -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item mr-2"><a class="nav-link" href="">About</a></li>
+                    <li class="nav-item dropdown"><!-- Create a dropdown-->
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+                        <!--Create Dropdown-->
+                        <div class="dropdown-menu" aria-labelledby="navbarNavDropdown">
+                            <!-- Create dropdown items-->
+                            <a class="dropdown-item" href="#">Vegetarian</a>
+                            <a class="dropdown-item" href="#">Non-Veg</a>
+                            <a class="dropdown-item" href="#">Chinese</a>
+                            <a class="dropdown-item" href="#">Vegan</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="">Sign In / Sign Up</a></li>
+                </ul>
+            </div>
+            <div class="d-none d-md-block"><!--display on medium sized screen resolutions and above -->
+                <p class="navbar-text my-auto mr-2"><i>The way to your soul is through the stomach</i></p>
+                <!-- Create button class for sign in/ sign up-->
+                <a href="/login" class="btn btn--cta btn--red">Sign In / Sign Up</a>
+            </div>
+        </nav>
+    </div>
+    <!-- end of navbar Section -->
 
     <!-- Callout Section -->
     <div class="container-fluid callout-container">
@@ -68,8 +71,8 @@
                     <!--strong and mark tags to make bold and highlight-->
                     <p><small><strong><mark>Browse our menu for specialities</mark></strong></small></p>
                     <!--Primary Call for Action button, styled through css-->
-                    <p><button class="btn btn-lg btn--cta btn--red data-toggle="modal" data-target="#signUpModal">Sign Up
-                        </button></p>
+                    <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal" data-target="#signUpModal">Sign
+                            Up </button></p>
                     <!--btn-success class for green color ,Data target id matches modal id-->
                 </section>
             </div>
@@ -78,171 +81,148 @@
     <!-- /.End of Callout section -->
 
     <!-- Quotes Section  -->
-    <div class="container quotes-container">
-        <div class="row">
-            <div class="col-12 my-5"> <!--maintain column layout on a mobile device-->
-                <section class="quotes">
-                    <!-- bootstrap text-upperclass class to form headings as capital letters -->
-                    <h2 class="text-uppercase">Quotes:</h2>
-                    <!--quoting blocks of content from another source within the document-->
+    <div class="container-wrapper container-wrapper--cyan">
+        <div class="container quotes-container content-container">
+            <div class="row">
+                <div class="col-12 page-header"> <!--maintain column layout on a mobile device-->
+                    <section class="quotes">
+                        <!-- bootstrap text-upperclass class to form headings as capital letters -->
+                        <h2 class="text-uppercase">Quotes:</h2>
+                        <!-- add block divider  -->
+                        <hr class="block-divider block-divider--short">
+                        <!--quoting blocks of content from another source within the document-->
+                </div>
             </div>
+            <div class="row">
+                <div class="col-12 col-md-6"> <!--maintain column layout on a mobile device-->
+                    <blockquote class="blockquote">
+                        <p>Nothing but the best.It reminded me of my grandmother's recepies</p>
+                        <p>- Bobby Sequeira</p>
+                    </blockquote>
+                </div>
+                <div class="col-12 col-md-6"> <!--maintain column layout on a mobile device-->
+                    <blockquote class="blockquote">
+                        <p>I highly recommened this place for anyone who craves for authentic Mumbai food</p>
+                        <p>- Shaan </p>
+                    </blockquote>
+                </div>
+            </div>
+            </section>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6"> <!--maintain column layout on a mobile device-->
-                <blockquote class="blockquote">
-                    <p>Nothing but the best.It reminded me of my grandmother's recepies</p>
-                    <p>- Bobby Sequeira</p>
-                </blockquote>
-            </div>
-            <div class="col-12 col-md-6"> <!--maintain column layout on a mobile device-->
-                <blockquote class="blockquote">
-                    <p>I highly recommened this place for anyone who craves for authentic Mumbai food</p>
-                    <p>- Shaan </p>
-                </blockquote>
-            </div>
-        </div>
-        </section>
     </div>
     <!-- /.End of Quote Section -->
 
 
     <!-- Features Section -->
-    <div class="features-container">
-        <section class="features">
-            <div class="row">
-                <div class="col-12 my-5"> <!--maintain column layout on a mobile device-->
-                    <!-- bootstrap text-upperclass class to form headings as capital letters. -->
-                    <h2 class="text-uppercase">Features:</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-4"> <!--maintain column layout on a mobile device-->
-                    <div class="feature">
-                        <h3>Feature 1</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi
-                            ut
-                            aliquip ex ea commodo consequat.</p>
-                        <!--Button for user to read more-->
-                        <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+    <div class="container-wrapper container-wrapper--red">
+        <div class="container features-container content-container"><!--content class to provide vertical space-->
+            <section class="features">
+                <div class="row">
+                    <div class="col-12 page-header"> <!--maintain column layout on a mobile device-->
+                        <!-- bootstrap text-upperclass class to form headings as capital letters. -->
+                        <h2 class="text-uppercase">Features:</h2>
+                        <!-- add block divider  -->
+                        <hr class="block-divider block-divider--short">
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4"> <!--maintain column layout on a mobile device-->
+                        <div class="feature">
+                            <h3>Feature 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore
+                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris
+                                nisi
+                                ut
+                                aliquip ex ea commodo consequat.</p>
+                            <!--Button for user to read more-->
+                            <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                        </div>
+                    </div>
 
-                <div class="col-12 col-md-6 col-lg-4"> <!--maintain column layout on a mobile device-->
-                    <div class="feature">
-                        <h3>Feature 2</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris aliquip ex ea commodo consequat.</p>
-                        <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                    <div class="col-12 col-md-6 col-lg-4"> <!--maintain column layout on a mobile device-->
+                        <div class="feature">
+                            <h3>Feature 2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris aliquip ex ea commodo consequat.</p>
+                            <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                        </div>
+                    </div>
+                    <div class="col-12 d-md-none d-lg-block col-lg-4"> <!--Do not display on medium screen size-->
+                        <div class="feature">
+                            <h3>Feature 3</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi utaliquip ex ea commodo consequat.</p>
+                            <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 d-md-none d-lg-block col-lg-4"> <!--Do not display on medium screen size-->
-                    <div class="feature">
-                        <h3>Feature 3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi utaliquip ex ea commodo consequat.</p>
-                        <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
     <!-- /.end of features section-->
 
     <!--table section-->
-    <div class="table-container">
-        <section>
-            <!-- bootstrap text-upperclass class to form headings as capital letters. -->
-            <h2 class="text-uppercase">Our Specialities</h2>
-            <!-- bootstrap class for table heading,hover on table rows and zebra-striping  -->
-            <table class="table table-hover table-sm table-striped">
-                <caption>Speciality of the Day</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Day of the week</th>
-                        <th scope="col">Meal of the day</th>
-                        <th scope="col">Speciality</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Friday</td>
-                        <td>Dinner</td>
-                        <td>Upwas Khicdi</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Saturday</td>
-                        <td>Lunch and Dinner</td>
-                        <td>Bombay Duck</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Sunday</td>
-                        <td>Lunch and Dinner</td>
-                        <td>Kosambi Vade</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <div class="container-wrapper container-wrapper--cornflowerblue">
+        <div class="container content-container table-container">
+            <div class="page-header"> <!--maintain column layout on a mobile device-->
+                <!--<section>-->
+                    <!-- bootstrap text-upperclass class to form headings as capital letters. -->
+                    <h2 class="text-uppercase">Weekend Special</h2>
+                    <!-- add block divider  -->
+                    <hr class="block-divider block-divider--short">
+                    <!-- bootstrap class for table heading,hover on table rows and zebra-striping  -->
+                    <table class="table table-hover table-sm table-striped text-center">
+                        <caption class="font-italic font-weight-bold"><strong>*Subject to local availablity</strong></caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Day of the week</th>
+                                <th scope="col">Meal of the day</th>
+                                <th scope="col">Speciality</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Friday</td>
+                                <td>Dinner</td>
+                                <td>Upwas Khicdi</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Saturday</td>
+                                <td>Lunch and Dinner</td>
+                                <td>*Bombay Duck</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Sunday</td>
+                                <td>Lunch and Dinner</td>
+                                <td>Kosambi Vade</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <!--</section>-->
+            </div>
+        </div>
     </div>
     <!-- /.end of table section -->
 
     <!--modal section working one-->
-    <!--<div class="modal" tabindex="-1" role="dialog" id="signUpModal">
+    <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Sign up </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!--Add Form Element
-                    <form>
-                        <!--For this form to function, we need to implement some backend server code to process it
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                anyone
-                                else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="repeatPassword">Repeat Password</label>
-                            <input type="password" class="form-control" id="repeatPassword"
-                                placeholder="Repeat Password">
-                        </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-     /.end of modal section -->
-
-    <!--4.6.x modal-->
-    <div class="modal" tabindex="-1" id="signUpModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -271,9 +251,16 @@
                         <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
+    <!--/.end of modal section-->
+
+
 
     <!-- code copied from Code Institute-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -285,21 +272,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-
-    <!--Javascript Bootstrap new copied by me
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script> -->
 
 </body>
 

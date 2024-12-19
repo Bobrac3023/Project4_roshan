@@ -2,73 +2,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.callout-container {
-    height: 100vh;
-    /*Bootstrap 4 is based on flexbox, which allows us to align our content easily by using the align items and the justify content properties*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    /* Vendor specific tags for speciifc prefixes for certian CSS properties  */
-
-    background: url("../images/whiskey-background.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    #background-size: cover;
-}
-
-/*.opaque-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}*/
-
-/* Block dividers */
-
-.block-divider {
-    width: 75px;
-    height: 5px;
-    border: 0;
-    background-color: black;
-}
-
-/* this class will also be used elsewhere */
-.block-divider--orange {
-    background-color: blue;
-}
-/* this class will also be used elsewhere */
-.block-divider--short {
-    width: 35px;
-}
-
-/* Jumbotron */
-
-.jumbotron {
-    #background-color: transparent;
-    background-color: bisque;
-}
-
-.jumbotron h1 {
-    color: black;
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-
-.jumbotron .lead {
-    color: brown;
-    margin: 25px 0;
-}
-
-
-.quotes-container {}
-
-.features-container {}
-
 /* Navbar */
 .navalert-container {
     position: absolute;
@@ -86,7 +19,6 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.50);
     border: 0;
-
 }
 
 /* overide bootsrap navbar toggler class */
@@ -112,6 +44,142 @@ body {
     color: black;
 }
 
+.callout-container {
+    height: 100vh;
+    /*Bootstrap 4 is based on flexbox, which allows us to align our content easily by using the align items and the justify content properties*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    /* Vendor specific tags for speciifc prefixes for certian CSS properties  
+
+    background: url("css/css/images/whiskey-background.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+}
+
+/*.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}*/
+
+/* Block dividers */
+
+.block-divider {
+    width: 75px;
+    height: 5px;
+    border: 0;
+    background-color: black;
+}
+
+/* this class will also be used elsewhere */
+.block-divider--orange {
+    background-color: blue;
+}
+
+/* this class will also be used elsewhere */
+.block-divider--short {
+    width: 35px;
+}
+
+/* Containers  */
+
+/* content Container  */
+.content-container {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.container-wrapper {}
+
+.container-wrapper--cyan {
+    background-color:cyan;
+    color: black;
+}
+.container-wrapper--red {
+    background-color: #f05f40;
+    color: white;
+}
+.container-wrapper--cornflowerblue {
+    background-color:white;
+    color:black;
+    text-decoration-color: black;
+}
+
+/* Jumbotron */
+
+.jumbotron {
+    #background-color: transparent;
+    background-color: bisque;
+}
+
+.jumbotron h1 {
+    color: black;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.jumbotron .lead {
+    color: brown;
+    margin: 25px 0;
+}
+
+
+.quotes-container {}
+
+.features-container {}
+
+
+/* Page Headers */
+
+.page-header {
+    margin-bottom: 0;
+    border-bottom: 0;
+    text-align: center;
+}
+
+.page-header h2 {
+    margin-top: 0;
+}
+
+/* Quotes */
+
+.quotes .page-header {
+    margin-bottom: 25px;
+}
+
+
+/* Features */
+
+.feature {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feature i {
+    margin-bottom: 20px;
+    font-size: 45px;
+    line-height: 45px;
+}
+
+.feature .btn {
+    background-color: white;
+    border-color: white;
+    border-radius: 15px;
+    min-width: 100px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #f05f40;
+}
+
+
 /* Buttons */
 
 .btn--cta {
@@ -126,6 +194,7 @@ body {
     border-color: #f05f40;
 }
 
+/*four pseudo elements that are affected when we hover over the button.*/
 .btn--red:hover,
 .btn--red:active,
 .btn--red:focus,
