@@ -52,13 +52,13 @@ body {
     justify-content: center;
     position: relative;
 
-    /* Vendor specific tags for speciifc prefixes for certian CSS properties  
+    /* Vendor specific tags for speciifc prefixes for certian CSS properties */
 
     background: url("css/css/images/whiskey-background.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; */
+    background-size: cover; 
 }
 
 /*.opaque-overlay {
