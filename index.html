@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <!--Viewport tag tells browser how to respond to different resolutions, particularly mobile ones.-->
+    <!--Viewport tag to respond to different resolutions, particularly mobile ones.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Soul of India</title>
 
@@ -17,27 +17,24 @@
 
 <body>
     <!--Navbar -->
-    <div class="container-fluid ">
+    <div class="container-fluid">
         <!--Allow navbar to be responsive with navbar-expand-sm class -->
         <nav class="navbar navbar-dark navbar-expand-sm"><!--semantic HTML tags for SEO and improve accesibility-->
-            <a href="/" class="navbar-brand">
-                MUMBAI MAGIC</a> <!--text-based brand name link header -->
-            <!--Compress to a button-->
-            <!-- data-toggle used as trigger for  collapsible element with id used in data-target -->
+            <a href="/" class="navbar-brand"> MUMBAI MAGIC</a> <!--text-based brand name-->
+            <!--Compress to a button, trigger for  collapsible element with id used in data-target-->
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false"
                 aria-label="Toggle navigation"><!--aria accessibility for screen readers-->
-                <span class="navbar-toggler-icon"></span></button> <!-- will create the Three bar icon -->
+                <span class="navbar-toggler-icon"></span></button> <!--create three bar icon -->
             <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--id matches data-target in button above -->
                 <ul class="navbar-nav mr-auto">
                     <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item mr-2"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item dropdown"><!-- Create a dropdown-->
+                    <!-- dropdown config-->
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Menu
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu
                         </a>
-                        <!--Create Dropdown-->
                         <div class="dropdown-menu" aria-labelledby="navbarNavDropdown">
                             <!-- Create dropdown items-->
                             <a class="dropdown-item" href="#">Vegetarian</a>
@@ -86,29 +83,28 @@
             <div class="row">
                 <div class="col-12 page-header"> <!--maintain column layout on a mobile device-->
                     <section class="quotes">
-                        <!-- bootstrap text-upperclass class to form headings as capital letters -->
-                        <h2 class="text-uppercase">Quotes:</h2>
+                        <h2 class="text-uppercase">Quotes:</h2> <!-- form headings as capital letters -->
                         <!-- add block divider  -->
                         <hr class="block-divider block-divider--short">
-                        <!--quoting blocks of content from another source within the document-->
                     </section>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-md-6"> <!--maintain column layout on a mobile device-->
+                    <!--blockquote -quote blocks of content from another source -->
                     <blockquote class="blockquote">
                         <p>Nothing but the best.It reminded me of my grandmother's recepies</p>
                         <p>- Bobby Sequeira</p>
                     </blockquote>
                 </div>
-                <div class="col-12 col-md-6"> <!--maintain column layout on a mobile device-->
+                <div class="col-12 col-md-6">
                     <blockquote class="blockquote">
                         <p>I highly recommened this place for anyone who craves for authentic Mumbai food</p>
                         <p>- Shaan </p>
                     </blockquote>
                 </div>
             </div>
-                    </div>
+        </div>
     </div>
     <!-- /.End of Quote Section -->
 
@@ -119,10 +115,8 @@
             <section class="features">
                 <div class="row">
                     <div class="col-12 page-header"> <!--maintain column layout on a mobile device-->
-                        <!-- bootstrap text-upperclass class to form headings as capital letters. -->
-                        <h2 class="text-uppercase">Features:</h2>
-                        <!-- add block divider  -->
-                        <hr class="block-divider block-divider--short">
+                        <h2 class="text-uppercase">Features:</h2><!--form headings as capital letters -->
+                        <hr class="block-divider block-divider--short"><!-- add block divider-->
                     </div>
                 </div>
                 <div class="row">
@@ -137,8 +131,8 @@
                                 nisi
                                 ut
                                 aliquip ex ea commodo consequat.</p>
-                            <!--Button for user to read more-->
                             <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                            <!--Button for user to read more-->
                         </div>
                     </div>
 
@@ -171,47 +165,45 @@
     <!-- /.end of features section-->
 
     <!--table section-->
-    <div class="container-wrapper container-wrapper--cornflowerblue">
+    <div class="container-wrapper container-wrapper--white">
         <div class="container content-container table-container">
             <div class="page-header"> <!--maintain column layout on a mobile device-->
-                <!--<section>-->
-                    <!-- bootstrap text-upperclass class to form headings as capital letters. -->
-                    <h2 class="text-uppercase">Weekend Special</h2>
-                    <!-- add block divider  -->
-                    <hr class="block-divider block-divider--short">
-                    <!-- bootstrap class for table heading,hover on table rows and zebra-striping  -->
-                    <table class="table table-hover table-sm table-striped text-center">
-                        <caption class="font-italic font-weight-bold"><strong>*Subject to local availablity</strong></caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Day of the week</th>
-                                <th scope="col">Meal of the day</th>
-                                <th scope="col">Speciality</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Friday</td>
-                                <td>Dinner</td>
-                                <td>Upwas Khicdi</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Saturday</td>
-                                <td>Lunch and Dinner</td>
-                                <td>*Bombay Duck</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Sunday</td>
-                                <td>Lunch and Dinner</td>
-                                <td>Kosambi Vade</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <!--</section>-->
+                <h2 class="text-uppercase">Weekend Special</h2><!--form headings as capital letters -->
+                <!-- add block divider  -->
+                <hr class="block-divider block-divider--short">
+                <!-- bootstrap class for table heading,hover on table rows and zebra-striping  -->
+                <table class="table table-hover table-sm table-striped text-center">
+                    <caption class="font-italic font-weight-bold"><strong>*Subject to local availablity</strong>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Day of the week</th>
+                            <th scope="col">Meal of the day</th>
+                            <th scope="col">Speciality</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Friday</td>
+                            <td>Dinner</td>
+                            <td>Upwas Khicdi</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Saturday</td>
+                            <td>Lunch and Dinner</td>
+                            <td>*Bombay Duck</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Sunday</td>
+                            <td>Lunch and Dinner</td>
+                            <td>Kosambi Vade</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -259,8 +251,6 @@
         </div>
     </div>
     <!--/.end of modal section-->
-
-
 
     <!-- code copied from Code Institute-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

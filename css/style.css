@@ -1,16 +1,34 @@
 body {
     font-family: 'Roboto', sans-serif;
+   
 }
 
-/* Navbar */
-.navalert-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    /* to pull our container forward */
-    
+/* Containers  */
+
+/* callout Container- used in callout section */
+.callout-container {
+    height: 100vh;
+    /*use flex box properites */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Vendor specific tags */
+    background: url("css/css/images/whiskey-background.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
+/* content Container- used in quotes section */
+.content-container {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+
+/* Navbar */
 
 /* overide default bootstrap Navbar class setting*/
 .navbar {
@@ -18,8 +36,8 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.50);
     border: 0;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 /* overide bootsrap navbar toggler class */
@@ -45,75 +63,6 @@ body {
     color: black;
 }
 
-.callout-container {
-    height: 100vh;
-    /*Bootstrap 4 is based on flexbox, which allows us to align our content easily by using the align items and the justify content properties*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    /* Vendor specific tags for speciifc prefixes for certian CSS properties */
-
-    background: url("css/css/images/whiskey-background.jpg")no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; 
-}
-
-/*.opaque-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}*/
-
-/* Block dividers */
-
-.block-divider {
-    width: 75px;
-    height: 5px;
-    border: 0;
-    background-color: black;
-}
-
-/* this class will also be used elsewhere */
-.block-divider--orange {
-    background-color: blue;
-}
-
-/* this class will also be used elsewhere */
-.block-divider--short {
-    width: 35px;
-}
-
-/* Containers  */
-
-/* content Container  */
-.content-container {
-    padding-top: 75px;
-    padding-bottom: 75px;
-}
-
-.container-wrapper {}
-
-.container-wrapper--cyan {
-    background-color:cyan;
-    color: black;
-}
-.container-wrapper--red {
-    background-color: #f05f40;
-    color: white;
-}
-.container-wrapper--cornflowerblue {
-    background-color:white;
-    color:black;
-    text-decoration-color: black;
-}
-
 /* Jumbotron */
 
 .jumbotron {
@@ -132,11 +81,43 @@ body {
     margin: 25px 0;
 }
 
+/* Block dividers */
 
-.quotes-container {}
+.block-divider {
+    width: 75px;
+    height: 5px;
+    border: 0;
+    background-color: black;
+}
 
-.features-container {}
+/* block-divider-orange used for callout section */
+.block-divider--orange {
+    background-color: blue;
+}
 
+/*  block-divider-short used for quotes and featuers section */
+.block-divider--short {
+    width: 35px;
+}
+
+/*  block-divider-short used for quotes section */
+.container-wrapper--cyan {
+    background-color: cyan;
+    color: black;
+}
+
+/*  block-divider-short used for features section */
+.container-wrapper--red {
+    background-color: #f05f40;
+    color: white;
+}
+
+/*  block-divider-short used for table section */
+.container-wrapper--white {
+    background-color: white;
+    color: black;
+    text-decoration-color: black;
+}
 
 /* Page Headers */
 
@@ -150,14 +131,13 @@ body {
     margin-top: 0;
 }
 
-/* Quotes */
+/* Quotes section */
 
 .quotes .page-header {
     margin-bottom: 25px;
 }
 
-
-/* Features */
+/* Features section */
 
 .feature {
     text-align: center;
@@ -180,9 +160,7 @@ body {
     color: #f05f40;
 }
 
-
 /* Buttons */
-
 .btn--cta {
     font-weight: bold;
     border-radius: 23px;
