@@ -9,8 +9,7 @@ body {
     left: 0;
     z-index: 1;
     /* to pull our container forward */
-    padding-left: 0;
-    padding-right: 0;
+    
 }
 
 /* overide default bootstrap Navbar class setting*/
@@ -19,6 +18,8 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.50);
     border: 0;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* overide bootsrap navbar toggler class */
