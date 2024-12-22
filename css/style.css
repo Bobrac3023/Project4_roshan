@@ -1,9 +1,8 @@
 body {
     font-family: 'Roboto', sans-serif;
-   
 }
 
-/* Containers  */
+/* Containers styling */
 
 /* callout Container- used in callout section */
 .callout-container {
@@ -14,7 +13,7 @@ body {
     justify-content: center;
     position: relative;
     /* Vendor specific tags */
-    background: url("css/css/images/whiskey-background.jpg")no-repeat center center fixed;
+    background: url("../css/images/images.jpeg")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -27,41 +26,67 @@ body {
     padding-bottom: 75px;
 }
 
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
 
-/* Navbar */
+/* Navbar styling */
 
 /* overide default bootstrap Navbar class setting*/
 .navbar {
     margin-bottom: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.50);
+    background-color: #525252;
     border: 0;
-    padding-right: 0;
-    padding-left: 0;
+    z-index: 1;
 }
 
-/* overide bootsrap navbar toggler class */
+/* style list items  */
+.navbar .ui-menu-color-home {
+    #background-color: #c86a18;
+}
+
+/* style list items  */
+.navbar .ui-menu-color-about {
+    #background-color: aqua;
+    #color: brown;
+
+}
+
+/* style list items  */
+.navbar .ui-menu-color-menu {
+    #background-color: #de178e;
+}
+
+
+/* style navbar toggler class */
 .navbar .navbar-toggler {
     border: 0;
 }
 
-/* Make navbar-brand bold */
+/* style navbar-brand  */
 .navbar .navbar-brand {
     font-weight: bolder;
-    color: brown;
+    color: maroon;
 }
 
-/* Make navbar items bold */
+/* style navbar anchor elements */
 .navbar .navbar-nav a {
     font-weight: bolder;
     color: black;
 }
 
-/* Make navbar items bold */
+/* style navbar text */
 .navbar .navbar-text {
     font-weight: bolder;
     color: black;
 }
+
+/*.navbar .navbar-nav a i{
+display: inline-block;
+text-align: center;
+}*/
 
 /* Jumbotron */
 
@@ -182,3 +207,13 @@ body {
     border-color: #df4929;
     color: white;
 }
+
+
+/* Footer */
+footer.container-fluid {
+    background-color: #525252;
+    color: white;
+    #justify-content: center;
+    text-align: center;
+}
+
