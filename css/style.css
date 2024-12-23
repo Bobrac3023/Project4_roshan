@@ -31,6 +31,9 @@ body {
     padding-right: 0;
 }
 
+.container-wrapper {
+    height: 100vh;
+}
 /* Navbar styling */
 
 /* overide default bootstrap Navbar class setting*/
@@ -51,7 +54,6 @@ body {
 .navbar .ui-menu-color-about {
     #background-color: aqua;
     #color: brown;
-
 }
 
 /* style list items  */
@@ -91,7 +93,6 @@ text-align: center;
 /* Jumbotron */
 
 .jumbotron {
-    #background-color: transparent;
     background-color: bisque;
 }
 
@@ -213,7 +214,46 @@ text-align: center;
 footer.container-fluid {
     background-color: #525252;
     color: white;
-    #justify-content: center;
-    text-align: center;
+    #text-align: center;
 }
 
+.inline-block {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: #fafafa;
+    background: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+
+.social-links li a i:hover {
+    background: #e84610;
+}
+.menu i {
+    font-size: 18px;
+    color: #fafafa;
+    text-align: center;
+    padding-left: 5px;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.menu i:hover {
+    color: #e84610;
+}
