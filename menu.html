@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <!--Viewport tag tells browser how to respond to different resolutions, particularly mobile ones.-->
+    <!--Viewport tag to respond to different resolutions, particularly mobile ones.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Soul of India</title>
-
     <!--link to bootstrap 4.6.2-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <!--link to fontawesome-->
@@ -21,47 +20,53 @@
         type="text/css" />
     <!--link index file to style.css file-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
 
 <body>
-    <!--Navbar -->
-    <div class="container-fluid">
-        <!--Allow navbar to be responsive with navbar-expand-sm class -->
-        <nav class="navbar navbar-dark navbar-expand-sm"><!--semantic HTML tags for SEO and improve accesibility-->
-            <a href="/" class="navbar-brand"> MUMBAI MAGIC</a> <!--text-based brand name-->
-            <!--Compress to a button, trigger for  collapsible element with id used in data-target-->
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false"
-                aria-label="Toggle navigation"><!--aria accessibility for screen readers-->
-                <span class="navbar-toggler-icon"></span></button> <!--create three bar icon -->
-            <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--id matches data-target in button above -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="active nav-item mr-2 ui-menu-color-home"><a class="nav-link hvr-sweep-to-bottom"
-                            href="/">Home</a></li>
-                    <li class="nav-item mr-2 ui-menu-color-about"><a class="nav-link hvr-sweep-to-bottom"
-                            href="about.html">About</a></li>
-                    <!-- dropdown config-->
-                    <li class="nav-item dropdown ui-menu-color-menu">
-                        <a class="nav-link dropdown-toggle hvr-sweep-to-bottom" href="menu.html" id="navbarNavDropdown"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarNavDropdown">
-                            <!-- Create dropdown items-->
-                            <a class="dropdown-item" href="menu.html">Vegetarian</a>
-                            <a class="dropdown-item" href="menu.html">Non-Veg</a>
-                            <a class="dropdown-item" href="menu.html">Weekend Special</a>
-                        </div>
-                    </li>
-                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="">Sign In / Sign Up</a></li>
-                </ul>
-            </div>
-            <div class="d-none d-md-block"><!--display on medium sized screen resolutions and above -->
-                <p class="navbar-text my-auto mr-2"><i>The way to your soul is through the stomach</i></p>
-                <!-- Create button class for sign in/ sign up-->
-                <a href="/login" class="btn btn--cta btn--red">Sign In / Sign Up</a>
-            </div>
-        </nav>
-    </div>
-    <!-- end of navbar Section -->
+        <!--Navbar -->
+        <div class="container-fluid">
+            <!--Allow navbar to be responsive with navbar-expand-sm class -->
+            <nav class="navbar navbar-dark navbar-expand-sm">
+                <!--semantic HTML tags for SEO and improve accesibility-->
+                <a href="/" class="navbar-brand"> MUMBAI MAGIC</a>
+                <!--text-based brand name-->
+                <!--Compress to a button, trigger for  collapsible element with id used in data-target-->
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <!--aria accessibility for screen readers-->
+                    <span class="navbar-toggler-icon"></span></button>
+                <!--create three bar icon -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <!--id matches data-target in button above -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="active nav-item mr-2 ui-menu-color-home"><a class="nav-link hvr-sweep-to-bottom"
+                                href="/">Home</a></li>
+                        <li class="nav-item mr-2 ui-menu-color-about"><a class="nav-link hvr-sweep-to-bottom"
+                                href="about.html">About</a></li>
+                        <!-- dropdown config-->
+                        <li class="nav-item dropdown ui-menu-color-menu">
+                            <a class="nav-link dropdown-toggle hvr-sweep-to-bottom" href="menu.html" id="navbarNavDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarNavDropdown">
+                                <!-- Create dropdown items-->
+                                <a class="dropdown-item" href="menu.html">Vegetarian</a>
+                                <a class="dropdown-item" href="menu.html">Non-Veg</a>
+                                <a class="dropdown-item" href="menu.html">Weekend Special</a>
+                            </div>
+                        </li>
+                        <li class="nav-item d-block d-sm-none"><a class="nav-link" href="">Sign In / Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="d-none d-md-block">
+                    <!--display on medium sized screen resolutions and above -->
+                    <p class="navbar-text my-auto mr-2"><i>The way to your soul is through the stomach</i></p>
+                    <!-- Create button class for sign in/ sign up-->
+                    <a href="/login" class="btn btn--cta btn--red">Sign In / Sign Up</a>
+                </div>
+            </nav>
+        </div>
+        <!-- end of navbar Section -->
 
     <!--Vegetarian section-->
     <div class="container-wrapper container-wrapper--white">
@@ -207,72 +212,69 @@
     </div>
     <!-- /.end of Weekend section -->
 
-    <!--Footer section-->
-    <footer class="container-fluid">
-        <div class="row">
-            <!--copyright section-->
-            <div class="col-sm-4 inline-block">
-                <h5 class="uppercase inline-block">Copyright</h5>
-                <p class="inline-block"> Copyright @2024 all rights reserved.</p>
-            </div>
-            <!--download section-->
-            <div class="col-sm-4 inline-block">
-                <h5 class="uppercase inline-block">Download</h5>
-                <p class="inline-block"> Download our menu here.
-                    <!--Using aria-hidden="true" to hide icons used purely for decoration.-->
-                    <a href="#" target="_blank" class="menu">
-                        <i class="fa fa-download" aria-hidden="true"></i>
-                        <span class="sr-only">Download
-                            link.</span><!--Screen reader class-give text to a screen reader-->
-                    </a>
-                </p>
-            </div>
-            <!--social-media section-->
-            <div class="col-sm-4 inline-block">
-                <h5 class="uppercase inline-block">Social</h5>
-                <!--Bootstrap list-inline-item class follows an list-inline class-->
-                <ul class="list-inline social-links">
-                    <li class="list-inline-item">
-                        <a target="_blank" href="#">
-                            <i class="fa fa-facebook" aria-hidden="true"></i> <!--fa-fa fontawesome icon-->
-                            <span class="sr-only">Facebook</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="#">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                            <span class="sr-only">Twitter</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="#">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            <span class="sr-only">LinkedIn</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="#">
-                            <i class="fa fa-pinterest" aria-hidden="true"></i>
-                            <span class="sr-only">Pinterest</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="#">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="#">
-                            <i class="fa fa-youtube" aria-hidden="true"></i>
-                            <span class="sr-only">YouTube</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+   <!--Footer section-->
+   <footer class="container-fluid">
+    <div class="row">
+        <!--copyright section-->
+        <div class="col-sm-4 inline-block">
+            <h5 class="uppercase inline-block">Copyright</h5>
+            <p class="inline-block"> Copyright @2024 all rights reserved.</p>
         </div>
-    </footer>
-    <!-- /.end of footer section -->
+        <!--download section-->
+        <div class="col-sm-4 inline-block">
+            <h5 class="uppercase inline-block">Download</h5>
+            <p class="inline-block"> Download our menu here.
+                <!--Using aria-hidden="true" to hide icons used purely for decoration.-->
+                <a href="#" target="_blank" class="menu">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <span class="sr-only">Download
+                        link.</span>
+                    <!--Screen reader class-give text to a screen reader-->
+                </a>
+            </p>
+        </div>
+        <!--social-media section-->
+        <div class="col-sm-4 inline-block">
+            <h5 class="uppercase inline-block">Social</h5>
+            <!--Bootstrap list-inline-item class follows an list-inline class-->
+            <ul class="list-inline social-links">
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://www.facebook.com/">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <!--fa-fa fontawesome icon-->
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://x.com/">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://www.linkedin.com/home">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://www.instagram.com/">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a target="_blank" href="https://www.youtube.com/">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                        <span class="sr-only">YouTube</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- /.end of footer section -->
+
 
     <!-- code copied from Code Institute-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

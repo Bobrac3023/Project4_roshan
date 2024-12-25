@@ -26,15 +26,8 @@ body {
     padding-bottom: 75px;
 }
 
-.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-}
+/* -----------------------Navbar styling--------------------------- */
 
-.container-wrapper {
-    height: 100vh;
-}
-/* Navbar styling */
 
 /* overide default bootstrap Navbar class setting*/
 .navbar {
@@ -85,12 +78,8 @@ body {
     color: black;
 }
 
-/*.navbar .navbar-nav a i{
-display: inline-block;
-text-align: center;
-}*/
 
-/* Jumbotron */
+/* Jumbotron styling */
 
 .jumbotron {
     background-color: bisque;
@@ -128,7 +117,7 @@ text-align: center;
 
 /*  block-divider-short used for quotes section */
 .container-wrapper--cyan {
-    background-color: cyan;
+    background-color: #f4f4f4;
     color: black;
 }
 
@@ -163,7 +152,7 @@ text-align: center;
     margin-bottom: 25px;
 }
 
-/* Features section */
+/* Features section styling */
 
 .feature {
     text-align: center;
@@ -210,18 +199,16 @@ text-align: center;
 }
 
 
-/* Footer */
+/* Footer styling  */
 footer.container-fluid {
     background-color: #525252;
     color: white;
-    #text-align: center;
 }
 
 .inline-block {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0;
 }
-
 
 .social-links li a i {
     width: 32px;
@@ -239,10 +226,10 @@ footer.container-fluid {
     -o-transition: all 0.35s ease-in-out;
 }
 
-
 .social-links li a i:hover {
     background: #e84610;
 }
+
 .menu i {
     font-size: 18px;
     color: #fafafa;
@@ -256,4 +243,49 @@ footer.container-fluid {
 
 .menu i:hover {
     color: #e84610;
+}
+
+
+/* ---------------------About.html styling------------------------------------------ */
+
+
+/* add background color to contact form section*/
+.bg-color-contact {
+    background-color: #fff;
+}
+
+/* style h3 header in contact form*/
+.contact-heading {
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+/* style feedback form */
+.center-form {
+    padding-top: 10px;
+    /*top and bottom 0 and auto left and right*/
+    margin: 0 auto;
+    /* for good user experience,form width does not take full page width.*/
+    max-width: 70%;
+}
+
+/* style submit button for feedback form */
+button[type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: #fafafa;
+    background-color: #e84610;
+}
+
+/* ----------------------------------------Media Queries */
+
+@media(min-width: 992px) {
+    .center-form {
+        padding-top: 30px;
+        min-height: 240px;
+        margin: 0 auto;
+        max-width: 50%;
+    }
 }
