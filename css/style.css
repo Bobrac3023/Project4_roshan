@@ -289,3 +289,13 @@ button[type="submit"] {
         max-width: 50%;
     }
 }
+
+
+/* Maps */
+
+/*--------------------------------------------Map*/
+div#map {
+    min-height: 200px;
+    padding: 10px;
+    margin: 20px;
+}

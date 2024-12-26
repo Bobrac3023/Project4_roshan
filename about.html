@@ -18,13 +18,18 @@
     <!--link to hover.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
         type="text/css" />
+    <!--Google Maps -->
+    <!-- The callback parameter is required, so we use console.debug as a noop -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgQGElL7zLqxLXtKX9G3f-DUNISj-f8wk&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
     <!--link index file to style.css file-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
 <body>
-       <!--Navbar -->
-       <div class="container-fluid">
+    <!--Navbar -->
+    <div class="container-fluid">
         <!--Allow navbar to be responsive with navbar-expand-sm class -->
         <nav class="navbar navbar-dark navbar-expand-sm">
             <!--semantic HTML tags for SEO and improve accesibility-->
@@ -68,25 +73,21 @@
     </div>
     <!-- end of navbar Section -->
 
-    <!--about us section -->
+    <!-- /.google map section -->
 
-    <div class="container-fluid container-wrapper--cyan">
-        <div class="row">
-            <div class="col-12 page-header">
-                <!--maintain column layout on a mobile device-->
-                <h3>Let's get introduced </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut
-                    labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris
-                    nisi
-                    ut
-                    aliquip ex ea commodo consequat.</p>
-            </div>
-        </div>
-    </div>
-    <!-- /.End of about us section -->
+    <div id="map"></div> <!-- map id styled in css-->
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 3,
+                center: {
+                    lat: 24.49416732788086,
+                    lng: 54.37644577026367
+                }
+            });
+        }
+    </script>
+    <!-- /.end of Goodle map section -->
 
     <!-- Contact form section -->
     <section class="container-fluid contact-form">
@@ -118,6 +119,7 @@
     </section>
     <!-- /. end of Contact form section -->
 
+
     <!--Footer section-->
     <footer class="container-fluid">
         <div class="row">
@@ -131,7 +133,7 @@
                 <h5 class="uppercase inline-block">Download</h5>
                 <p class="inline-block"> Download our menu here.
                     <!--Using aria-hidden="true" to hide icons used purely for decoration.-->
-                    <a href="#" target="_blank" class="menu">
+                    <a href="css/cv/sample-cv.pdf" target="_blank" class="menu">
                         <i class="fa fa-download" aria-hidden="true"></i>
                         <span class="sr-only">Download
                             link.</span>
@@ -181,6 +183,15 @@
     </footer>
     <!-- /.end of footer section -->
 
+    <!--Google Maps script tags-->
+    <!--markerclusterer.js file- allows to add clusters to map.-->
+    <script
+        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgQGElL7zLqxLXtKX9G3f-DUNISj-f8wk&callback=initMap">
+    </script>
+    <!--end of Google maps script tags-->
 
     <!-- code copied from Code Institute-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
