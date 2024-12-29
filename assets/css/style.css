@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Containers styling */
+/* ----------------Containers styling------------------------- */
 
 /* callout Container- used in callout section */
 .callout-container {
@@ -13,7 +13,7 @@ body {
     justify-content: center;
     position: relative;
     /* Vendor specific tags */
-    background: url("../css/images/images.jpeg")no-repeat center center fixed;
+    background: url("../assets/images/images.jpeg")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -33,25 +33,28 @@ body {
 .navbar {
     margin-bottom: 0;
     width: 100%;
-    background-color: #525252;
     border: 0;
     z-index: 1;
+    background-color: #042a49;
+    color: white;
 }
 
 /* style list items  */
 .navbar .ui-menu-color-home {
-    #background-color: #c86a18;
+    color: white;
+    font-weight: bolder;
 }
 
 /* style list items  */
 .navbar .ui-menu-color-about {
-    #background-color: aqua;
-    #color: brown;
+    color: white;
+    font-weight: bolder;
 }
 
 /* style list items  */
 .navbar .ui-menu-color-menu {
-    #background-color: #de178e;
+    color: white;
+    font-weight: bolder;
 }
 
 
@@ -63,7 +66,7 @@ body {
 /* style navbar-brand  */
 .navbar .navbar-brand {
     font-weight: bolder;
-    color: maroon;
+    color: white;
 }
 
 /* style navbar anchor elements */
@@ -75,14 +78,13 @@ body {
 /* style navbar text */
 .navbar .navbar-text {
     font-weight: bolder;
-    color: black;
+    color: white;
 }
 
-
-/* Jumbotron styling */
+/* ------------Jumbotron styling------------------------ */
 
 .jumbotron {
-    background-color: bisque;
+    background-color:darkgray;
 }
 
 .jumbotron h1 {
@@ -201,7 +203,7 @@ body {
 
 /* Footer styling  */
 footer.container-fluid {
-    background-color: #525252;
+    background-color: #042a49;
     color: white;
 }
 
@@ -295,7 +297,14 @@ button[type="submit"] {
 
 /*--------------------------------------------Map*/
 div#map {
-    min-height: 200px;
-    padding: 10px;
+    #min-height: 200px;
+    height:300px;
+    width:100%;
+    padding: 20px;
     margin: 20px;
+}
+
+.maph3 {
+    text-align: center;
+    color: black;
 }

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
         type="text/css" />
     <!--link index file to style.css file-->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -62,7 +62,7 @@
                     <!--display on medium sized screen resolutions and above -->
                     <p class="navbar-text my-auto mr-2"><i>The way to your soul is through the stomach</i></p>
                     <!-- Create button class for sign in/ sign up-->
-                    <a href="/login" class="btn btn--cta btn--red">Sign In / Sign Up</a>
+                    <a href="/" class="btn btn--cta btn--red" data-toggle="modal" data-target="#signUpModal">Sign In / Sign Up</a>
                 </div>
             </nav>
         </div>
@@ -218,14 +218,14 @@
         <!--copyright section-->
         <div class="col-sm-4 inline-block">
             <h5 class="uppercase inline-block">Copyright</h5>
-            <p class="inline-block"> Copyright @2024 all rights reserved.</p>
+            <p class="inline-block">Copyright © 2024 -Roshan Sequeira.All rights reserved.</p>
         </div>
         <!--download section-->
         <div class="col-sm-4 inline-block">
             <h5 class="uppercase inline-block">Download</h5>
             <p class="inline-block"> Download our menu here.
                 <!--Using aria-hidden="true" to hide icons used purely for decoration.-->
-                <a href="css/cv/sample-cv.pdf" target="_blank" class="menu">
+                <a href="assets/cv/sample-cv.pdf" target="_blank" class="menu">
                     <i class="fa fa-download" aria-hidden="true"></i>
                     <span class="sr-only">Download
                         link.</span>
@@ -235,7 +235,7 @@
         </div>
         <!--social-media section-->
         <div class="col-sm-4 inline-block">
-            <h5 class="uppercase inline-block">Social</h5>
+            <h5 class="uppercase inline-block">Follow us</h5>
             <!--Bootstrap list-inline-item class follows an list-inline class-->
             <ul class="list-inline social-links">
                 <li class="list-inline-item">
@@ -274,6 +274,49 @@
     </div>
 </footer>
 <!-- /.end of footer section -->
+
+<!--modal section working one-->
+<div class="modal" tabindex="-1" role="dialog" id="signUpModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sign up </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--Add Form Element-->
+                <form>
+                    <!--For this form to function, we need to implement some backend server code to process it-->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                            anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="repeatPassword">Repeat Password</label>
+                        <input type="password" class="form-control" id="repeatPassword"
+                            placeholder="Repeat Password">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.end of modal section-->
 
 
     <!-- code copied from Code Institute-->
