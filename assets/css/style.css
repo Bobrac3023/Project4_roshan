@@ -28,7 +28,6 @@ body {
 
 /* -----------------------Navbar styling--------------------------- */
 
-
 /* overide default bootstrap Navbar class setting*/
 .navbar {
     margin-bottom: 0;
@@ -84,7 +83,7 @@ body {
 /* ------------Jumbotron styling------------------------ */
 
 .jumbotron {
-    background-color:darkgray;
+    background-color: darkgray;
 }
 
 .jumbotron h1 {
@@ -250,10 +249,9 @@ footer.container-fluid {
 
 /* ---------------------About.html styling------------------------------------------ */
 
-
 /* add background color to contact form section*/
 .bg-color-contact {
-    background-color: #fff;
+    background-color: #f4f4f4;
 }
 
 /* style h3 header in contact form*/
@@ -292,14 +290,10 @@ button[type="submit"] {
     }
 }
 
-
-/* Maps */
-
 /*--------------------------------------------Map*/
 div#map {
-    #min-height: 200px;
-    height:300px;
-    width:100%;
+    height: 300px;
+    width: 100%;
     padding: 20px;
     margin: 20px;
 }
