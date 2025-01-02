@@ -1,5 +1,5 @@
 """
-URL configuration for my_project project.
+URL configuration for project4_reservation project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from hello_world import views as index_views
+from reservation_app import views as reservation_app_views
+
+
 
 urlpatterns = [
-    path('/hello', index_views.index, name='index'),
+        path('reservation_app/', reservation_app_views.myreservation, name='reservation_app_views'),
     path('admin/', admin.site.urls),
 ]
