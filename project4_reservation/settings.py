@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--o#lsw%!mb)r3kv19!^zf!kbgt5%07#id5*k+fja9&x26ds$@f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-bobrac3023-project4rosh-fcg5maem4hs.ws-us117.gitpod.io',
+ALLOWED_HOSTS = ['8000-bobrac3023-project4rosh-o4o33anh735.ws-us117.gitpod.io',
 '.herokuapp.com']
 
 
@@ -87,8 +87,8 @@ WSGI_APPLICATION = 'project4_reservation.wsgi.application'
 #    }
 #}
 DATABASES = {     
-'default': 
-dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': 
+    dj_database_url.parse(os.environ.get("DATABASE_URL"))
  }
 
 
