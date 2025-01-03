@@ -1,1 +1,1 @@
-web :gunicorn project4_reservation.wsgi
+web: gunicorn project4_reservation.wsgi
