@@ -29,8 +29,7 @@ ALLOWED_HOSTS = ['8000-bobrac3023-project4rosh-elyld05fi4n.ws-us117.gitpod.io',
 '.herokuapp.com']
 
 
-# Application definition
-
+# Application definition !
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
