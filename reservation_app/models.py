@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 STATUS = ((0, "requested"), (1, "confirmed"))
 
 # Create your models here.
-class reservation(models.Model):
+class Reservation(models.Model):
     title = models.CharField(max_length=200, unique=True)
     patron = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="patron_name"
