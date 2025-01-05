@@ -12,4 +12,15 @@ class Reservation(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+
+    
+class Feedback (models.Model):  
+    post = models.ForeignKey(
+        Reservation, on_delete=models.CASCADE, related_name="comments")
+    patron = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    content = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    
+    
     
