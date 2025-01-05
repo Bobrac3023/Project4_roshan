@@ -11,4 +11,4 @@ from .models import Reservation
 class PostList(generic.ListView):
     model = Reservation
     queryset = Reservation.objects.all()
-    template_name = "reservation_app_list.html"
+    template_name = "reservation_app_index.html"
