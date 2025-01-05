@@ -91,8 +91,6 @@ DATABASES = {
  }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-bobrac3023-project4rosh-elyld05fi4n.ws-us117.gitpod.io/reservation_app/",
-    "https://8000-bobrac3023-project4rosh-elyld05fi4n.ws-us117.gitpod.io/reservation_app/admin",
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com"
     
