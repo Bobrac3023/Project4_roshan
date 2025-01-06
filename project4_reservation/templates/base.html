@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,36 +8,22 @@
     <!--Viewport tag to respond to different resolutions, particularly mobile ones.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Soul of India</title>
-
     <!--link to bootstrap 4.6.2-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <!--link to fontawesome-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css" />
-
     <!--Embed Google Roboto font code-->
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-
     <!--link to hover.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
         type="text/css" />
-
-    <!--Google Maps -->
-    <script type="module" src="assets/js/maps.js"></script>
-
-    <!-- link to style.css -->
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!--link index file to style.css file-->
+    <!--<link rel="stylesheet" href="assets/css/style.css" type="text/css">-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     
-    <!-- link to emailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("-kf4mqtCvprOvNnZ_");
-        })();
-    </script>
-
 </head>
 
 <body>
@@ -58,7 +46,7 @@
                     <li class="active nav-item mr-2 ui-menu-color-home"><a class="nav-link hvr-sweep-to-bottom"
                             href="/">Home</a></li>
                     <li class="nav-item mr-2 ui-menu-color-about"><a class="nav-link hvr-sweep-to-bottom"
-                            href="about.html">About</a></li>
+                            href="reservation_app/templates/reservation/about.html">About</a></li>
                     <!-- dropdown config-->
                     <li class="nav-item dropdown ui-menu-color-menu">
                         <a class="nav-link dropdown-toggle hvr-sweep-to-bottom" href="menu.html" id="navbarNavDropdown"
@@ -78,49 +66,127 @@
                 <!--display on medium sized screen resolutions and above -->
                 <p class="navbar-text my-auto mr-2"><i>The way to your soul is through the stomach</i></p>
                 <!-- Create button class for sign in/ sign up-->
-                <a href="/" class="btn btn--cta btn--red" data-toggle="modal" data-target="#signUpModal">Sign In / Sign
-                    Up</a>
+                <a href="/" class="btn btn--cta btn--red" data-toggle="modal" data-target="#signUpModal">Sign In /
+                    Sign Up</a>
             </div>
         </nav>
     </div>
+
     <!-- end of navbar Section -->
 
-    <!-- /.google map section -->
-     <h3 class="maph3"> Visit us - Our Abu Dhabi Location </h3>
-    <div id="map"></div> <!-- Render map in div-->
+    <!-- Callout Section -->
+    <div class="container-fluid callout-container">
+        <div class="row">
+            <div class="col-12">
+                <!--maintain column layout on a mobile device-->
+                <section class="callout jumbotron text-center">
+                    <h1 class="jumbotron-header">Authentic Mumbai Food </h1>
+                    <!-- block divider styled through CSS-->
+                    <hr class="block-divider block-divider--orange">
+                    <!--Make paragraph stand out by adding lead class-->
+                    <p class="lead">Experience Mouth Watering ,Soul Stiring "Mumbai Delicacies"</p>
+                    <!--strong and mark tags to make bold and highlight-->
+                    <p><small><strong><mark>Why wait - Reseve a table now </mark></strong></small></p>
+                    <!--Primary Call for Action button, styled through css-->
+                    <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal"
+                            data-target="#signUpModal">Reservations</button></p>
+                    <!--btn-success class for green color ,Data target id matches modal id-->
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- /.End of Callout section -->
 
-    <!-- /.end of Goodle map section -->
-
-    <!-- Contact form section -->
-    <section class="container-fluid contact-form">
-        <div class="row bg-color-contact">
-            <div class="col">
-                <!-- contact form heading  -->
-                <h3 class="contact-heading uppercase text-center">Got an idea or feedback to share?</h3>
-                <h5 class="uppercase text-center">We are always open to listen and improve our client experiences!</h5>
-                <!-- contact form -4 components: 2 text input fields, a text area, and a button.-->
-                <div class="center-form">
-                    <form onsubmit="return sendMail(this);">
-                        <!--bootstrap form-control class to add styling -->
-                        <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
-                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
-                            required />
-                        <!-- textarea- 5 rows for text area and required attribute used for all fields-->
-                        <textarea rows="5" name="feedbacksummary" id="feedbacksummary" class="form-control"
-                            placeholder="Ideas and feedback" required></textarea>
-                        <!--form submit button -->
-                        <div class="form-row text-center">
-                            <div class="col">
-                                <button type="submit" class="btn btn-secondary">Send Request</button>
-                            </div>
-                        </div>
-                    </form>
+    <!-- Quotes Section  -->
+    <div class="container-wrapper--cyan">
+        <div class="container content-container">
+            <div class="row">
+                <div class="col-12 page-header">
+                    <!--maintain column layout on a mobile device-->
+                    <section class="quotes">
+                        <h2 class="text-uppercase">Quotes:</h2> <!-- form headings as capital letters -->
+                        <!-- add block divider  -->
+                        <hr class="block-divider block-divider--short">
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <!--maintain column layout on a mobile device-->
+                    <!--blockquote -quote blocks of content from another source -->
+                    <blockquote class="blockquote">
+                        <p>Nothing but the best.It reminded me of my grandmother's recepies</p>
+                        <p>- Bobby Sequeira</p>
+                    </blockquote>
+                </div>
+                <div class="col-12 col-md-6">
+                    <blockquote class="blockquote">
+                        <p>I highly recommened this place for anyone who craves for authentic Mumbai food</p>
+                        <p>- Shaan </p>
+                    </blockquote>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- /. end of Contact form section -->
+    </div>
+    <!-- /.End of Quote Section -->
 
+
+    <!-- Features Section -->
+    <div class="container-wrapper--red">
+        <div class="container content-container">
+            <!--content class to provide vertical space-->
+            <section class="features">
+                <div class="row">
+                    <div class="col-12 page-header">
+                        <!--maintain column layout on a mobile device-->
+                        <h2 class="text-uppercase">Features:</h2>
+                        <!--form headings as capital letters -->
+                        <hr class="block-divider block-divider--short"><!-- add block divider-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!--maintain column layout on a mobile device-->
+                        <div class="feature">
+                            <h3>Feature 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore
+                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris
+                                nisi
+                                ut
+                                aliquip ex ea commodo consequat.</p>
+                            <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                            <!--Button for user to read more-->
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <!--maintain column layout on a mobile device-->
+                        <div class="feature">
+                            <h3>Feature 2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris aliquip ex ea commodo consequat.</p>
+                            <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                        </div>
+                    </div>
+                    <div class="col-12 d-md-none d-lg-block col-lg-4">
+                        <!--Do not display on medium screen size-->
+                        <div class="feature">
+                            <h3>Feature 3</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi utaliquip ex ea commodo consequat.</p>
+                            <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- /.end of features section-->
 
     <!--Footer section-->
     <footer class="container-fluid">
@@ -128,7 +194,7 @@
             <!--copyright section-->
             <div class="col-sm-4 inline-block">
                 <h5 class="uppercase inline-block">Copyright</h5>
-                <p class="inline-block">Copyright © 2024 -Roshan Sequeira.All rights reserved.</p>
+                <p class="inline-block"> Copyright © 2024 -Roshan Sequeira.All rights reserved.</p>
             </div>
             <!--download section-->
             <div class="col-sm-4 inline-block">
@@ -185,6 +251,7 @@
     </footer>
     <!-- /.end of footer section -->
 
+
     <!--modal section working one-->
     <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
         <div class="modal-dialog" role="document">
@@ -227,12 +294,6 @@
         </div>
     </div>
     <!--/.end of modal section-->
-    <script src="assets/js/sendemail.js"></script>
-
-    <!--Google Maps script tags-->
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyAgQGElL7zLqxLXtKX9G3f-DUNISj-f8wk", v: "weekly"});</script>
-    <!--end of Google maps script tags-->
 
     <!-- code copied from Code Institute-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -244,7 +305,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
-    <script src="assets/js/maps.js"></script>
 
 </body>
 

@@ -11,4 +11,6 @@ from .models import Reservation
 class PostList(generic.ListView):
     model = Reservation
     queryset = Reservation.objects.all()
-    template_name = "reservation_app_index.html"
+    #template_name = "reservation_app_index.html"
+    template_name="reservation/index.html"
+    paginate_by = 6
