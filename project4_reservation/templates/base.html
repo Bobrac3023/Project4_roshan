@@ -1,5 +1,7 @@
+
 {% load static %} 
 {% url 'home' as home_url %}
+{% url 'about' as about_url %}
 
 
 <!DOCTYPE html>
@@ -48,7 +50,7 @@
                     <li class="active nav-item mr-2 ui-menu-color-home"><a class="nav-link hvr-sweep-to-bottom"
                             href="/">Home</a></li>
                     <li class="nav-item mr-2 ui-menu-color-about"><a class="nav-link hvr-sweep-to-bottom"
-                            href="">About</a></li>
+                            href= "about_app/templates/about/about.html">About</a></li>
                     <!-- dropdown config-->
                     <li class="nav-item dropdown ui-menu-color-menu">
                         <a class="nav-link dropdown-toggle hvr-sweep-to-bottom" href="menu.html" id="navbarNavDropdown"
