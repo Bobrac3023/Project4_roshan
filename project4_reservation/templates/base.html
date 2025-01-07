@@ -1,4 +1,6 @@
 {% load static %}
+{% url 'home' as home_url %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,119 +76,9 @@
 
     <!-- end of navbar Section -->
 
-    <!-- Callout Section -->
-    <div class="container-fluid callout-container">
-        <div class="row">
-            <div class="col-12">
-                <!--maintain column layout on a mobile device-->
-                <section class="callout jumbotron text-center">
-                    <h1 class="jumbotron-header">Authentic Mumbai Food </h1>
-                    <!-- block divider styled through CSS-->
-                    <hr class="block-divider block-divider--orange">
-                    <!--Make paragraph stand out by adding lead class-->
-                    <p class="lead">Experience Mouth Watering ,Soul Stiring "Mumbai Delicacies"</p>
-                    <!--strong and mark tags to make bold and highlight-->
-                    <p><small><strong><mark>Why wait - Reseve a table now </mark></strong></small></p>
-                    <!--Primary Call for Action button, styled through css-->
-                    <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal"
-                            data-target="#signUpModal">Reservations</button></p>
-                    <!--btn-success class for green color ,Data target id matches modal id-->
-                </section>
-            </div>
-        </div>
-    </div>
-    <!-- /.End of Callout section -->
-
-    <!-- Quotes Section  -->
-    <div class="container-wrapper--cyan">
-        <div class="container content-container">
-            <div class="row">
-                <div class="col-12 page-header">
-                    <!--maintain column layout on a mobile device-->
-                    <section class="quotes">
-                        <h2 class="text-uppercase">Quotes:</h2> <!-- form headings as capital letters -->
-                        <!-- add block divider  -->
-                        <hr class="block-divider block-divider--short">
-                    </section>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <!--maintain column layout on a mobile device-->
-                    <!--blockquote -quote blocks of content from another source -->
-                    <blockquote class="blockquote">
-                        <p>Nothing but the best.It reminded me of my grandmother's recepies</p>
-                        <p>- Bobby Sequeira</p>
-                    </blockquote>
-                </div>
-                <div class="col-12 col-md-6">
-                    <blockquote class="blockquote">
-                        <p>I highly recommened this place for anyone who craves for authentic Mumbai food</p>
-                        <p>- Shaan </p>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.End of Quote Section -->
-
-
-    <!-- Features Section -->
-    <div class="container-wrapper--red">
-        <div class="container content-container">
-            <!--content class to provide vertical space-->
-            <section class="features">
-                <div class="row">
-                    <div class="col-12 page-header">
-                        <!--maintain column layout on a mobile device-->
-                        <h2 class="text-uppercase">Features:</h2>
-                        <!--form headings as capital letters -->
-                        <hr class="block-divider block-divider--short"><!-- add block divider-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!--maintain column layout on a mobile device-->
-                        <div class="feature">
-                            <h3>Feature 1</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut
-                                labore
-                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris
-                                nisi
-                                ut
-                                aliquip ex ea commodo consequat.</p>
-                            <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                            <!--Button for user to read more-->
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!--maintain column layout on a mobile device-->
-                        <div class="feature">
-                            <h3>Feature 2</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris aliquip ex ea commodo consequat.</p>
-                            <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                        </div>
-                    </div>
-                    <div class="col-12 d-md-none d-lg-block col-lg-4">
-                        <!--Do not display on medium screen size-->
-                        <div class="feature">
-                            <h3>Feature 3</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi utaliquip ex ea commodo consequat.</p>
-                            <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-    <!-- /.end of features section-->
+    {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
 
     <!--Footer section-->
     <footer class="container-fluid">
@@ -201,7 +93,7 @@
                 <h5 class="uppercase inline-block">Download</h5>
                 <p class="inline-block"> Download our menu here.
                     <!--Using aria-hidden="true" to hide icons used purely for decoration.-->
-                    <a href="assets/cv/sample-cv.pdf" target="_blank" class="menu">
+                    <a href="project4_reservation/static/menucard/images.jpeg" target="_blank" class="menu">
                         <i class="fa fa-download" aria-hidden="true"></i>
                         <span class="sr-only">Download
                             link.</span>

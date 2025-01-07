@@ -21,6 +21,6 @@ from django.urls import path,include
 
 urlpatterns = [
     #path('reservation_app/', reservation_app_views.myreservation, name='reservation_app_views'),
-    path("", include("reservation_app.urls"), name="rservation_app-urls"),
+    path("", include("reservation_app.urls"), name="reservation_app-urls"),
     path('admin/', admin.site.urls),
 ]
