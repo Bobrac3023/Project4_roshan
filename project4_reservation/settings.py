@@ -19,7 +19,7 @@ if os.path.isfile('env.py'):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'project4_reservation/templates/')
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'project4_reservation/templates')
 
 
 # Quick-start development settings - unsuitable for production
