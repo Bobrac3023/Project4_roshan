@@ -30,7 +30,6 @@
     <script type="module" src="../static/"></script>
 
     <!--link index file to style.css file-->
-    <!--<link rel="stylesheet" href="assets/css/style.css" type="text/css">-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
@@ -71,37 +70,24 @@
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-                    <!-- dropdown config-->
-                    <li class="nav-item dropdown ui-menu-color-menu">
-                        <a class="nav-link dropdown-toggle hvr-sweep-to-bottom" href="menu.html" id="navbarNavDropdown"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarNavDropdown">
-                            <!-- Create dropdown items-->
-                            <a class="dropdown-item" href="menu.html">Vegetarian</a>
-                            <a class="dropdown-item" href="menu.html">Non-Veg</a>
-                            <a class="dropdown-item" href="menu.html">Weekend Special</a>
-                        </div>
-                    </li>
-                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="">Sign In /
-                            Sign Up </a></li>
                 </ul>
             </div>
             <div class="d-none d-md-block">
                 <!--display on medium sized screen resolutions and above -->
                 <p class="navbar-text my-auto mr-2"><i>The way to your soul is through the stomach</i></p>
-                <!-- Create button class for sign in/ sign up-->
-                <a href="{% url 'account_signup' %}" class="btn btn--cta btn--red">Register</a>
-                <a href="{% url 'account_login' %}" class="btn btn--cta btn--red">Login</a>
             </div>
         </nav>
     </div>
 
     <!-- end of navbar Section -->
+     
+    <main>
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
 
-    {% block content %}
-    <!-- Content Goes here -->
-    {% endblock content %}
+    </main>
+ 
 
     <!--Footer section-->
     <footer class="container-fluid">
