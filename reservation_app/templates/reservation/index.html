@@ -1,29 +1,28 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-{% block content %} 
+{% block content %}
 
 
- <!-- Creating New Comments -->
- <div class="col-md-4 card mb-4 mt-3">
+<!-- Creating New Comments-->
+<div class="col-md-4 card mb-4 mt-3">
     <div class="card-body">
-      {% if user.is_authenticated %}
-      <h3>Leave a comment:</h3>
-      <p>Posting as: {{ user.username }}</p>
-      <form id="ReservationForm" method="post"
-        style="margin-top: 1.3em;">
-        {{ comment_form | crispy }}
-        {% csrf_token %}
-        <button id="submitButton" type="submit"
-          class="btn btn-signup btn-lg">Submit</button>
-      </form>
-      {% else %}
-      <p>Log in to leave a comment</p>
-      {% endif %}
+        {% if user.is_authenticated %}
+        <h3>Leave a comment:</h3>
+        <p>Posting as: {{ user.username }}</p>
+        <form id="ReservationForm" method="post" style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+        </form>
+        {% else %}
+        <p>Log in to leave a comment</p>
+        {% endif %}
     </div>
-  </div>
-   <!-- End of Creating New Comments -->
-    <!-- Callout Section -->
+</div>
+<!-- End of Creating New Comments-->
+
+<!-- Callout Section -->
 <div class="container-fluid callout-container">
     <div class="row">
         <div class="col-12">
@@ -40,9 +39,23 @@
                 <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal"
                         data-target="#signUpModal">Reservations</button></p>
                 <!--btn-success class for green color ,Data target id matches modal id-->
+                <!--<div class="card-body">
+                    {% if user.is_authenticated %}
+                    <h3>Leave a comment:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form id="ReservationForm" method="post" style="margin-top: 1.3em;">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                    {% else %}
+                    <p>Log in to leave a comment</p>
+                    {% endif %}
+                </div>-->
             </section>
         </div>
     </div>
+</div>
 </div>
 <!-- /.End of Callout section -->
 <!-- Quotes Section  -->
@@ -52,7 +65,7 @@
             <div class="col-12 page-header">
                 <!--maintain column layout on a mobile device-->
                 <section class="quotes">
-                    <h2 class="text-uppercase">Quotes:</h2> <!-- form headings as capital letters -->
+                    <h2 class="text-uppercase">Reviews:</h2> <!-- form headings as capital letters -->
                     <!-- add block divider  -->
                     <hr class="block-divider block-divider--short">
                 </section>
