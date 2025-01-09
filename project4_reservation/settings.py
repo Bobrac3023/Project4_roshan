@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
 from pathlib import Path
 import os 
 import dj_database_url 
@@ -31,7 +30,7 @@ SECRET_KEY = 'django-insecure-4%%+oncli72x76x5qstr)(7@)fb=x0!_n+tn5ua$@xk4^!^%gi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-bobrac3023-project4rosh-elyld05fi4n.ws-us117.gitpod.io',
+ALLOWED_HOSTS = ['8000-bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net',
 '.herokuapp.com']
 
 
@@ -47,6 +46,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'reservation_app',
     'about_app',
 ]
@@ -55,6 +56,8 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -98,10 +101,12 @@ WSGI_APPLICATION = 'project4_reservation.wsgi.application'
 #    }
 #}
 
+ 
 DATABASES = {     
     'default': 
     dj_database_url.parse(os.environ.get("DATABASE_URL"))
  }
+
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",

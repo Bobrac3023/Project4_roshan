@@ -12,6 +12,5 @@ class Review (models.Model):
     
 
     
-
     
     
