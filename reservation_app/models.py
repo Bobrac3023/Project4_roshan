@@ -20,7 +20,7 @@ class Reservation(models.Model):
     read = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"Reservation request from {self.name}"
+        return f"Reservation request form {self.name}"
     
 class Feedback (models.Model):  
     post = models.ForeignKey(

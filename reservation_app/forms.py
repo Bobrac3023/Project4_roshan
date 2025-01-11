@@ -1,6 +1,5 @@
 from .models import Reservation
 from django import forms
-#from .forms import ReservationForm
 from django.shortcuts import render
 
 class ReservationForm(forms.ModelForm):

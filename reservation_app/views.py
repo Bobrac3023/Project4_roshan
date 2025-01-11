@@ -1,31 +1,34 @@
 from django.shortcuts import render
-from django.views import generic
+#from django.views import generic
 from .models import Reservation
-#from .forms import ReservationForm
+from .forms import ReservationForm
 
 # Create your views here.
 
-class PostList(generic.ListView):
-    model = Reservation
-    queryset = Reservation.objects.all()
-    template_name="reservation/index.html"
-    #paginate_by = 6
+#class PostList(generic.ListView):
+#    model = Reservation
+#    queryset = Reservation.objects.all()
+#    template_name="reservation/index.html"
+#    #paginate_by = 6
 
-def index(request, slug):
-    # …
-    if request.method == "POST":
-        ReservationForm = ReservationForm(data=request.POST)
-    if ReservationForm.is_valid():
-        comment = ReservationForm.save(commit=False)
-        comment.author = request.user
-        comment.post = post
-        comment.save()
-    ReservationForm = ReservationForm()
 
-    return render(
-        request,
-        "reservation_app/index.html",
-        {
-            "ReservationForm": ReservationForm,
-        },
-    )
+
+def about_me(request):
+        """
+        Renders the index.html page
+        """
+        about = Reservation.objects.all()
+        #about = Reservation.objects.all().order_by('-updated_on').first()
+        reservation_form = ReservationForm()
+
+        return render(
+            request,
+            "reservation/index.html",
+            {
+                """
+                adding reservation an reservation form variables to the context in the render helper function
+                """
+            "about": about,
+            "reservation_form": reservation_form
+            },
+        )
