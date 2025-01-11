@@ -5,7 +5,6 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,12 +25,10 @@
     <!--link to hover.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
         type="text/css" />
-  
 
 
     <!--link index file to style.css file-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
 </head>
 
 <body>
@@ -40,7 +37,7 @@
         <!--Allow navbar to be responsive with navbar-expand-sm class -->
         <nav class="navbar navbar-dark navbar-expand-sm">
             <!--semantic HTML tags for SEO and improve accesibility-->
-            <a href="/" class="navbar-brand"> MUMBAI MAGIC</a>
+            <a href="/" class="navbar-brand"> MAI'S KITCHEN</a>
             <!--text-based brand name-->
             <!--Compress to a button, trigger for  collapsible element with id used in data-target-->
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -78,16 +75,13 @@
             </div>
         </nav>
     </div>
-
     <!-- end of navbar Section -->
-     
-    <main>
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
 
-    </main>
- 
+<main>
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+</main>
 
     <!--Footer section-->
     <footer class="container-fluid">
@@ -102,7 +96,8 @@
                 <h5 class="uppercase inline-block">Download</h5>
                 <p class="inline-block"> Download our menu here.
                     <!--Using aria-hidden="true" to hide icons used purely for decoration.-->
-                    <a href="/workspace/Project4_roshan/project4_reservation/static/menucard/sample-cv.pdf" target="_blank" class="menu">
+                    <a href="/workspace/Project4_roshan/project4_reservation/static/menucard/sample-cv.pdf"
+                        target="_blank" class="menu">
                         <i class="fa fa-download" aria-hidden="true"></i>
                         <span class="sr-only">Download
                             link.</span>
@@ -153,67 +148,20 @@
     <!-- /.end of footer section -->
 
 
-    <!--modal section working one-->
-    <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Sign up </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!--Add Form Element-->
-                    <form>
-                        <!--For this form to function, we need to implement some backend server code to process it-->
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                anyone
-                                else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="repeatPassword">Repeat Password</label>
-                            <input type="password" class="form-control" id="repeatPassword"
-                                placeholder="Repeat Password">
-                        </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/.end of modal section-->
-    
-
-
     <!-- code copied from Code Institute-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
-        </script>
+    </script>
+    
 
-        <!--Google Maps script tags-->
-    <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
-        ({ key: "AIzaSyAgQGElL7zLqxLXtKX9G3f-DUNISj-f8wk", v: "weekly" });</script>
-<!--end of Google maps script tags-->
-
+    {% block extras %}
+    {% endblock %}
 </body>
 
 </html>

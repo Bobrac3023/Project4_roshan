@@ -18,6 +18,8 @@ class Reservation(models.Model):
     email = models.EmailField(default=True)
     message = models.TextField()
     read = models.BooleanField(default=False)
+    #created_on = models.DateTimeField(auto_now_add=True)
+    #status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
         return f"Reservation request form {self.name}"

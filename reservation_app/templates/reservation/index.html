@@ -3,42 +3,155 @@
 {% load crispy_forms_tags %}
 
 
-
 {% block content %}
-<div class="container mt-5">
+<!-- Callout Section -->
+<div class="container-fluid callout-container">
     <div class="row">
-        <div class="col-12 col-md-4 text-center">
-            <img src="{% static 'images/nobody.jpg' %}" width="75%">
-        </div>
-        <div class="col-12 col-md-8">
-            <h2>{{ about.title }}</h2>
-            {{ about.content | safe }}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col text-right">
-            <!-- Updated on field goes in here -->
-
-            <p class="text-end"><em>Updated on: {{ reservation.updated_on }}</em></p>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 my-5">
-            <h2>Reserve your Table today</h2>
-            <p>At Mai's Kitchen, we believe the best way to nourish the soul is through the stomach.
-                Come and enjoy our mout watering, soul stiring cusine made from the finest ingredients.
-                Our chef's don't use any artificial flavours in their preparations. 
-                We are excited to serve you. 
-                Fill out the form to beat the queue!</p>
-
-            <!-- add your form here. Your submit button should 
-                                have the classes of btn, btn-secondary -->
-            <form method="post">
-                {{ reservation_form | crispy }}
-                {% csrf_token %}
-                <button class="btn btn-secondary" type="submit">Submit</button>
-            </form>
+        <div class="col-12">
+            <!--maintain column layout on a mobile device-->
+            <section class="callout jumbotron text-center">
+                <h1 class="jumbotron-header">Authentic Maharashtrian Restaurant </h1>
+                <!-- block divider styled through CSS-->
+                <hr class="block-divider block-divider--orange">
+                <!--Make paragraph stand out by adding lead class-->
+                <p class="lead">Experience Mouth Watering ,Soul Stiring "Maharashtrain Delicacies"</p>
+                <!--strong and mark tags to make bold and highlight-->
+                <p><small><strong><mark>Why wait - Reseve a table now </mark></strong></small></p>
+                <!--Primary Call for Action button, styled through css-->
+                <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal" data-target="#signUpModal"
+                        href="">Reservations</button></p>
+                <!--btn-success class for green color ,Data target id matches modal id-->
+                
+                <!--END of btn-success class for green color ,Data target id matches modal id-->
+            </section>
         </div>
     </div>
 </div>
+</div>
+<!-- /.End of Callout section -->
+<!-- Quotes Section  -->
+<div class="container-wrapper--cyan">
+    <div class="container content-container">
+        <div class="row">
+            <div class="col-12 page-header">
+                <!--maintain column layout on a mobile device-->
+                <section class="quotes">
+                    <h2 class="text-uppercase">Reviews:</h2> <!-- form headings as capital letters -->
+                    <!-- add block divider  -->
+                    <hr class="block-divider block-divider--short">
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <!--maintain column layout on a mobile device-->
+                <!--blockquote -quote blocks of content from another source -->
+                <blockquote class="blockquote">
+                    <p>Nothing but the best.It reminded me of my grandmother's recepies</p>
+                    <p>- Bobby Sequeira</p>
+                </blockquote>
+            </div>
+            <div class="col-12 col-md-6">
+                <blockquote class="blockquote">
+                    <p>I highly recommened this place for anyone who craves for authentic Mumbai food</p>
+                    <p>- Shaan </p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.End of Quote Section -->
+<!-- Features Section -->
+<div class="container-wrapper--red">
+    <div class="container content-container">
+        <!--content class to provide vertical space-->
+        <section class="features">
+            <div class="row">
+                <div class="col-12 page-header">
+                    <!--maintain column layout on a mobile device-->
+                    <h2 class="text-uppercase">Highlights:</h2>
+                    <!--form headings as capital letters -->
+                    <hr class="block-divider block-divider--short"><!-- add block divider-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!--maintain column layout on a mobile device-->
+                    <div class="feature">
+                        <h3>Our USP</h3>
+                        <p>At Mai's Kitchen, we believe the best way to nourish the soul is through the stomach.
+                            Come and enjoy our mouth watering, soul stiring cusine made from the finest ingredients.
+                            Our chef's don't use any artificial flavours in their preparations.
+                            We are excited to serve you.</p>
+                        <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                        <!--Button for user to read more-->
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!--maintain column layout on a mobile device-->
+                    <div class="feature">
+                        <h3>Feature 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco laboris aliquip ex ea commodo consequat.</p>
+                        <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                    </div>
+                </div>
+                <div class="col-12 d-md-none d-lg-block col-lg-4">
+                    <!--Do not display on medium screen size-->
+                    <div class="feature">
+                        <h3>Feature 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi utaliquip ex ea commodo consequat.</p>
+                        <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- /.end of features section-->
+
+<!--modal section working one-->
+<div class="modal" tabindex="-1" role="dialog" id="signUpModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Reserve your Table today</h4>
+                <p><a class="link" href="/accounts/login/">login</a>
+                    <a class="link" href="/accounts/signup/">sign up</a></p>
+                <!--start Django form element-->
+                <form method="post">
+                    {{ reservation_form | crispy }}
+                    {% csrf_token %}
+                    <button class="btn btn-secondary" type="submit">Submit</button>
+                </form>
+                <!--end of Django form element-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.end of modal section-->
+
+
 {% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
+<script src="/static/js/maps.js"></script>
+<script src="static/sendmail.js"></script>
+<!-- link to emailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init("-kf4mqtCvprOvNnZ_");
+    })();
+</script>
+
+{% endblock %}
