@@ -4,6 +4,8 @@
 
 
 {% block content %}
+
+<!--Start of Callout section-->
 <div class="container-fluid callout-container">
     <div class="row">
         <div class="col-12">
@@ -20,7 +22,6 @@
                 <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal" data-target="#signUpModal"
                         href="">Reservations</button></p>
                 <!--btn-success class for green color ,Data target id matches modal id-->
-
                 <!--END of btn-success class for green color ,Data target id matches modal id-->
             </section>
         </div>
@@ -28,7 +29,6 @@
 </div>
 </div>
 <!-- /.End of Callout section -->
-
 <!-- start reviews Section  -->
 <div class="container-wrapper--cyan">
     <div class="container content-container">
@@ -65,7 +65,6 @@
     </div>
 </div>
 <!-- /.End of reviews  Section -->
-
 <!-- start highlights Section -->
 <div class="container-wrapper--red">
     <div class="container content-container">
@@ -84,8 +83,10 @@
                     <!--maintain column layout on a mobile device-->
                     <div class="feature">
                         <h3>Nourish the Soul</h3>
-                        <p> Mai’s Kitchen takes pride in serving traditional Maharashtrian cuisine, hailing from the western state of Maharashtra in India. 
-                            We offer a variety of vegetarian and non-vegetarian dishes with a balance of sweet, spicy, sour, and salty flavours.</p>
+                        <p> Mai’s Kitchen takes pride in serving traditional Maharashtrian cuisine, hailing from the
+                            western state of Maharashtra in India.
+                            We offer a variety of vegetarian and non-vegetarian dishes with a balance of sweet, spicy,
+                            sour, and salty flavours.</p>
                         <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
                         <!--Button for user to read more-->
                     </div>
@@ -94,10 +95,11 @@
                     <!--maintain column layout on a mobile device-->
                     <div class="feature">
                         <h3>Made with Love</h3>
-                        <p>All our meals are made with love. 
+                        <p>All our meals are made with love.
                             Cooking is more than just mixing ingredients.
-                            we care for our customers not only by nourishing their body but also by respecting our culture and history. 
-                            We ensure ,flavours of the past continue to shape our future.</p>
+                            we care for our customers not only by nourishing their body but also by respecting our
+                            culture and history.
+                            We ensure ,flavours of the past continue to shape our future.</p>
                         <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
                     </div>
                 </div>
@@ -105,9 +107,9 @@
                     <!--Do not display on medium screen size-->
                     <div class="feature">
                         <h3>Authentic and Vibrant</h3>
-                        <p>Unlock your palette with us by dining at our authentic and vibrant restaurant. 
-                            We aim to bring in seasonal menus, chef’s favourites, and special offers. 
-                            Stay tuned while we share the flavours of Maharashtra with you!</p>
+                        <p>Unlock your palette with us by dining at our authentic and vibrant restaurant.
+                            We aim to bring in seasonal menus, chef’s favourites, and special offers.
+                            Stay tuned while we share the flavours of Maharashtra with you!</p>
                         <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
                     </div>
                 </div>
@@ -130,21 +132,19 @@
                 <h4>Reserve your Table today</h4>
                 <p><a class="link" href="/accounts/login/">login</a>
                     <a class="link" href="/accounts/signup/">sign up </a></p>
+
                 <!--start Django form element-->
                 <form method="post">
                     {{ reservation_form | crispy }}
                     {% csrf_token %}
-                    <button class="btn btn-secondary" type="submit">Submit</button>
                 </form>
-                {% if user.is_authenticated and name.email == user %}
-                <button class="btn btn-edit" email_id="{{ email.id }}">Edit</button>
-                {% endif %}
                 <!--end of Django form element-->
             </div>
         </div>
     </div>
 </div>
 <!--/. end of modal section for reservations and login-->
+
 
 
 {% endblock content %}

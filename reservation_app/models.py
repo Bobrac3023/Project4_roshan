@@ -19,25 +19,8 @@ class Reservation(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-    
-class Meta:
-    """
-        Metadata options for the model.
-        Attributes:
-        unique_together (tuple): Ensures that the combination of 'table',
-        'date', and 'time' is unique.
-    """
-    unique_together = ('date', 'time')
-
-    def __str__(self):
-        """
-        Returns a string representation of the Reservation instance.
-             The string includes the name, number of guests,
-             date, and time information.
-        """
-        return (f'Dear {self.name}, your booking for {self.guests}'
-                f'guests on {self.date} at {self.time} is'
-                f'confirmed')
+def __str__(self):
+        return f"Reservation request form {self.name}"
 
 class Feedback (models.Model):
     post = models.ForeignKey(
