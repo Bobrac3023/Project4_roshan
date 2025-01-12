@@ -4,7 +4,6 @@
 
 
 {% block content %}
-<!-- Callout Section -->
 <div class="container-fluid callout-container">
     <div class="row">
         <div class="col-12">
@@ -21,7 +20,7 @@
                 <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal" data-target="#signUpModal"
                         href="">Reservations</button></p>
                 <!--btn-success class for green color ,Data target id matches modal id-->
-                
+
                 <!--END of btn-success class for green color ,Data target id matches modal id-->
             </section>
         </div>
@@ -29,14 +28,15 @@
 </div>
 </div>
 <!-- /.End of Callout section -->
-<!-- Quotes Section  -->
+
+<!-- start reviews Section  -->
 <div class="container-wrapper--cyan">
     <div class="container content-container">
         <div class="row">
             <div class="col-12 page-header">
                 <!--maintain column layout on a mobile device-->
                 <section class="quotes">
-                    <h2 class="text-uppercase">Reviews:</h2> <!-- form headings as capital letters -->
+                    <h2 class="text-uppercase">Customer Reviews:</h2> <!-- form headings as capital letters -->
                     <!-- add block divider  -->
                     <hr class="block-divider block-divider--short">
                 </section>
@@ -47,21 +47,26 @@
                 <!--maintain column layout on a mobile device-->
                 <!--blockquote -quote blocks of content from another source -->
                 <blockquote class="blockquote">
-                    <p>Nothing but the best.It reminded me of my grandmother's recepies</p>
-                    <p>- Bobby Sequeira</p>
+                    <p> I always come here for their Piyush, it is so fresh and tasty!
+                        Great customer service and amazing food!
+                    </p>
+                    <p>Bobby Sequeira - Food blogger</p>
                 </blockquote>
             </div>
             <div class="col-12 col-md-6">
                 <blockquote class="blockquote">
-                    <p>I highly recommened this place for anyone who craves for authentic Mumbai food</p>
-                    <p>- Shaan </p>
+                    <p>I highly recommened this place for anyone who craves for authentic Maharastrian food.
+                        My favourite dishes are misal pav and techa.
+                    </p>
+                    <p> Ritesh Deshmukh - Bollywood actor</p>
                 </blockquote>
             </div>
         </div>
     </div>
 </div>
-<!-- /.End of Quote Section -->
-<!-- Features Section -->
+<!-- /.End of reviews  Section -->
+
+<!-- start highlights Section -->
 <div class="container-wrapper--red">
     <div class="container content-container">
         <!--content class to provide vertical space-->
@@ -78,11 +83,9 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <!--maintain column layout on a mobile device-->
                     <div class="feature">
-                        <h3>Our USP</h3>
-                        <p>At Mai's Kitchen, we believe the best way to nourish the soul is through the stomach.
-                            Come and enjoy our mouth watering, soul stiring cusine made from the finest ingredients.
-                            Our chef's don't use any artificial flavours in their preparations.
-                            We are excited to serve you.</p>
+                        <h3>Nourish the Soul</h3>
+                        <p> Mai’s Kitchen takes pride in serving traditional Maharashtrian cuisine, hailing from the western state of Maharashtra in India. 
+                            We offer a variety of vegetarian and non-vegetarian dishes with a balance of sweet, spicy, sour, and salty flavours.</p>
                         <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
                         <!--Button for user to read more-->
                     </div>
@@ -90,20 +93,21 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <!--maintain column layout on a mobile device-->
                     <div class="feature">
-                        <h3>Feature 2</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco laboris aliquip ex ea commodo consequat.</p>
+                        <h3>Made with Love</h3>
+                        <p>All our meals are made with love. 
+                            Cooking is more than just mixing ingredients.
+                            we care for our customers not only by nourishing their body but also by respecting our culture and history. 
+                            We ensure ,flavours of the past continue to shape our future.</p>
                         <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
                     </div>
                 </div>
                 <div class="col-12 d-md-none d-lg-block col-lg-4">
                     <!--Do not display on medium screen size-->
                     <div class="feature">
-                        <h3>Feature 3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco laboris nisi utaliquip ex ea commodo consequat.</p>
+                        <h3>Authentic and Vibrant</h3>
+                        <p>Unlock your palette with us by dining at our authentic and vibrant restaurant. 
+                            We aim to bring in seasonal menus, chef’s favourites, and special offers. 
+                            Stay tuned while we share the flavours of Maharashtra with you!</p>
                         <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
                     </div>
                 </div>
@@ -111,9 +115,9 @@
         </section>
     </div>
 </div>
-<!-- /.end of features section-->
+<!-- /.end of highlighs section-->
 
-<!--modal section working one-->
+<!--modal section for reservations and login-->
 <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -124,34 +128,28 @@
             </div>
             <div class="modal-body">
                 <h4>Reserve your Table today</h4>
-                <p><a class="link" href="/accounts/login/">login</a>
-                    <a class="link" href="/accounts/signup/">sign up</a></p>
+                <p><a class="link" href="/accounts/login/">Please "login" if you have an account already</a>
+                    <a class="link" href="/accounts/signup/">Please "sign up" first to reserve a table </a></p>
                 <!--start Django form element-->
                 <form method="post">
                     {{ reservation_form | crispy }}
                     {% csrf_token %}
                     <button class="btn btn-secondary" type="submit">Submit</button>
                 </form>
+                {% if user.is_authenticated and name.email == user %}
+                <button class="btn btn-edit" email_id="{{ email.id }}">Edit</button>
+                {% endif %}
                 <!--end of Django form element-->
             </div>
         </div>
     </div>
 </div>
-<!--/.end of modal section-->
+<!--/. end of modal section for reservations and login-->
 
 
 {% endblock content %}
 
 {% block extras %}
 <script src="{% static 'js/comments.js' %}"></script>
-<script src="/static/js/maps.js"></script>
-<script src="static/sendmail.js"></script>
-<!-- link to emailJS -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function () {
-        emailjs.init("-kf4mqtCvprOvNnZ_");
-    })();
-</script>
 
 {% endblock %}

@@ -14,12 +14,12 @@ STATUS = ((0, "requested"), (1, "confirmed"))
 #    status = models.IntegerField(choices=STATUS, default=0)
 
 class Reservation(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=100)
     email = models.EmailField(default=True)
-    message = models.TextField()
+    message = models.TextField(max_length=150)
     read = models.BooleanField(default=False)
-    #created_on = models.DateTimeField(auto_now_add=True)
-    #status = models.IntegerField(choices=STATUS, default=0)
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
         return f"Reservation request form {self.name}"

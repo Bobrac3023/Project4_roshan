@@ -11,9 +11,7 @@ class PostList(generic.ListView):
     model = Reservation
     queryset = Reservation.objects.all()
     template_name="reservation/index.html"
-    #paginate_by = 6
-
-
+    
 
 def about_me(request):
 
@@ -25,8 +23,8 @@ def about_me(request):
         if reservation_form.is_valid():
             reservation_form.save()
             messages.add_message(request, messages.SUCCESS, "Reservation request received. Please check your inbox for an confirmation email")
-        
-    about = Reservation.objects.all()
+    reservation_app=Reservation.objects.all()    
+    #about = Reservation.objects.all()
     #about = Reservation.objects.all().order_by('-updated_on').first()
     reservation_form = ReservationForm()
 
@@ -37,41 +35,35 @@ def about_me(request):
             """
             adding reservation an reservation form variables to the context in the render helper function
             """
-            "about": about,
+            "reservation_app": reservation_app,
             "reservation_form": reservation_form
             },
     )
 
-#def comment_edit(request, slug, comment_id):
+
 def comment_edit(request,name_id):
     """
     view to edit comments
     """
     if request.method == "POST":
 
-        #queryset = Post.objects.filter(status=1)
-        queryset = Reservation.objects.filter(status=1)
-        #post = get_object_or_404(queryset, slug=slug)
-        post = get_object_or_404(queryset,name=name)
-        #comment = get_object_or_404(Comment, pk=comment_id)
-        comment = get_object_or_404(Reservation, pk=name_id)
-        #reservation_form = ReservationForm(data=request.Reservation, instance=comment)
+        queryset = Reservation.objects()
+        username = get_object_or_404(queryset)
+        username = get_object_or_404(queryset,name=username)
+        username = get_object_or_404(Reservation, pk=username_id)
         """
         ensure reservation_form variable is connected to the correct database record instance to be edited?
         """
-        reservation_form = ReservationForm(data=request.Reservation, instance=Reservation)
+        reservation_form = ReservationForm(data=request.Reservation, instance=username)
 
-        #if reservation_form.is_valid() and comment.author == request.user:
-        if reservation_form.is_valid() and comment.name == request.user:
-            comment = reservation_form.save(commit=False)
-            comment.post = post
-            comment.approved = False
-            comment.save()
-            #messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        if reservation_form.is_valid() and name.username == request.user:
+            username = reservation_form.save(commit=False)
+            username.username = username
+            username.approved = False
+            username.save()
             messages.add_message(request, messages.SUCCESS, 'Reservation Updated!')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
-    #return HttpResponseRedirect(reverse('post_detail', args=[slug]))
     return HttpResponseRedirect(reverse('index.html', args=[messages]))
 
