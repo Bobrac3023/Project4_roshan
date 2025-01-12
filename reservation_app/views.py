@@ -4,6 +4,7 @@ from django.views import generic
 from django.contrib import messages
 from .models import Reservation
 from .forms import ReservationForm
+from django.utils.decorators import method_decorator
 
 # Create your views here.
 
