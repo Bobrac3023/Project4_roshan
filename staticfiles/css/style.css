@@ -1,8 +1,9 @@
-
 body {
     font-family: 'Roboto', sans-serif;
 }
+
 /* ----------------Containers styling------------------------- */
+
 /* callout Container- used in callout section */
 .callout-container {
     height: 100vh;
@@ -12,18 +13,21 @@ body {
     justify-content: center;
     position: relative;
     /* Vendor specific tags */
-    background: url("../project4_reservation/static/menucard/images.jpeg")no-repeat center center fixed;
+    background: url "{% static '/images/images.jpeg' %}"no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
 /* content Container- used in quotes section */
 .content-container {
     padding-top: 75px;
     padding-bottom: 75px;
 }
+
 /* -----------------------Navbar styling--------------------------- */
+
 /* overide default bootstrap Navbar class setting*/
 .navbar {
     margin-bottom: 0;
@@ -33,108 +37,135 @@ body {
     background-color: #042a49;
     color: white;
 }
+
 /* style list items  */
 .navbar .ui-menu-color-home {
     color: white;
     font-weight: bolder;
 }
+
 /* style list items  */
 .navbar .ui-menu-color-about {
     color: white;
     font-weight: bolder;
 }
+
 /* style list items  */
 .navbar .ui-menu-color-menu {
     color: white;
     font-weight: bolder;
 }
 
+
 /* style navbar toggler class */
 .navbar .navbar-toggler {
     border: 0;
 }
+
 /* style navbar-brand  */
 .navbar .navbar-brand {
     font-weight: bolder;
     color: white;
 }
+
 /* style navbar anchor elements */
 .navbar .navbar-nav a {
     font-weight: bolder;
     color: black;
 }
+
 /* style navbar text */
 .navbar .navbar-text {
     font-weight: bolder;
     color: white;
 }
+
 /* ------------Jumbotron styling------------------------ */
+
 .jumbotron {
     background-color: darkgray;
 }
+
 .jumbotron h1 {
     color: black;
     font-weight: bold;
     margin-bottom: 30px;
 }
+
 .jumbotron .lead {
     color: brown;
     margin: 25px 0;
 }
+
 /* Block dividers */
+
 .block-divider {
     width: 75px;
     height: 5px;
     border: 0;
     background-color: black;
 }
+
 /* block-divider-orange used for callout section */
 .block-divider--orange {
     background-color: blue;
 }
+
 /*  block-divider-short used for quotes and featuers section */
 .block-divider--short {
     width: 35px;
 }
+
 /*  block-divider-short used for quotes section */
 .container-wrapper--cyan {
     background-color: #f4f4f4;
     color: black;
 }
+
 /*  block-divider-short used for features section */
 .container-wrapper--red {
     background-color: #f05f40;
     color: white;
 }
+
 /*  block-divider-short used for table section */
 .container-wrapper--white {
     background-color: white;
     color: black;
     text-decoration-color: black;
 }
+
 /* Page Headers */
+
 .page-header {
     margin-bottom: 0;
     border-bottom: 0;
     text-align: center;
 }
+
 .page-header h2 {
     margin-top: 0;
 }
+
 /* Quotes section */
+
 .quotes .page-header {
     margin-bottom: 25px;
 }
+
 /* Features section styling */
+
 .feature {
     text-align: center;
     margin-bottom: 40px;
 }
+
 .feature i {
     margin-bottom: 20px;
     font-size: 45px;
     line-height: 45px;
 }
+
 .feature .btn {
     background-color: white;
     border-color: white;
@@ -144,17 +175,20 @@ body {
     margin-top: 10px;
     color: #f05f40;
 }
+
 /* Buttons */
 .btn--cta {
     font-weight: bold;
     border-radius: 23px;
     width: 160px;
 }
+
 .btn--red {
     color: white;
     background-color: #f05f40;
     border-color: #f05f40;
 }
+
 /*four pseudo elements that are affected when we hover over the button.*/
 .btn--red:hover,
 .btn--red:active,
@@ -165,15 +199,18 @@ body {
     color: white;
 }
 
+
 /* Footer styling  */
 footer.container-fluid {
     background-color: #042a49;
     color: white;
 }
+
 .inline-block {
     text-align: center;
     margin-top: 0;
 }
+
 .social-links li a i {
     width: 32px;
     height: 32px;
@@ -189,9 +226,11 @@ footer.container-fluid {
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
+
 .social-links li a i:hover {
     background: #e84610;
 }
+
 .menu i {
     font-size: 18px;
     color: #fafafa;
@@ -202,15 +241,19 @@ footer.container-fluid {
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
+
 .menu i:hover {
     color: #e84610;
 }
 
+
 /* ---------------------About.html styling------------------------------------------ */
+
 /* add background color to contact form section*/
 .bg-color-contact {
     background-color: #f4f4f4;
 }
+
 /* style h3 header in contact form*/
 .contact-heading {
     font-family: "Exo", sans-serif;
@@ -218,6 +261,7 @@ footer.container-fluid {
     margin-top: 25px;
     margin-bottom: 20px;
 }
+
 /* style feedback form */
 .center-form {
     padding-top: 10px;
@@ -226,6 +270,7 @@ footer.container-fluid {
     /* for good user experience,form width does not take full page width.*/
     max-width: 70%;
 }
+
 /* style submit button for feedback form */
 button[type="submit"] {
     margin-top: 15px;
@@ -233,7 +278,9 @@ button[type="submit"] {
     color: #fafafa;
     background-color: #e84610;
 }
+
 /* ----------------------------------------Media Queries */
+
 @media(min-width: 992px) {
     .center-form {
         padding-top: 30px;
@@ -242,6 +289,7 @@ button[type="submit"] {
         max-width: 50%;
     }
 }
+
 /*--------------------------------------------Map*/
 div#map {
     height: 300px;
@@ -249,8 +297,8 @@ div#map {
     padding: 20px;
     margin: 20px;
 }
+
 .maph3 {
     text-align: center;
     color: black;
 }
-
