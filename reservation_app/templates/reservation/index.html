@@ -21,6 +21,10 @@
                 <!--Primary Call for Action button, styled through css-->
                 <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal" data-target="#signUpModal"
                         href="">Reservations</button></p>
+                <a href="templates/reservation/" class="btn btn-light btn-md active mb-2" role="button"
+                    aria-pressed="true">update reservations</a>
+                <a href="reservation_app/templates/reservation/confirm_delete.html"
+                    class="btn btn-light btn-md active mb-2" role="button" aria-pressed="true">Delete reservations</a>
                 <!--btn-success class for green color ,Data target id matches modal id-->
                 <!--END of btn-success class for green color ,Data target id matches modal id-->
             </section>
@@ -132,14 +136,14 @@
                 <h4>Reserve your Table today</h4>
                 <p><a class="link" href="/accounts/login/">login</a>
                     <a class="link" href="/accounts/signup/">sign up </a></p>
-
                 <!--start Django form element-->
                 <form method="post">
                     {{ reservation_form | crispy }}
                     {% csrf_token %}
                 </form>
-                <!--end of Django form element-->
+                <button class="btn btn-secondary" type="submit">Submit</button>
             </div>
+            <!--end of Django form element-->
         </div>
     </div>
 </div>

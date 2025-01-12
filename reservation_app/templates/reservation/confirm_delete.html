@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<section class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mb-5">
+                <div class="card-header text-center">
+                    <h1 class="text-center mt-5 mb-4"><u>Confirm Cancellation</u></h1>
+                    <p>Are you sure you want to cancel your reservation? Please confirm.</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class ="my-4"> 
+                        <button type="submit" class="btn btn-outline-danger btn-sm active mx-3">Confirm</button>
+                        <a href="{% url 'reservation_list' %}" class="btn btn-outline-success btn-sm active"
+                            role="button">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
