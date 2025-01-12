@@ -1,22 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
+import datetime
+
+
 
 STATUS = ((0, "requested"), (1, "confirmed"))
-
-# Create your models here.
-#class Reservation(models.Model):
-#    title = models.CharField(max_length=200, unique=True)
-#    patron = models.ForeignKey(
-#    User, on_delete=models.CASCADE, related_name="patron_name"
-#    )
-#   content = models.TextField()
-#    created_on = models.DateTimeField(auto_now_add=True)
-#    status = models.IntegerField(choices=STATUS, default=0)
 
 class Reservation(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(default=True)
     message = models.TextField(max_length=150)
+    date = models.DateField(default=timezone.now)
+    time = models.TimeField()
+    guests = models.IntegerField(default=0)
     read = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)

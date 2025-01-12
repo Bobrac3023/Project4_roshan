@@ -23,8 +23,8 @@ def about_me(request):
         if reservation_form.is_valid():
             reservation_form.save()
             messages.add_message(request, messages.SUCCESS, "Reservation request received. Please check your inbox for an confirmation email")
-    reservation_app=Reservation.objects.all()    
-    #about = Reservation.objects.all()
+    #reservation_app=Reservation.objects.all()    
+    about = Reservation.objects.all()
     #about = Reservation.objects.all().order_by('-updated_on').first()
     reservation_form = ReservationForm()
 
@@ -35,13 +35,13 @@ def about_me(request):
             """
             adding reservation an reservation form variables to the context in the render helper function
             """
-            "reservation_app": reservation_app,
+            "about": about,
             "reservation_form": reservation_form
             },
     )
 
 
-def comment_edit(request,name_id):
+def comment_edit(request,booking_id):
     """
     view to edit comments
     """
