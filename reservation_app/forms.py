@@ -2,25 +2,25 @@ from .models import Reservation
 from django import forms
 from django.shortcuts import render
 
+
 class ReservationForm(forms.ModelForm):
     """
     Form for creating and updating reservations.
     Fields:
     name (CharField): The name of the guest making the reservation.
-    email (EmailField) : Eail of the guest for the reservation 
+    email (EmailField) : Eail of the guest for the reservation
     message (TextField) : Additonal notes from the guest
     date (DateField): Only from current date is accepted.
     time (CharField): Can choose only from the given time slots.
     guests (IntegerField): The number of guests.
-        
     """
 
-    name = forms.CharField(max_length=100, 
+    name = forms.CharField(max_length=100,
                            widget=forms.TextInput(
                                attrs={'class': 'form-control'}))
     guests = forms.IntegerField(widget=forms.NumberInput(
                                     attrs={'class': 'form-control'}))
-    
+
     message = forms.CharField(
         max_length=150,
         widget=forms.Textarea(
@@ -28,10 +28,9 @@ class ReservationForm(forms.ModelForm):
         )
     )
 
-
     class Meta:
         model = Reservation
-        fields = ('name', 'email', 'message','date','time','guests')
+        fields = ('name', 'email', 'message', 'date', 'time', 'guests')
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'time': forms.Select(choices=[
@@ -57,7 +56,3 @@ class ReservationForm(forms.ModelForm):
             }),
             'message': forms.Textarea(attrs={'class': 'form-control'}),
         }
-
-  
-
-   

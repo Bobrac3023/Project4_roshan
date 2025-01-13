@@ -19,8 +19,10 @@ class Reservation(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
+
 def __str__(self):
-        return f"Reservation request form {self.name}"
+    return f"Reservation request form {self.name}"
+
 
 class Feedback (models.Model):
     post = models.ForeignKey(
@@ -29,4 +31,3 @@ class Feedback (models.Model):
         User, on_delete=models.CASCADE, related_name="commenter")
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-        
