@@ -32,6 +32,7 @@ The website is responsive, based on agile methodology and uses frontend developm
 - Colors used for styling:  #042a49, white, black,  brown, blue, #f05f40, #042a49
         
 ## Technology used in development and testing.
+
 - **Google Chrome** as the Browser.
 - Cloud-based platform **gitpod.io** and **github** used for designing and hosting the website.
 - Bootstrap Framework v4.6.x- https://getbootstrap.com/docs/4.6/getting-started/introduction/
@@ -40,6 +41,19 @@ The website is responsive, based on agile methodology and uses frontend developm
   Radeon Graphics**.
 - Django Framework based on Python 3.12.2.
 - Linters - https://pep8ci.herokuapp.com/# 
+
+### Libraries & Frameworks
+
+- Django Framework based on Python 3.12.2.(https://www.djangoproject.com/) - Free and open source Python Web Framework
+- Gunicorn (https://gunicorn.org/) - A Python WSGI HTTP server compatible with Django and used to run the project on Heroku
+- PostgreSQL 0.5.x (https://www.postgresql.org/) - A powerful, open-source object-relational database system
+- Pyscopg2 2.9.5 (https://www.psycopg.org/docs/) - A PostgreSQL database adapter for Python
+- Heroku (https://www.heroku.com) - A cloud platform as a service
+- Django Allauth (https://django-allauth.readthedocs.io/en/latest/) - Integrated set of Django applications addressing authentication and registration
+- Bootstrap 4.6.2 (https://getbootstrap.com/docs/4.6/getting-started/introduction/) - A Framework for building responsive, mobile-fist sites
+- whitenoise==5.3.0 (https://whitenoise.readthedocs.io/en/latest/) - WhiteNoise is used for serving static files in a Django application.
+- sqlparse==0.5.0(https://pypi.org/project/sqlparse/) - SQLParse is a library used for parsing SQL queries in Python.
+
 
 ## Website Structure and feature description 
 - The Django Design Philosopies are widely implmented to acheive the fundamental goals of **Loose Coupling, Less Code, Quick Development and Don't Repeat yourself (DRY), Explicit is better than Implicit and Consistency**.https://docs.djangoproject.com/en/4.2/misc/design-philosophies/
@@ -83,7 +97,8 @@ The website is responsive, based on agile methodology and uses frontend developm
 
  ### Callout Section 
  #### Screenshot of main landing page
--![Screenshot of main landing page with mouse hovering over the home page](/readme.doc/home_page_with_mouse_hover.png)
+![main_landing_page_codeide.png](readme.doc/main_landing_page_codeide.png)
+![main_landing_page_heroku.png](readme.doc/main_landing_page_heroku.png)
 
 - The **Callout section** includes a **Callout Jumbotron**.
 - This jumbotron prominently displays the header **Authentic Maharashtrian Restaurant**
@@ -105,116 +120,37 @@ The website is responsive, based on agile methodology and uses frontend developm
 - ***Authentic and Vibrant*** - We aim to bring in seasonal menus, chef’s favourites, and special offers. 
 
 
+## User Stories and Methodology
 
-## Sign-up Form Details.
+GitHub Issues was used to plan and implement the user stories and test acceptance criteria
+Link to github issues  :  
 
+Each User Story contains **Acceptance Criteria -AC** to meet the  **Minimum Viable Product(MVP)** criterai for this project.
 
-
-## Home Page
-
-## Purpose of the project. 
-
-
-
+The **MoSCoW Method of Prioritisation**(https://www.agilebusiness.org/dsdm-project-framework/moscow-prioririsation.html) was also refered to to under the usr staory concepts.
+Each user story was classifyied based on **Must Have**, **Should Have** ,**Could Have** ,**Won’t Have**.
 
 
 ## Links to Github, Gitpod and Heroku
 
 - External Link  
-  https://bobrac3023.github.io/roshan-battleship-proj3/
+  
+- Github issues : https://github.com/users/Bobrac3023/projects/2/views/1
 
-- Heroku app Program link  
-  https://roshan-battleship-proj3-06066cd9a93e.herokuapp.com/
-
-- Link to Github repository.  
-  https://github.com/Bobrac3023/roshan-battleship-proj3
+- Heroku app :  https://roshanproject4-8e7fe177e877.herokuapp.com/
+  
+- Link to Github repository : https://bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net/
 
 - Link to Gitpod workspace.  
-  https://bobrac3023-roshanbattle-cv53bgpnc73.ws-us115.gitpod.io/
+  
 
 ## Features to implement later
 
-- Use color packages like **colorama** or **termcolor** to print bold text.  
-- Display images using libraries like **openCV**, **matplotlib**, **pillow** or **tensorflow**.
+- Use API to implement a google map with markers
+- Implement an external email system like sendemail to receive guest feedback. This will be integrated using API.
+- Menu Page - A page to display dish of the wekk and "what's special".  
+* Forgot/Reset password functionality
 
-
-## Install pytz package and configure timezone
-
-### ptyz package
-- The pytz package was installed to allow import of the timezone module. 
-
-![pip_install_pytz](readme.doc/pip_install_pytz.png)
-
-### pip3 freeze > requirements.txt output ### 
-- The pip3 freeze > requirements.txt command was used to capture the pytz package dependency for the Heroku app. 
-
-![requirements.txt_update](readme.doc/requirements_txt_update.png)
-
-### datetime and timezone configuration details ###
-
-- The time zone configured for this game is UTC+4 which is Asia/Dubai.  
-- The time is displayed in 12 hour format with AM/PM.  
-- The day of the week is also displayed. 
-
-![timezone_compiler_validation](readme.doc/timezone_compiler_validation_.png)
-
-### Heroku app output for datetime and timezone ###
-
-![heroku_app_datetime_zone_display](readme.doc/heroku_app_datetime_zone_display.png)
-
-## Testing and code validation
--Code and functions were tested and validated using the three tools listed below:-  
-- **programmiz.com** - an online python compiler  (https://www.programiz.com/online-compiler/7oVd1BFsuE3Bd).  
-- **pythontutor** - Visualize code execution  (https://pythontutor.com/cp/composingprograms.html#mode=edit).  
-- **gitpod IDE environment**  (https://bobrac3023-roshanbattle-cv53bgpnc73.ws-us115.gitpod.io/).  
-
-
-### Test,validate and visualize "print_grid" function
-
-- **Online Compiler output** 
-
-![print_gird_function_compiler_output](readme.doc/print_grid_function_compiler_output.png)
-
-- **pythontutor visualization output** 
-
-![print_grid_function_pythontutor](readme.doc/print_grid_function_pythontutor.png)
-
-### Test,validate and visualize "random no" generation inside the Main function
-
-- **Online compiler output** 
-
-![random_no_function_compiler_output](readme.doc/random_no_function_compiler_output.png)
-
-- **Code insititute IDE output**
-
-![random_no_gitio_test](readme.doc/random_no_gitio_test.png)
-
-- **pythontutor visualization output** 
-
-![random_no_function_pythontutor](readme.doc/random_no_pythontutor_visualizaton.png)
-
-### Test,validate and visualize "Main" function", for "input validation" and "user choice" validation
-
-- **Online compiler output** 
-
-![main_function_compiler_output](readme.doc/main_function_compiler_output.png)
-
-
-- **Code insititute IDE output**
-
-![main_function_gitio_test](readme.doc/main_function_gitpio_test.png)
-
-- **pythontutor visualization output**
-
-![main_function_pythontutor](readme.doc/main_function_pythontutor.png)
-
-
-### Odd Quirk issue - "input statement"  
-
-- In order to allow the input statement to work corectly in the Heroku mock terminal, code institute requires the additon of **/n** line character at the end of the text.  
-- Without this extra character the text for the **input request** will not show in the terminal.
-
-![odd_quirk_input_text](readme.doc/odd_quirk_input_text_issue.png)
 
 ## Deployment
 
@@ -229,122 +165,45 @@ The website is responsive, based on agile methodology and uses frontend developm
 
 -From the **Actions** tab, select **Deployment** to check deployment status and capture external link.
 
-![github_page_enable](github_page_enable.png)
-![github_pagebuild_deployment](github_pagebuild_deployment.png)
-![github_pagebuild_sucess](github_pagebuild_sucess.png)
+## Testing and code validation
 
-### Github_page_deployment
+-Code and functions were tested and validated using the three tools listed below:-  
 
--Once the main branch has been selected, the page will automatically refresh to indicate the successful deployment.
-
--The live link can be found here - https://bobrac3023.github.io/roshan-battleship-proj3/
-
-### Gitpod after creation from Github Repository using Code-Institute-Org/python-essentials-template
-
-![gitpodio_after_creation](readme.doc/gitpodio_after_creation.png)
-
-### Code_ide_environment
-
-![gitpod_code_ide_environment](readme.doc/gitpod_code_ide_environment.png)
-
-### git_add_commit_push_command
-
--use gitpod commands to add, commit code to gitub repository.  
--gitpod push command to push commited changes to github repository 
-
-![add,commit,push](readme.doc/add_commit_push_github.png)
-
-## Heroku 
+- gitpod IDE environment    https://bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net/
+- Python Linter - https://pep8ci.herokuapp.com/# 
 
 
-### Heroku Eco Dynos Plan config
+### Test,validate HTML Files
 
-![heroku_eco_dynos_plan](readme.doc/heroku_eco_dynos_plan.png)
+### Base.html
+![]()
 
-### Heroku Buildpacks Config- Add python and Nodejs
+### Index.html
 
-![heroku_add_buildpacks](readme.doc/heroku_add_buildpacks.png)
+![]()
 
-### Heroku Github conectivitiy and deployment 
+### Test and Validate CSS file ###
+- Link https://jigsaw.w3.org/css-validator/validator
 
-![heroku_authorise](readme.doc/heroku_authorise.png)
-![heroku_auto_deploy_github](readme.doc/heroku_auto_deploy_github.png)
-![heroku_app_github_connected](readme.doc/heroku_app_github_connected.png)
-![heroku_manual_deply](readme.doc/heroku_manual_deploy.png)
+![style_css_validated](readme.doc/style_css_validated.png)
 
-### Heroku app deployed 
 
-![heroku_app_deployed](readme.doc/heroku_app_deployed.png)
+### Code insititute IDE output ###
 
-### Heroku app program link
+![]()
 
-https://roshanproject4-8e7fe177e877.herokuapp.com/
+### Python File validation ###
+
+![]()
+
 
 ## Credits
 
-- **Extra help to understand key python concepts.**  
-    https://www.youtube.com/watch?v=KzqSDvzOFNA.  
-    https://www.youtube.com/watch?v=piJc18hcH0Y.  
-    https://www.youtube.com/watch?v=CasqhmeopnU.  
-    https://www.youtube.com/watch?v=8UCIvrs9LZw.  
-    https://www.youtube.com/watch?v=Ej7I8BPw7Gk.  
-    https://www.youtube.com/watch?v=PY9hvAFrxMI.  
-    https://pythonbasics.org/try-except/  
-    https://www.youtube.com/watch?v=TqPzwenhMj0&list=PLsyeobzWxl7poL9JTVyndKe62ieoN-MZ3&index=6  
-    https://www.youtube.com/watch?v=4OX49nLNPEE  
-    https://www.youtube.com/watch?v=ON70wvKYops
-    https://www.youtube.com/watch?v=kLI31o7mDsA  
-    https://www.youtube.com/watch?v=zPFZy6wKhVA&list=PL98qAXLA6afuh50qD2MdAj3ofYjZR_Phn&index=34  
-    https://www.youtube.com/watch?v=94UHCEmprCY.  
-    https://www.w3schools.com/python/ref_string_lower.asp.  
-    https://www.w3schools.com/python/ref_string_strip.asp  
-    https://www.geeksforgeeks.org/python-comments/
-
-
-- **Programmiz.com**- An online compiler to test functions and pieces of code   
-    https://www.programiz.com/online-compiler/7oVd1BFsuE3Bd.  
-
-- **Visualize Code execution** - pythontutor.  
-    https://pythontutor.com/cp/composingprograms.html#mode=edit.  
-
-- **PEP8 style guide**  
-    https://pep8.org/  
-    https://realpython.com/python-pep8/
-
-
+- **Extra help to understand key concepts.**  
 
 ### Content creation assistance- reference code
 
-- **design the grid**  
-    https://www.youtube.com/watch?v=PY9hvAFrxMI.  
-- **input validation**  
-    https://www.youtube.com/watch?v=ON70wvKYops.  
-- **validate data type**  
-    https://www.youtube.com/watch?v=kLI31o7mDsA.  
-- **user input**  
-    https://bobbyhadz.com/blog/python-input-boolean  
-- **pytz install and configure timezone**  
-    https://www.geeksforgeeks.org/python-pip/  
-    https://strftime.org/  
-    https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes  
-    https://mljar.com/blog/list-pytz-timezones/
 
-
-
-
-### Media
--All images used in this readme file are placed under the readme.doc file.
-
-![readme_doc_images](readme.doc/readme_doc.png)
-
-
-Indian Curry is a full-stack, responsive website built for fictional restaurant business for education purpose only.
-
-The website consists of a Menu page, with the list of food items available and also a table reservation facility which can be accessed on user creating an account and then book, view, edit and delete table reservations.
-
-![Am I responsive image](documentation/responsiveness.png)
-
-[Link to the live website of Indian Curry](https://restaurant-reserving-e9a35f43f341.herokuapp.com/)
 
 ## Table of Contents
 * [Overview](#overview)
@@ -372,23 +231,6 @@ The website consists of a Menu page, with the list of food items available and a
 
 ____
 
-## Overview
-
-Indian Curry is a responsive, mobile-first build website.  It is compatible with all current major browsers.  The website is built for educational purposes, using Bootstrap and the Django Framework. It gives users the ability to register for an account and reserve a table in advance. It includes role-based permissions and full CRUD functionality on reservations.
-
-[Back To Top](#table-of-contents)
-
-____
-
-## Agile Methodology
-
-The plan for this project was carried out using Agile Methodology. GitHub Issues, which can be viewed [here](https://github.com/Pramilashanmugam/Restaurant/issues), were used to record the User Stories.  
-
-Each User Story contains Acceptance Criteria and Tasks which I sometimes had to change after I did the process, as I wasn't yet sure what needed to be done to achieve the Acceptance Criteria I aimed for.
-
-Since this was my first project using this methodology and the Django framework it was quite challenging, some of the estimated user stories where clubbed together as epic in the later stage as they where related to one another. In practice, a few of these tasks were completed faster than anticipated, while others took much longer. 
-
-The [MoSCoW Method of Prioritisation](https://www.agilebusiness.org/dsdm-project-framework/moscow-prioririsation.html) was also used, classifying each User Story as a 'Must Have', 'Should Have' or 'Could Have'. Some "Won't Have's" didn't make it into the project and were left in the Backlog for a future iteration. It is important to note here, that by writing only enough User Stories to reach the Minimum Viable Product(MVP).
 
 <details>
 <summary>Instance of Kanban Board, screenshots of Epics and User Story</summary>
@@ -399,11 +241,6 @@ Kanban Board at this Iteration
 ![Kanband: userstories and epic board](documentation/userstories-epic.png)
 
 </details>
-
-<br>
-As a whole, I found using the Agile Methodology of great benefit as it helped me to better organise the development of my project. Although I didn't give myself a specific duration for each iteration, it helped me to also manage my time better. It also felt good to move Tasks from 'to do' to  'Done' column when it was completed.
-
-[Back To Top](#table-of-contents)
 
 ____
 
@@ -686,27 +523,6 @@ The Home page hero on the Landing page takes up more than half the viewport of a
 
 <br>
 
-**Home Page Content**
-
-The Home page displays further content which gives the user a brief story of the founder and why to choose to open this restaurant. It includes:
-* A short story for establishing this restaurant.
-* About the person from whom the founder got inspired in cooking.
-* It describes the authentic taste of indian kitchen and spices.
-
-<details>
-
-<summary>Click to view screenshots of other Home page content</summary>
-
-        Home content on mobile
-![Home articles on mobile](documentation/content-mob.png)
-
-        Home content on tablet/desktop
-![Home articles on tablet](documentation/content-desktop.png)
-
-</details>
-
-<br>
-
 **Menu Page**
 
 The responsive Menu page is reachable via the Menu link in the navigation bar as well by clicking the 
@@ -963,45 +779,7 @@ ____
 
 ## Technologies Used
 
-### Languages
 
-* [HTML5](https://www.w3schools.com/html/)
-* [CSS3](https://www.w3schools.com/css/css_intro.asp)
-* [Python](https://www.python.org/downloads/release/python-3811/)
-
-### Libraries & Frameworks
-
-* [Django 3.2.18](https://www.djangoproject.com/) - Free and open source Python Web Framework
-* [Gunicorn 20.1.0](https://gunicorn.org/) - A Python WSGI HTTP server compatible with Django and used to run the project on Heroku
-* [PostgreSQL 0.5.0](https://www.postgresql.org/) - A powerful, open-source object-relational database system
-* [Pyscopg2 2.9.5](https://www.psycopg.org/docs/) - A PostgreSQL database adapter for Python
-* [Heroku](https://www.heroku.com) - A cloud platform as a service
-* [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) - Integrated set of Django applications addressing authentication and registration
-* [Bootstrap 4.6.2](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - A Framework for building responsive, mobile-fist sites
-* [whitenoise==5.3.0](https://whitenoise.readthedocs.io/en/latest/) - WhiteNoise is used for serving static files in a Django application.
-* [sqlparse==0.5.0](https://pypi.org/project/sqlparse/) - SQLParse is a library used for parsing SQL queries in Python.
-
-### Tools
-
-* [GitPod](https://www.gitpod.io/) - Cloud development environment used
-* [GitHub](https://github.com/) - Cloud based git repository used
-* [W3C Validator](https://validator.w3.org/) - A validator which checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.
-* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - A validator which checks the validity of CSS code
-* [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) - Highlights syntactical and stylistic problems in Python source code
-* [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Web Developer Tools
-* [Techsini multi mock up responsiveness](https://techsini.com/multi-mockup/index.php) - For responsive visuals of the website
-* [CanIUse](https://caniuse.com/) - Browser support tables for modern web technologies
-* [TinyPNG](https://tinypng.com/) - Compresses images to reduce the file size
-* [TinyURL](https://tinyurl.com/app/) - Shortens links
-* [Pexels](https://www.pexels.com/) - Stock Photos
-* [Pixabay](https://pixabay.com/) - Stock Photos 
-* [Coolors](https://coolors.co/000000-620000-ff8000-e3cbbf-f5f5f5) - Colour Palette Generator
-* [Google Fonts](https://fonts.google.com/) - Fonts
-* [UXwings for icons](https://uxwing.com/) - Icons
-* [Balsamiq](https://balsamiq.com/wireframes/) - Low Fidelity Wireframes
-* [Spreedsheet to markdown table](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) - Converts spreadsheet to markdown table
-* [File converters](https://convertio.co/) - Converts the file type
-* [Image resizer](https://www.befunky.com/create/resize-image/) - Resizes the images
 
 
 [Back To Top](#table-of-contents)
