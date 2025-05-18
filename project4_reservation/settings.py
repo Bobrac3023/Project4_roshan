@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+#from dotenv import load_dotenv
 if os.path.isfile('env.py'):
     import env
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'project4_reservation/templates')
 SECRET_KEY ='django-insecure-4%%+oncli72x76x5qstr)(7@)fb=x0!_n+tn5ua$@xk4^!^%gi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS =['8000-bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net',
     '.herokuapp.com']
@@ -102,6 +102,7 @@ DATABASES = {
 
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://localhost",
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com"
 
