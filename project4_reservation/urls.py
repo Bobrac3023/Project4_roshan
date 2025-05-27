@@ -17,11 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
 urlpatterns = [
-    path("about_app/templates/about/about.html",
-         include("about_app.urls"), name="about_app_urls"),
-    path("accounts/", include("allauth.urls")),
-    path("", include("reservation_app.urls"), name="reservation_app_urls"),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),  # allauth login/signup/logout
+    path('about/', include('about_app.urls')),   # clean about app URL
+    path('', include('reservation_app.urls')),   # home & reservation
 ]

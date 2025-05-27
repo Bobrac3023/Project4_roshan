@@ -15,15 +15,13 @@
                 <!-- block divider styled through CSS-->
                 <hr class="block-divider block-divider--orange">
                 <!--Make paragraph stand out by adding lead class-->
-                <p class="lead">Experience Mouth Watering ,Soul Stirring "Maharashtrian Delicacies"</p>
-                <!--strong and mark tags to make bold and highlight-->
-                <p><small><strong><mark>Why wait - Reseve a table now </mark></strong></small></p>
+                <p class="lead">Experience Mouth Watering ,Soul Stirring "Maharashtrian Delicacies"</p>               
                 <!--Primary Call for Action button, styled through css-->
                 <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal" data-target="#signUpModal"
                         href="">Reservations</button></p>
-                <a href="templates/reservation/" class="btn btn-light btn-md active mb-2" role="button"
+                <a href="{% url 'update_reservation' pk=1 %}" class="btn btn-light btn-md active mb-2" role="button"
                     aria-pressed="true">update reservations</a>
-                <a href="reservation_app/templates/reservation/confirm_delete.html"
+                <a href="{% url 'confirm_delete' pk=1 %}"
                     class="btn btn-light btn-md active mb-2" role="button" aria-pressed="true">Delete reservations</a>
                 <!--btn-success class for green color ,Data target id matches modal id-->
                 <!--END of btn-success class for green color ,Data target id matches modal id-->
