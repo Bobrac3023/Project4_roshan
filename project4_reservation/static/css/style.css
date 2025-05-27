@@ -28,6 +28,8 @@ body {
 /* -----------------------Navbar styling--------------------------- */
 
 /* overide default bootstrap Navbar class setting*/
+
+
 .navbar {
     margin-bottom: 0;
     width: 100%;
@@ -205,11 +207,12 @@ footer.container-fluid {
     color: white;
 }
 
+/* Footer styling  
 .inline-block {
     text-align: center;
     margin-top: 0;
 }
-
+*/
 .social-links li a i {
     width: 32px;
     height: 32px;
