@@ -89,7 +89,7 @@
                             western state of Maharashtra in India.
                             We offer a variety of vegetarian and non-vegetarian dishes with a balance of sweet, spicy,
                             sour, and salty flavours.</p>
-                        <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                        <p><a class="btn btn-sm btn-light" href="{% static 'menucard/menu.pdf' %}">Read More</a></p>
                         <!--Button for user to read more-->
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                             we care for our customers not only by nourishing their body but also by respecting our
                             culture and history.
                             We ensure the flavours of the past continue to shape our future.</p>
-                        <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                        <p><a class="btn btn-sm btn-light" href="{% static 'menucard/menu.pdf' %}">Read More</a></p>
                     </div>
                 </div>
                 <div class="col-12 d-md-none d-lg-block col-lg-4">
@@ -112,7 +112,7 @@
                         <p>Unlock your palette with us by dining at our authentic and vibrant restaurant.
                             We aim to bring in seasonal menus, chef’s favourites, and special offers.
                             Stay tuned while we share the flavours of Maharashtra with you!</p>
-                        <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                        <p><a class="btn btn-sm btn-light" href="{% static 'menucard/menu.pdf' %}">Read More</a></p>
                     </div>
                 </div>
             </div>
@@ -133,13 +133,13 @@
             <div class="modal-body">
                 <h4>Reserve your Table today</h4>
                 <p><a class="link" href="/accounts/login/">login</a>
-                    <a class="link" href="/accounts/signup/">sign up </a></p>
+                    <a class="link" href="/accounts/signup/">Signup </a></p>
                 <!--start Django form element-->
                 <form method="post">
                     {{ reservation_form | crispy }}
                     {% csrf_token %}
                 </form>
-                <button class="btn btn-secondary" type="submit">Submit</button>
+                
             </div>
             <!--end of Django form element-->
         </div>

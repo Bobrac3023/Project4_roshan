@@ -1,37 +1,90 @@
- {% extends "base.html" %}
- {% block content %}
+{% extends "base.html" %} {% block content %}
 
- <!-- /.google map section -->
- <h3 class="maph3"> Visit us - Our Abu Dhabi Location </h3>
- <div id="map"></div> <!-- Render map in div-->
- <!-- /.end of Goodle map section -->
- <!-- Contact form section -->
- <section class="container-fluid contact-form">
-     <div class="row bg-color-contact">
-         <div class="col">
-             <!-- contact form heading  -->
-             <h3 class="contact-heading uppercase text-center">Got an idea or feedback to share?</h3>
-             <h5 class="uppercase text-center">We are always open to listen and improve our client experiences!</h5>
-             <!-- contact form -4 components: 2 text input fields, a text area, and a button.-->
-             <div class="center-form">
-                 <form onsubmit="return sendMail(this);">
-                     <!--bootstrap form-control class to add styling -->
-                     <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
-                     <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
-                         required />
-                     <!-- textarea- 5 rows for text area and required attribute used for all fields-->
-                     <textarea rows="5" name="feedbacksummary" id="feedbacksummary" class="form-control"
-                         placeholder="Ideas and feedback" required></textarea>
-                     <!--form submit button -->
-                     <div class="form-row text-center">
-                         <div class="col">
-                             <button type="submit" class="btn btn-secondary">Send Request</button>
-                         </div>
-                     </div>
-                 </form>
-             </div>
-         </div>
-     </div>
- </section>
- <!-- /. end of Contact form section -->
- {% endblock content %}
+<!-- Google Map Section with Address Overlay -->
+<h4 class="maph3 text-center my-4">Visit us - Our Abu Dhabi Location</h4>
+
+<div class="map-wrapper" style="position: relative; width: 100%; max-width: 100%; height: 350px;">
+  <iframe
+    src="https://www.google.com/maps?q=24.486371,54.368478&z=17&output=embed"
+    width="100%"
+    height="100%"
+    style="border: 0"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+  <!-- Address Overlay -->
+  <div style="
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    max-width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  ">
+    📍 <strong>Arzanah Tower – Umm Suqeim Street</strong><br>
+    Al Zahiya, Abu Dhabi, United Arab Emirates
+  </div>
+</div>
+<!-- /.end of Goodle map section -->
+
+<!-- Contact form section -->
+<section class="container-fluid contact-form">
+  <div class="row bg-color-contact">
+    <div class="col">
+      <!-- contact form heading  -->
+      <h3 class="contact-heading uppercase text-center">
+        Got an idea or feedback to share?
+      </h3>
+      <h5 class="uppercase text-center">
+        We are always open to listen and improve our client experiences!
+      </h5>
+      <!-- contact form -4 components: 2 text input fields, a text area, and a button.-->
+      <div class="center-form">
+        <form onsubmit="return sendMail(this);">
+          <!--bootstrap form-control class to add styling -->
+          <input
+            type="text"
+            name="name"
+            id="fullname"
+            class="form-control"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            id="emailaddress"
+            class="form-control"
+            placeholder="Email"
+            required
+          />
+          <!-- textarea- 5 rows for text area and required attribute used for all fields-->
+          <textarea
+            rows="3"
+            name="feedbacksummary"
+            id="feedbacksummary"
+            class="form-control"
+            placeholder="Ideas and feedback"
+            required
+          ></textarea>
+          <!--form submit button -->
+          <div class="form-row text-center">
+            <div class="col">
+              <button type="submit" class="btn btn-secondary">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /. end of Contact form section -->
+{% endblock content %}
