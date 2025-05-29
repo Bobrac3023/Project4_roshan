@@ -38,7 +38,7 @@
     <!--link index file to style.css file-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!--Navbar -->
     <!--Allow navbar to be responsive with navbar-expand-sm class -->
     <nav class="navbar navbar-dark navbar-expand-sm">
@@ -109,13 +109,13 @@
       </div>
     </nav>
     <!-- end of navbar Section -->
-    <main class="container-fluid px-0">
+    <main class="container-fluid px-0 flex-fill">
       {% block content %}
       <!-- Content Goes here -->
       {% endblock content %}
     </main>
     <!--Footer section-->
-    <footer class="container-fluid">
+    <footer class="container-fluid mt-auto">
       <div class="row">
         <!--copyright section-->
         <div class="col-sm-4 inline-block">

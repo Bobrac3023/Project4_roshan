@@ -35,7 +35,11 @@ class Reservation(models.Model):
         if reservation_datetime < timezone.now():
             raise ValidationError("Reservation date/time cannot be in the past.")
 
-        # Limit number of guests
+        # Limit number of guests is less than 1
+        if self.guests < 1:
+            raise ValidationError("Number of guests must be at least 1.")
+        
+        # Limit number of guests is more than 10
         if self.guests > 10:
             raise ValidationError("Reservations cannot exceed 10 guests.")
 
