@@ -1,157 +1,208 @@
-{% extends "base.html" %}
-{% load static %}
-{% load crispy_forms_tags %}
-
-
+{% extends "base.html" %} 
+{% load static %} 
+{% load crispy_forms_tags %} 
 {% block content %}
 
 <!--Start of Callout section-->
 <div class="container-fluid callout-container">
-    <div class="row">
-        <div class="col-12">
-            <!--maintain column layout on a mobile device-->
-            <section class="callout jumbotron text-center">
-                <h1 class="jumbotron-header">Authentic Maharashtrian Restaurant </h1>
-                <!-- block divider styled through CSS-->
-                <hr class="block-divider block-divider--orange">
-                <!--Make paragraph stand out by adding lead class-->
-                <p class="lead">Experience Mouth Watering ,Soul Stirring "Maharashtrian Delicacies"</p>               
-                <!--Primary Call for Action button, styled through css-->
-                <p><button class="btn btn-lg btn--cta btn--red" data-toggle="modal" data-target="#signUpModal"
-                        href="">Reservations</button></p>
-                <a href="{% url 'update_reservation' pk=1 %}" class="btn btn-light btn-md active mb-2" role="button"
-                    aria-pressed="true">update reservations</a>
-                <a href="{% url 'confirm_delete' pk=1 %}"
-                    class="btn btn-light btn-md active mb-2" role="button" aria-pressed="true">Delete reservations</a>
-                <!--btn-success class for green color ,Data target id matches modal id-->
-                <!--END of btn-success class for green color ,Data target id matches modal id-->
-            </section>
-        </div>
+  <div class="row">
+    <div class="col-12">
+      <!--maintain column layout on a mobile device-->
+      <section class="callout jumbotron text-center">
+        <h1 class="jumbotron-header">Authentic Maharashtrian Restaurant</h1>
+        <!-- block divider styled through CSS-->
+        <hr class="block-divider block-divider--orange" />
+        <!--Make paragraph stand out by adding lead class-->
+        <p class="lead">
+          Experience Mouth Watering ,Soul Stirring "Maharashtrian Delicacies"
+        </p>
+        <!--Primary Call for Action button, styled through css-->
+        <p>
+          <button
+            class="btn btn-lg btn--cta btn--red"
+            data-toggle="modal"
+            data-target="#signUpModal"
+            href=""
+          >
+            Reservations
+          </button>
+        </p>
+        <a
+          href="{% url 'update_reservation' pk=1 %}"
+          class="btn btn-light btn-md active mb-2"
+          role="button"
+          aria-pressed="true"
+          >update reservations</a
+        >
+        <a
+          href="{% url 'confirm_delete' pk=1 %}"
+          class="btn btn-light btn-md active mb-2"
+          role="button"
+          aria-pressed="true"
+          >Delete reservations</a
+        >
+        <!--btn-success class for green color ,Data target id matches modal id-->
+        <!--END of btn-success class for green color ,Data target id matches modal id-->
+      </section>
     </div>
+  </div>
 </div>
 
 <!-- /.End of Callout section -->
 <!-- start reviews Section  -->
 <div class="container-wrapper--cyan">
-    <div class="container content-container">
-        <div class="row">
-            <div class="col-12 page-header">
-                <!--maintain column layout on a mobile device-->
-                <section class="quotes">
-                    <h2 class="text-uppercase">Customer Reviews:</h2> <!-- form headings as capital letters -->
-                    <!-- add block divider  -->
-                    <hr class="block-divider block-divider--short">
-                </section>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <!--maintain column layout on a mobile device-->
-                <!--blockquote -quote blocks of content from another source -->
-                <blockquote class="blockquote">
-                    <p> I always come here for their Piyush, it is so fresh and tasty!
-                        Great customer service and amazing food!
-                    </p>
-                    <p>Bobby Sequeira - Food blogger</p>
-                </blockquote>
-            </div>
-            <div class="col-12 col-md-6">
-                <blockquote class="blockquote">
-                    <p>I highly recommend this place for anyone who craves for authentic Maharastrian food.
-                        My favourite dishes are misal pav and techa.
-                    </p>
-                    <p> Ritesh Deshmukh - Bollywood actor</p>
-                </blockquote>
-            </div>
-        </div>
+  <div class="container content-container">
+    <div class="row">
+      <div class="col-12 page-header">
+        <!--maintain column layout on a mobile device-->
+        <section class="quotes">
+          <h2 class="text-uppercase">Customer Reviews:</h2>
+          <!-- form headings as capital letters -->
+          <!-- add block divider  -->
+          <hr class="block-divider block-divider--short" />
+        </section>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <!--maintain column layout on a mobile device-->
+        <!--blockquote -quote blocks of content from another source -->
+        <blockquote class="blockquote">
+          <p>
+            I always come here for their Piyush, it is so fresh and tasty! Great
+            customer service and amazing food!
+          </p>
+          <p>Bobby Sequeira - Food blogger</p>
+        </blockquote>
+      </div>
+      <div class="col-12 col-md-6">
+        <blockquote class="blockquote">
+          <p>
+            I highly recommend this place for anyone who craves for authentic
+            Maharastrian food. My favourite dishes are misal pav and techa.
+          </p>
+          <p>Ritesh Deshmukh - Bollywood actor</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- /.End of reviews  Section -->
 <!-- start highlights Section -->
 <div class="container-wrapper--red">
-    <div class="container content-container">
-        <!--content class to provide vertical space-->
-        <section class="features">
-            <div class="row">
-                <div class="col-12 page-header">
-                    <!--maintain column layout on a mobile device-->
-                    <h2 class="text-uppercase">Highlights:</h2>
-                    <!--form headings as capital letters -->
-                    <hr class="block-divider block-divider--short"><!-- add block divider-->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!--maintain column layout on a mobile device-->
-                    <div class="feature">
-                        <h3>Nourish the Soul</h3>
-                        <p> Mai’s Kitchen takes pride in serving traditional Maharashtrian cuisine, hailing from the
-                            western state of Maharashtra in India.
-                            We offer a variety of vegetarian and non-vegetarian dishes with a balance of sweet, spicy,
-                            sour, and salty flavours.</p>
-                        <p><a class="btn btn-sm btn-light" href="{% static 'menucard/menu.pdf' %}">Read More</a></p>
-                        <!--Button for user to read more-->
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!--maintain column layout on a mobile device-->
-                    <div class="feature">
-                        <h3>Made with Love</h3>
-                        <p>All our meals are made with love.
-                            Cooking is more than just mixing ingredients.
-                            we care for our customers not only by nourishing their body but also by respecting our
-                            culture and history.
-                            We ensure the flavours of the past continue to shape our future.</p>
-                        <p><a class="btn btn-sm btn-light" href="{% static 'menucard/menu.pdf' %}">Read More</a></p>
-                    </div>
-                </div>
-                <div class="col-12 d-md-none d-lg-block col-lg-4">
-                    <!--Do not display on medium screen size-->
-                    <div class="feature">
-                        <h3>Authentic and Vibrant</h3>
-                        <p>Unlock your palette with us by dining at our authentic and vibrant restaurant.
-                            We aim to bring in seasonal menus, chef’s favourites, and special offers.
-                            Stay tuned while we share the flavours of Maharashtra with you!</p>
-                        <p><a class="btn btn-sm btn-light" href="{% static 'menucard/menu.pdf' %}">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+  <div class="container content-container">
+    <!--content class to provide vertical space-->
+    <section class="features">
+      <div class="row">
+        <div class="col-12 page-header">
+          <!--maintain column layout on a mobile device-->
+          <h2 class="text-uppercase">Highlights:</h2>
+          <!--form headings as capital letters -->
+          <hr class="block-divider block-divider--short" />
+          <!-- add block divider-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          <!--maintain column layout on a mobile device-->
+          <div class="feature">
+            <h3>Nourish the Soul</h3>
+            <p>
+              Mai’s Kitchen takes pride in serving traditional Maharashtrian
+              cuisine, hailing from the western state of Maharashtra in India.
+              We offer a variety of vegetarian and non-vegetarian dishes with a
+              balance of sweet, spicy, sour, and salty flavours.
+            </p>
+            <p>
+              <a
+                class="btn btn-sm btn-light"
+                href="https://en.wikipedia.org/wiki/Maharashtrian_cuisine"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Read More</a
+              >
+            </p>
+            <!--Button for user to read more-->
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <!--maintain column layout on a mobile device-->
+          <div class="feature">
+            <h3>Made with Love</h3>
+            <p>
+              All our meals are made with love. Cooking is more than just mixing
+              ingredients. we care for our customers not only by nourishing
+              their body but also by respecting our culture and history. We
+              ensure the flavours of the past continue to shape our future.
+            </p>
+            <p>
+              <a
+                class="btn btn-sm btn-light"
+                href="https://mealmastermind.com/question-what-does-cooking-with-love-mean/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Read More</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="col-12 d-md-none d-lg-block col-lg-4">
+          <!--Do not display on medium screen size-->
+          <div class="feature">
+            <h3>Authentic and Vibrant</h3>
+            <p>
+              Unlock your palette with us by dining at our authentic and vibrant
+              restaurant. We aim to bring in seasonal menus, chef’s favourites,
+              and special offers. Stay tuned while we share the flavours of
+              Maharashtra with you!
+            </p>
+            <p>
+              <a
+                class="btn btn-sm btn-light"
+                href="{% static 'menucard/menu.pdf' %}"
+                >Read More</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 <!-- /.end of highlighs section-->
 
 <!--modal section for reservations and login-->
 <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h4>Reserve your Table today</h4>
-                <p><a class="link" href="/accounts/login/">login</a>
-                    <a class="link" href="/accounts/signup/">Signup </a></p>
-                <!--start Django form element-->
-                <form method="post">
-                    {{ reservation_form | crispy }}
-                    {% csrf_token %}
-                </form>
-                
-            </div>
-            <!--end of Django form element-->
-        </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>Reserve your Table today</h4>
+        <p>
+          <a class="link" href="/accounts/login/">login</a>
+          <a class="link" href="/accounts/signup/">Signup </a>
+        </p>
+        <!--start Django form element-->
+        <form method="post">
+          {{ reservation_form | crispy }} {% csrf_token %}
+        </form>
+      </div>
+      <!--end of Django form element-->
     </div>
+  </div>
 </div>
 <!--/. end of modal section for reservations and login-->
 
-
-
-{% endblock content %}
-
-{% block extras %}
+{% endblock content %} {% block extras %}
 <script src="{% static 'js/comments.js' %}"></script>
 
 {% endblock %}
