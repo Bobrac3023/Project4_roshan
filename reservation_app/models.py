@@ -13,7 +13,7 @@ class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=100)
     email = models.EmailField(default=True)
-    message = models.TextField(max_length=150)
+    message = models.TextField(max_length=75)
     date = models.DateField(default=timezone.now)
     time = models.TimeField(default=timezone.now)
     guests = models.IntegerField(default=0)
@@ -21,25 +21,41 @@ class Reservation(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
+    def clean(self):
+        # Combine date and time into one datetime
+        reservation_datetime = datetime.datetime.combine(self.date, self.time)
 
-def __str__(self):
-    return f"Reservation request form {self.name}"
+        # Make reservation_datetime timezone-aware
+        reservation_datetime = timezone.make_aware(
+            reservation_datetime,
+            timezone.get_current_timezone()
+        )
 
+        # Prevent past reservations
+        if reservation_datetime < timezone.now():
+            raise ValidationError("Reservation date/time cannot be in the past.")
+
+        # Limit number of guests
+        if self.guests > 10:
+            raise ValidationError("Reservations cannot exceed 10 guests.")
+
+    def __str__(self):
+        return f"Reservation request form {self.name}"
 
 class Feedback(models.Model):
     reservation = models.ForeignKey(
-        'Reservation',  # or import Reservation directly
+        'Reservation',
         on_delete=models.CASCADE,
         related_name="feedbacks",
         null=True,
-        blank=True  # ✅ allows empty input in forms too
+        blank=True
     )
     patron = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name="feedbacks",
         null=True,
-        blank=True  # ✅ allows empty input
+        blank=True
     )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
