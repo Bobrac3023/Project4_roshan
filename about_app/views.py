@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from reservation_app.forms import ReservationForm, FeedbackForm
 from django.contrib import messages
 from reservation_app.forms import FeedbackForm
-from reservation_app.models import Feedback  
+from reservation_app.models import Feedback #using Feedback from reservation_app
 
 
 

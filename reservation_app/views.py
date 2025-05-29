@@ -46,6 +46,8 @@ def about_me(request):
             "reservation_form": reservation_form
         }
     )
+def contact_us(request):
+    return render(request, 'reservation/contact.html')
 # ----------------------------
 # Reservation Form Page (at /reservation/form/)
 # ----------------------------
@@ -73,14 +75,20 @@ Saves and shows a message when updated or deleted
 # ----------------------------
 @login_required
 def update_reservation(request, pk):
-    reservation = get_object_or_404(Reservation, pk=pk)
+    try:
+        reservation = Reservation.objects.get(pk=pk, user=request.user)
+    except Reservation.DoesNotExist:
+        # Friendly message if reservation not found or not owned by user
+        messages.error(request, "Reservation not found or you don’t have permission to edit it.")
+        return redirect('reservation_list')
+    
     if request.method == 'POST':
         form = ReservationForm(request.POST, instance=reservation)
         if form.is_valid(): #validates form field rules
             reservation = form.save(commit=False)
             reservation.full_clean()  #Enforce model-level validation
             reservation.save()
-            messages.success(request, 'Your reservation has been successfully updated!')
+            messages.success(request, 'Your reservation has been updated successfully')
             return redirect('reservation_list')
     else:
         form = ReservationForm(instance=reservation)
@@ -95,7 +103,13 @@ If user clicks “Yes” → Deletes reservation
 # ----------------------------
 @login_required
 def delete_reservation(request, pk):
-    reservation = get_object_or_404(Reservation, pk=pk)
+    try:
+        reservation = Reservation.objects.get(pk=pk, user=request.user)
+    except Reservation.DoesNotExist:
+        # Friendly message if reservation not found or not owned by user
+        messages.error(request, "Reservation not found or you don’t have permission to edit it.")
+        return redirect('reservation_list')
+    
     if request.method == 'POST':
         reservation.delete()
         messages.success(request, 'Your reservation has been successfully cancelled!')
