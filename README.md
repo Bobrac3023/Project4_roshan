@@ -76,7 +76,14 @@ The website is responsive, based on agile methodology and uses frontend developm
 
 ### HTML File Breakdown
 
-- File : index.html - the Homepage 
+- File : Base.html (The Template Foundation-Master Layout)
+- Purpose : 
+  - The navigation bar (menu at the top)
+  - Footer (social media links and copyright)
+  - Common design (fonts, colors, CSS, JavaScript)
+  - The {% block content %} section where other pages add their unique content
+
+ - File : index.html - the Homepage 
 - Purpose : 
   - Shows a big welcome message (jumbotron)
   - Has a "Reservations" button that displays a popup modal for login/signup
@@ -86,27 +93,44 @@ The website is responsive, based on agile methodology and uses frontend developm
   - Everyone. No login needed.
 
 - File :about.html
-- Purpose :Feedback form + list of recent feedback entries.
+- Purpose :
+  - Lets users submit feedback
+  - Shows past feedback messages (with name and time)
 - Who can view this?
   - Everyone. No login needed.
+
 - File : contact.html
-- Purpose : Static contact info with embedded Google map.
+- Purpose : 
+  - Shows Google Map of Abu Dhabi location
+  - Provides contact details like phone, email, timings
 - Who can view this?
   - Everyone. No login needed.
+
 - File :reservation_form.html	
-- Form to make a new reservation.
+- Purpose: 
+  - Form to make a new reservation.
 - Who can view this?
   - Everyone. No login needed.
+
 - File :reservation_list.html	
-- Displays all reservations made by the logged-in user.
+- Purpose: 
+  - Displays all reservations made by the logged-in user.
 - Who can view this?
-  - Everyone. No login needed.
+  - Only logged in users
+
 - File :update_reservation.html	
-- Lists reservations with update/delete actions.
+- Purpose: 
+  - Lists reservations with update/delete actions.
 - Who can view this?
-  - Everyone. No login needed.
+  - Only logged in users
+  
 - File :confirm_delete.html	
-- Confirms cancellation before deleting a reservation.
+- Purpose:
+  - Confirms cancellation before deleting a reservation.
+  - Asks: “Are you sure you want to cancel?”
+  - Has two buttons: Yes (cancel) and No (go back) 
+- Who can view this?
+  - Only logged in users
 
 
 ## Features
