@@ -6,41 +6,43 @@
     <h2 class="mb-4">Your Reservations</h2>
 
     {% if reservations %}
-        <table class="table table-striped table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Guests</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for reservation in reservations %}
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
                     <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td>{{ reservation.name }}</td>
-                        <td>{{ reservation.date }}</td>
-                        <td>{{ reservation.time }}</td>
-                        <td>{{ reservation.guests }}</td>
-                        <td>
-                            {% if reservation.status == 0 %}
-                                Requested
-                            {% else %}
-                                Confirmed
-                            {% endif %}
-                        </td>
-                        <td>
-                            <a href="{% url 'update_reservation' pk=reservation.pk %}" class="btn btn-sm btn-primary">Update</a>
-                            <a href="{% url 'confirm_delete' pk=reservation.pk %}" class="btn btn-sm btn-danger">Delete</a>
-                        </td>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Guests</th>
+                        <th>Status</th>
+                        <th>Actions</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {% for reservation in reservations %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ reservation.name }}</td>
+                            <td>{{ reservation.date }}</td>
+                            <td>{{ reservation.time }}</td>
+                            <td>{{ reservation.guests }}</td>
+                            <td>
+                                {% if reservation.status == 0 %}
+                                    Requested
+                                {% else %}
+                                    Confirmed
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{% url 'update_reservation' pk=reservation.pk %}" class="btn btn-sm btn-primary">Update</a>
+                                <a href="{% url 'confirm_delete' pk=reservation.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     {% else %}
         <div class="alert alert-info">You have no reservations yet.</div>
     {% endif %}
