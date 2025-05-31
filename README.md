@@ -6,6 +6,109 @@ This project is based on a popular western India Maharashtrian hotel named Mai's
 The client can reserve a table online at a date and time of their choice and based on circumstances can change or delete the reservations.
 The website is responsive, based on agile methodology and uses frontend development tools and technologies to provide a good UI/UX experience. 
 
+## Project Summary
+
+- This is a Django-based restaurant reservation system for an "Authentic Maharashtrian Restaurant".
+- It follows Django's MVT (Model-View-Template) architecture:
+
+- It allows users to
+  - View homepage content and reviews.
+  - Create,Read,Update,Delete (CRUD) reservations (with login).
+  - Submit feedback. ( with and without login)
+  - View contact info. ( embedded google map , email,contact number and timing)
+- It includes:
+  - HTML templates for various pages.
+  - Django models for Reservation and Feedback.
+  - Forms to submit reservations and feedback.
+  - Views for form handling, CRUD operations, and displaying data.
+
+- Templates (HTML)
+  - base.html: Master layout (header, footer)
+  - index.html: Homepage
+  - reservation_form.html: reservation form
+  - reservation_list.html: Display reservations made by the user
+  - update_reservation.html: Edit form that helps logged in user update their own reservation
+  - confirm_delete.html: Delete a users own reservations after login
+  - about.html: Feedback form
+  - contact.html: Contact and map
+
+- Models 
+  - Reservation: Stores booking info, ensures rules (no past date, max 10 guests)
+  - Feedback: Stores messages tied to reservation or user
+
+- Views
+  - PostList: Shows homepage
+  - about_me: Saves or shows feedback
+  - contact_us: Displays contact info
+  - reservation_form: Save reservations after validation
+  - update_reservation: Let user edit their own reservations
+  - delete_reservation: Confirm and delete a users own reservations
+  - reservation_list: Display user’s rservations only
+
+- URLs 
+  - /       → Home (PostList)
+  - /about/ → Feedback (about_me)
+  - /contact/       → Contact info
+  - /reservation/form/ → Reservation form
+  - /reservation/list/ → View Reservations
+  - /reservation/update/ID → Edit reservations
+  - /reservation/confirm_delete/ID → Delete reservations
+
+- Forms 
+  - ReservationForm: Collects name, email, time, date, guests
+  - FeedbackForm: Collects guest/user opinion
+
+
+### Logic Explained 
+
+- Each step below shows what the user sees or can do:
+  - Homepage: This is where users start. It shows information about the restaurant.
+  - Login / Signup: Required before making any reservations.
+  - Make a Reservation: Form is displayed only after login. Requires date, time, guests.
+  - View My Reservations: Displays all bookings created by the current user.
+  - Edit Reservation: Allows the user to change date/time of their booking.
+  - Delete Reservation: Lets the user cancel their booking after confirmation.
+  - Feedback: Open to all. Logged-in users link it to their booking.
+  - Contact Page: Public page showing contact information and map.
+
+
+## Website Structure and feature description 
+
+### HTML File Breakdown
+
+- File : index.html - the Homepage 
+- Purpose : 
+  - Shows a big welcome message (jumbotron)
+  - Has a "Reservations" button that displays a popup modal for login/signup
+  - Shows Update/Delete Reservation buttons
+  - Displays Customer reviews and Restaurant highlights
+- Who can view this?
+  - Everyone. No login needed.
+
+- File :about.html
+- Purpose :Feedback form + list of recent feedback entries.
+- Who can view this?
+  - Everyone. No login needed.
+- File : contact.html
+- Purpose : Static contact info with embedded Google map.
+- Who can view this?
+  - Everyone. No login needed.
+- File :reservation_form.html	
+- Form to make a new reservation.
+- Who can view this?
+  - Everyone. No login needed.
+- File :reservation_list.html	
+- Displays all reservations made by the logged-in user.
+- Who can view this?
+  - Everyone. No login needed.
+- File :update_reservation.html	
+- Lists reservations with update/delete actions.
+- Who can view this?
+  - Everyone. No login needed.
+- File :confirm_delete.html	
+- Confirms cancellation before deleting a reservation.
+
+
 ## Features
 
 - The project code is written in fron end development tools- HtML, CSS, Bootstrap,Django framework inside the code institute IDE.   
