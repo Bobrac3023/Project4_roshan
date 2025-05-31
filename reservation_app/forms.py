@@ -2,8 +2,9 @@ from django import forms
 from .models import Reservation, Feedback
 import datetime
 
+
 class ReservationForm(forms.ModelForm):
-    # ✅ Custom time slot choices (adjust to your needs)
+    # Custom time slots
     TIME_CHOICES = [
         ("12:00", "12:00 PM"),
         ("12:30", "12:30 PM"),
@@ -15,7 +16,7 @@ class ReservationForm(forms.ModelForm):
         ("20:00", "8:00 PM"),
     ]
 
-    # ✅ Override time field to use dropdown
+    # Override time field to use dropdown
     time = forms.ChoiceField(
         choices=TIME_CHOICES,
         widget=forms.Select(attrs={
@@ -23,12 +24,12 @@ class ReservationForm(forms.ModelForm):
         })
     )
 
-    # ✅ Override date field to use calendar and restrict past dates
+    # Override date field to use calendar and restrict past dates
     date = forms.DateField(
         widget=forms.DateInput(attrs={
             'type': 'date',
             'class': 'form-control',
-            'min': datetime.date.today().strftime('%Y-%m-%d'),  # disables past dates
+            'min': datetime.date.today().strftime('%Y-%m-%d'),
         })
     )
 

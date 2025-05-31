@@ -9,8 +9,10 @@ STATUS = (
     (1, "Confirmed"),
 )
 
+
 class Reservation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             null=True, blank=True)
     name = models.CharField(max_length=100)
     email = models.EmailField(default=True)
     message = models.TextField(max_length=75)
@@ -33,18 +35,20 @@ class Reservation(models.Model):
 
         # Prevent past reservations
         if reservation_datetime < timezone.now():
-            raise ValidationError("Reservation date/time cannot be in the past.")
+            raise ValidationError
+            ("Reservation date/time cannot be in the past")
 
         # Limit number of guests is less than 1
         if self.guests < 1:
             raise ValidationError("Number of guests must be at least 1.")
-        
+
         # Limit number of guests is more than 10
         if self.guests > 10:
             raise ValidationError("Reservations cannot exceed 10 guests.")
 
     def __str__(self):
         return f"Reservation request form {self.name}"
+
 
 class Feedback(models.Model):
     reservation = models.ForeignKey(
@@ -65,4 +69,6 @@ class Feedback(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Feedback by {self.patron.username if self.patron else 'Anonymous'}"
+        return
+        f"Feedback by{self.patron.username if self.patron else 'Anonymous'}"
+        
