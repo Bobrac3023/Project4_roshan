@@ -1,27 +1,34 @@
 
 # PROJECT4_ROSHAN - The Soul of India
 
-## Introduction-Purpose of the Project
+## Introduction
 
-This project is based on a popular western India Maharashtrian hotel named Mai's Kitchen which traditionally serves authenticic and mouth watering cusine. The name **MAI** means **mother** in ***Marathi*** language.
-The client can reserve a table online at a date and time of their choice and based on circumstances can change or delete the reservations.
-The website is responsive, based on agile methodology and uses frontend development tools and technologies to provide a good UI/UX experience. 
+The name “Mai” means “Mother” in the Marathi language — spoken in the state of Maharashtra, a large and culturally rich region in western India. Maharashtra is renowned for its mouth-watering cuisine that delights the senses and nourishes the soul.
+
+Mai’s Kitchen is a tribute to this culinary heritage, offering patrons an authentic taste of Maharashtrian flavors in a modern dining experience.
 
 ## Project Summary
 
-- This is a Django-based restaurant reservation system for an "Authentic Maharashtrian Restaurant".
-- It follows Django's MVT (Model-View-Template) architecture:
+This project is a Django-based restaurant reservation system built for "Mai's Kitchen".
 
-- It allows users to
-  - View homepage content and reviews.
-  - Create,Read,Update,Delete (CRUD) reservations (with login).
-  - Submit feedback. ( with and without login)
-  - View contact info. ( embedded google map , email,contact number and timing)
-- It includes:
-  - HTML templates for various pages.
-  - Django models for Reservation and Feedback.
-  - Forms to submit reservations and feedback.
-  - Views for form handling, CRUD operations, and displaying data.
+- Design Philosophy
+  - Built using the Agile methodology with iterative enhancements and user feedback
+  - Designed with a responsive layout, optimized for both mobile and desktop users
+
+- Project Overview
+  - It follows Django's MVT (Model-View-Template) architecture that enables customers to:
+    - View homepage content and reviews.
+    - Make table reservations online
+    - View their upcoming reservations
+    - Update or cancel their bookings as needed
+    - Submit feedback. ( with and without login)
+    - View contact info. ( embedded google map , email,contact number and timing)
+
+  - It includes:
+    - HTML templates for various pages.
+    - Django models for Reservation and Feedback.
+    - Forms to submit reservations and feedback.
+    - Views for form handling, CRUD operations, and displaying data.
 
 - Templates (HTML)
   - base.html: Master layout (header, footer)
@@ -165,12 +172,16 @@ The website is responsive, based on agile methodology and uses frontend developm
   - Who can view this?
     - Everyone. No login needed.
 
+![homepage.png](readme.doc/homepage.png)
+
 - about.html
   - Purpose :Page for users to leave and view feedback.
     - Lets guests and logged in users submit feedback
     - Shows past feedback messages (with name and time)
   - Who can view this?
     - Everyone. No login needed.
+
+![about_page.png](readme.doc/about_page.png)
 
 - contact.html
   - Purpose : Shows location and contact info of the restaurant.
@@ -179,6 +190,8 @@ The website is responsive, based on agile methodology and uses frontend developm
   - Who can view this?
     - Everyone. No login needed.
 
+![contact_us_page.png](readme.doc/contact_us_page.png)
+
 - reservation_form.html	
   - Purpose: Page to fill out a reservation form.
     - Simple form using Django’s crispy formatting
@@ -186,7 +199,9 @@ The website is responsive, based on agile methodology and uses frontend developm
   - Who can view this?
     - Only logged in users
 
-- File :reservation_list.html	
+![reservation_form.png](readme.doc/reservation_form.png)
+
+- reservation_list.html	
   - Purpose: Show a list of reservations for the logged-in user.
     - Displays all reservations made by the logged-in user.
     - If there are reservations, it shows them in a table
@@ -194,6 +209,8 @@ The website is responsive, based on agile methodology and uses frontend developm
     - Buttons to update or delete each reservation 
   - Who can view this?
     - Only logged in users
+
+![reservation_list_success.png](readme.doc/reservation_list_success.png)
 
 - update_reservation.html	
   - Purpose: Allows user to edit a reservation.
@@ -210,6 +227,54 @@ The website is responsive, based on agile methodology and uses frontend developm
   - Who can view this?
     - Only logged in users
 
+## Schema used for this Project
+
+- Backend Logic (Python Files)
+  - models.py (Database Schema) - 
+    - Defines how Django stores, validates, and manages application data in the database.
+    - This project contains two models:
+    - Reservation Model: 
+      - Stores name, email, date, time, guest count, and optional message. 
+      - Includes: Validation to block past dates & Guest limits between 1 and 10
+    - Feedback Model: 
+    - Links to a reservation or user and stores feedback content
+
+- forms.py (User Input)
+  - Abstracts user input logic and applies consistent client-side + server-side validation.
+  - ReservationForm:
+    - Custom time slot dropdown
+    - Prevents past-date entries
+    - Uses Bootstrap-styled widgets via crispy_forms
+  - FeedbackForm:
+    - Simple textarea for submitting user comments
+
+- views.py (Business Logic)
+  - Handles:
+    - Homepage (via PostList)
+    - Feedback submission (about_me)
+    - Contact page (contact_us)
+    - Reservation creation, update, deletion, and listing
+  - Key Features:
+    - Uses @login_required to restrict sensitive views
+    - Enforces model-level validation
+    - Uses Django's messages framework for user feedback (success/error)
+
+- urls.py (Routing)
+  - Maps human-readable URLs to corresponding view functions
+  - Enables paths like /about/, /reservation/form/, and /reservation/list/ to function properly
+
+- settings.py
+  - Registers all apps (e.g., reservation_app, about_app, crispy_forms)
+  - Loads environment variables via env.py (e.g., Neon DB, secret key)
+  - Manages static/template settings for Heroku or local development
+  - Configures CSRF trusted domains and login/logout redirects
+
+## Features to implement later
+
+- Use API to implement google map with markers
+- Implement through API Integration an external email system like sendemail to receive guest feedback.
+- Menu Page - A page to display ***dish of the week*** and ***"what's special"***.
+- Forgot/Reset password functionality
 
 ## Tools and Technology.
 
@@ -247,67 +312,115 @@ The website is responsive, based on agile methodology and uses frontend developm
   - Linters - https://pep8ci.herokuapp.com/# 
   - Broswer - Google Chrome
 
-## staticfiles 
+## Test and Validate - Functions
 
-All static files were consolidated and brough a sibgle folder to allow to be accessed by the Heroku App
+- The following functions were tested and validated
+  - The Sign-up function 
+  - The sign-in function 
+  - The view and update reservation function 
+  - The Delete reservation function
+- No automated testing was done . All manual testing was done and screenshots attached
+
+### Test and Validate Sign-up function.
+
+- The sign-up form can be reached from two areas. 
+  - when the user clicks on the "reserve now" button on the home page
+  - from the sign-up page on the navbar.
+- The sign-up form has validation checks for usernames and passwords.  
+
+![reserve_now_modal](readme.doc/reserve_now_modal.png)
+
+![sign_up_page](readme.doc/sign_up_page.png)
+
+![username_valiadtion_signup](readme.doc/username_valiadtion_signup.png)
+
+![password_validation_signup](readme.doc/password_validation_signup.png)
+
+### Test and Validate Sign-in function
+
+- The sign-in form can be reached from two areas. 
+  - when the user clicks on the "reserve now" button on the home page
+  - from the sign-up page on the navbar.
+- The sign-in form has validation checks for usernames and passwords.  
+
+![reserve_now_modal](readme.doc/reserve_now_modal.png)
+
+![sign_in_page](readme.doc/sign_in_page.png)
+
+![sign_in_validation](readme.doc/sign_in_validation.png)
+
+
+
+### Test and Validate reservation-form function
+
+- Once a user signs-up or signs-in, they are redirected to the rservation form.
+- Users can book a table with their name, email, date, time, guest count, and a message.
+- Form validations ensure:
+  - No past dates allowed
+  - Guest count must be between 1 and 10
+- Reservations are saved to the database and associated with the logged-in user if authenticated.
+
+![reservation_form](readme.doc/reservation_form.png)
+
+![reservation_email_must](readme.doc/reservation_email_must.png)
+
+![reservation_message_must](readme.doc/reservation_message_must.png)
+
+![reservation_date_validation](readme.doc/reservation_date_validation.png)
+
+![reservation_timeslot_validation](readme.doc/reservation_timeslot_validation.png)
+
+![reservation_guest_validation](readme.doc/reservation_guest_validation.png)
+
+![reservation_guest_exceed_validation](readme.doc/reservation_guest_exceed_validation.png)
+
+- Once the signed in user submits the reservation, they are directed to the reservation list as show below.
+- The guest can see only reservations made under the username they are logged in
+- The guest can make mulitple reservations under different names and email addresses.
+- The status shows "requested" as the admin is yet to confirm the booking.
+
+![reservation_list_success.png](readme.doc/reservation_list_success.png)
+
+
+### Test and Validate view/update-form function
+
+- The screenshot below show the view for the logged in guest.
+- The guest can see only reservations made under the username they are logged in
+- The guest can make mulitple rservations under different names and email addresses.
+- The status shows "requested" as the admin is yet to confirm the booking.
+
+![reservation_list_success.png](readme.doc/reservation_list_success.png)
+
+
+- As can be seen from the screenshot, the logged in user can update mulitple fields from the previous reservation.
+
+![post_update.png](readme.doc/post_update.png)
+
+# Deployment.
+
+## Staticfiles
+
+- All static files were consolidated under a single folder to allow to be accessed by the Heroku App
 
 ![static_files](readme.doc/static_files.png)
 
+## Project Links - Github & Heroku
 
-## Website pages and feature description
-
-### BASE.HTML 
-
-### Head Section 
-- The head section is based in the BASE.HTML file based on Django Design philosophies loose coupling philosophy
-- The head section has the title **Soul of India**.
-- The links to **google fonts, fontawesome, bootstrap, hover.css**, are all defined here.
-- The styles.css file is also linked here.
-- Viewport tag to respond to different resolutions, particularly mobile ones.
-
-### Navbar Section
-- Based on Django design philosophies, the "Navbar" section configued in Base.HTML includes the following.
-- The Brand **MAI'S KITCHEN**.
-- The **unordered list** for the header links inlcuding configuration to collapse into a **three bar icon** on small screens.
-- The text**The way to your soul is through the stomach** prominently displayed on the right hand side of the header.
-
-
-### Footer 
-- The Footer displays "social media links" which open in a separate tab for ease of use.
-- The Copy right section with the author's name is also prominently displayed on the left had section.
-- The central part of the footer is reserved for guests to download the Menu. This menu is a PDF file and opens in a new tab so that the user does not have to navigate back to the page he was on.
-- The PDF file is stored under the **project4_reservation** app section under the **static/css/menucard folder**.
-- The Menu includes our restaurant address. 
-- All social media links are "hover enabled" and open in seperate tabs.
-- The following social media links have been configured- **Facebook, Twitter, Linkedin, Instagram, and Youtube**. 
-- **A note of caution here** - MAI's Kitchen website does have a presence on any of the social media links, these links have only been configured to demonstrate front end design capability for this project.  
-
-
-### INDEX.HTML 
-
- ### Callout Section 
- #### Screenshot of main landing page
-![main_landing_page_codeide.png](readme.doc/main_landing_page_codeide.png)
-![main_landing_page_heroku.png](readme.doc/main_landing_page_heroku.png)
-
-- The **Callout section** includes a **Callout Jumbotron**.
-- This jumbotron prominently displays the header **Authentic Maharashtrian Restaurant**
-- **Jumbotron** also includes Bootstrap defined ARIA enabled butons for guests to make **reservations**, **update reservations** and **cancel reservations**.
-- The **reservations button** is linked to a **form** configured in the **Modal section** 
-- The update and cancel reservations button direct to the respective forms configured on **update_reservation.html** and **confirm_delete.html**
-
-### Customer Reviews Section.
-
-- As MAI's Kitchen is a new restaurant it is importnat that we highlight our acheivements and menu items.
-- This section has reviews from a prominet food blogegr and a Bollyhood actor
-- A future feature is to inlcude a section for guests to leave us with their reviews direcly through our website. 
+- Github Repository : https://github.com/Bobrac3023/Project4_roshan.git
   
-### Highlighhts Section. 
-- This section is used to highlight to MAI KITCHEN's patron on the uniqueness of the restaurant. 
-- This is broken down into **Three Themes**
-- ***Nourish the Soul*** - Mai’s Kitchen takes pride in serving traditional Maharashtrian cuisine, hailing from the western state of Maharashtra in India. 
-- ***Made with Love*** -All our meals are made with love. We ensure ,flavours of the past continue to shape our future.
-- ***Authentic and Vibrant*** - We aim to bring in seasonal menus, chef’s favourites, and special offers. 
+- Heroku app : https://roshanproject4-8e7fe177e877.herokuapp.com/
+
+## Deployment from GitHub
+
+-The site was deployed to GitHub pages as below.  
+  -In the GitHub repository
+    - Navigate to the Settings tab
+    - Select pages
+    - select ***"Deploy from branch"***
+    - Under ***Branch*** dropdown, change to ***Main*** from ***none***
+    - From the ***Actions*** tab, select ***Deployment*** to check deployment status
+
+
 
 ## Wireframes
 
@@ -315,35 +428,13 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 Two custom models have been implemented in this project.
 
-## Schema used for this Project
 
-### Models 
-Three Models were created but only One Used. The models names as below 
+## Test and Validate - Code
 
-- Reservation model - linked to reservation_app
-- Feedback model - linked to reservation_app
-- Review Model  - linked to about_app 
+-Code and functions were tested and validated using the three tools listed below:-  
 
-The reservation_app model had the following fields created 
-
-- name
-- email
-- message
-- date
-- time
-- guest
-- read
-- created-on
-- status  ( This was initially set to 0-created and the rservation manager could then change this to approved)
-
-### Class
-
-- ReservationAdmin
-- ReservationForm 
-
-
-
-___
+- gitpod IDE environment    https://bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net/
+- Python Linter - https://pep8ci.herokuapp.com
 
 ## User Stories and Methodology
 
@@ -366,9 +457,6 @@ The **MoSCoW Method of Prioritisation**(https://www.agilebusiness.org/dsdm-proje
 ![milestones.png](readme.doc/milestones.png) 
 - View of user stories to milestones 
 ![user_story_view_github.png](readme.doc/user_story_milestone_assignment.png)
-
-
-
 
 ## Admin/Business Owner User Story and Acceptance Criteria 
 
@@ -406,53 +494,11 @@ The Guest Reservation Managment Milestone was created with three user stories an
 As a guest, I should be able to login in to update my reservation.
 As a guest, I should be able to login in to cancel my reservation.
 
-
-
-## Links to Github, Gitpod and Heroku
-
-- External Link  
-  
-- Github issues : https://github.com/users/Bobrac3023/projects/2/views/1
-
-- Heroku app :  https://roshanproject4-8e7fe177e877.herokuapp.com/
-  
-- Link to Github repository : https://bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net/
-
-- Link to Gitpod workspace.  
   
 
-## Features to implement later
-
-- Use API to implement a google map with markers
-- Implement an external email system like sendemail to receive guest feedback. This will be integrated using API.
-- Menu Page - A page to display dish of the wekk and "what's special".  
-* Forgot/Reset password functionality
 
 
-## Deployment
 
-### Deployment from GitHub
--The site was deployed to GitHub pages as below.  
--In the GitHub repository,
--   Navigate to the Settings tab,
--   Select pages
--   Under **Branch** dropdown, change to **Main** hub from **none**.
-
--select_branch_github_deployment
-
--From the **Actions** tab, select **Deployment** to check deployment status and capture external link.
-
-## Testing and code validation
-
--Code and functions were tested and validated using the three tools listed below:-  
-
-- gitpod IDE environment    https://bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net/
-- Python Linter - https://pep8ci.herokuapp.com/# 
-
-
-### Test,validate HTML Files
-
-No automated testing was done . All manual testing was done and screenshots attached 
 
 ### Test and Validate CSS file ###
 - Link https://jigsaw.w3.org/css-validator/validator
@@ -476,5 +522,4 @@ Screenshot show the out put of the linter after the changes were carried out. A 
 ![models_py_linter.png](readme.doc/models_py_linter.png)
 ![forms_py_linter.png](readme.doc/forms_py_linter.png)
 ![urls_py_linter.png](readme.doc/urls_py_linter.png)
-
 
