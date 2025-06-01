@@ -389,8 +389,6 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 ![sign_in_validation](readme.doc/sign_in_validation.png)
 
-
-
 ### Test and Validate reservation-form function
 
 - Once a user signs-up or signs-in, they are redirected to the rservation form.
@@ -421,7 +419,6 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 ![reservation_list_success.png](readme.doc/reservation_list_success.png)
 
-
 ### Test and Validate view/update-form function
 
 - The screenshot below show the view for the logged in guest.
@@ -431,10 +428,26 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 ![reservation_list_success.png](readme.doc/reservation_list_success.png)
 
-
 - As can be seen from the screenshot, the logged in user can update mulitple fields from the previous reservation.
 
 ![post_update.png](readme.doc/post_update.png)
+
+### Django Admin Portal.
+
+![django_admin_panel](readme.doc/django_admin_panel.png)
+
+
+### Django Portal- view reservation list
+
+![django_reservation_list](readme.doc/django_reservation_list.png)
+
+### Django Portal- confirm reservation for user2
+
+![confirm_reservation_user2](readme.doc/confirm_reservation_user2.png)
+
+### View reservation list with user2 logged in
+
+!![confirm_resevartion_user2_login](readme.doc/confirm_resevartion_user2_login.png)
 
 # Deployment 
 
