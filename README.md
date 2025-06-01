@@ -67,6 +67,10 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
   - ReservationForm: Collects name, email, time, date, guests
   - FeedbackForm: Collects guest/user opinion
 
+## Wireframes
+
+Wireframes were first sketched with pen and drawn using Microsoft Powerpoint 
+
 ### Logic Explained 
 
 - Each step below shows what the user sees or can do:
@@ -78,6 +82,8 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
   - Delete Reservation: Lets the logged in user cancel their booking after confirmation.
   - Feedback: Open to all. Logged-in users link it to their booking.
   - Contact Page: Public page showing contact information and map.
+
+![reservation_logic_steps.png](readme.doc/reservation_logic_steps.png)
 
 ## Features
 
@@ -153,6 +159,9 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
   - "Read More" buttons under "highlights section" of home page open in to external links. 
 
 ## Website Structure and feature description 
+
+
+![website_structure.png](readme.doc/website_structure.png)
 
 ### HTML File Breakdown
 
@@ -312,6 +321,37 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
   - Linters - https://pep8ci.herokuapp.com/# 
   - Broswer - Google Chrome
 
+
+# Github issues - User Stories and Methodology
+
+- user stories and test acceptance criteria were planned and executed using ***github issues***
+- Link to github issues  :  https://github.com/users/Bobrac3023/projects/2/views/1
+- Each User Story contains ***Acceptance Criteria -AC*** to meet the  ***Minimum Viable Product(MVP)*** criterai for this project.
+- The user story acceptance criteria was based on ***As a, I can, So that*** or ***I Know I am done when***
+- For user story concepts based on **Must Have**, **Should Have** ,**Could Have** ,**Won’t Have**, a reference was made to ***MoSCoW Method of Prioritisation***(https://www.agilebusiness.org/dsdm-project-framework/moscow-prioririsation.html).
+- No automated testing was done . Manual testing was conducted to validate - screenshots in ***"Test and Validate-Functions"*** section
+
+### Github project snapshot
+
+![projects_snapshot.png](readme.doc/projects_snapshot.png)
+
+### Github - Issues Snapshot
+
+![project_issues.png](readme.doc/project_issues.png)
+
+### Github - Milestones Snapshot
+
+![milestones.png](readme.doc/milestones.png)
+
+
+### Github- Admin/Business Owner User Story and Acceptance Criteria 
+
+- The Admin Account Managment Milestone was created with two user stories and both were tracked in Github issues 
+
+![admin_account_mgmt_milestone_2.png](readme.doc/admin_account_mgmt_milestone_2.png)
+
+![admin_act_mgmt_milestone_complete.png](readme.doc/admin_act_mgmt_milestone_complete.png)
+
 ## Test and Validate - Functions
 
 - The following functions were tested and validated
@@ -396,7 +436,7 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
 
 ![post_update.png](readme.doc/post_update.png)
 
-# Deployment.
+# Deployment 
 
 ## Staticfiles
 
@@ -420,87 +460,14 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
     - Under ***Branch*** dropdown, change to ***Main*** from ***none***
     - From the ***Actions*** tab, select ***Deployment*** to check deployment status
 
+# Test and Validate - Code
 
-
-## Wireframes
-
-Wireframes were first sketched with pen and drawn using Microsoft Powerpoint 
-
-Two custom models have been implemented in this project.
-
-
-## Test and Validate - Code
-
--Code and functions were tested and validated using the three tools listed below:-  
-
+- Code and functions were tested and validated using the three tools listed below:-  
 - gitpod IDE environment    https://bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net/
 - Python Linter - https://pep8ci.herokuapp.com
 
-## User Stories and Methodology
-
-GitHub Issues was used to plan and implement the user stories and test acceptance criteria
-Link to github issues  :  
-
-Each User Story contains **Acceptance Criteria -AC** to meet the  **Minimum Viable Product(MVP)** criterai for this project.
-The user story acceptance criteria was based on ***As a, I can, So that*** or ***I Know I am done when***
-
-The **MoSCoW Method of Prioritisation**(https://www.agilebusiness.org/dsdm-project-framework/moscow-prioririsation.html) was also refered to for the user story concepts based on **Must Have**, **Should Have** ,**Could Have** ,**Won’t Have**.
-
-
-### Github Issues User story screenshot 
-
--Create new issue
-![create_new_issue_1.png](readme.doc/create_new_issue_1.png)
--View of user stories on github issue
-![user_story_view_github.png](readme.doc/user_story_view_github.png)
--View of Milestones for the project
-![milestones.png](readme.doc/milestones.png) 
-- View of user stories to milestones 
-![user_story_view_github.png](readme.doc/user_story_milestone_assignment.png)
-
-## Admin/Business Owner User Story and Acceptance Criteria 
-
-No automated testing was done . All manual testing was done and screenshots attached 
-
-The Admin Account Managment Milestone was created with two user stories and both were tracked in Github issues 
-![admin_account_mgmt_milestone_2.png](readme.doc/admin_account_mgmt_milestone_2.png)
-![admin_act_mgmt_milestone_complete.png](readme.doc/admin_act_mgmt_milestone_complete.png)
-
-### As an admin, I want to create, update, and delete reservations so that I can assist users with their bookings. 
-![approve_reservation.png](readme.doc/approve_reservation.png)
-
-### As an admin, I want to view a list of all reservations so that I can manage booking schedules.###
-![admin_panel](readme.doc/admin_panel.png)
-
-
-## Guest Account Managment 
-
-No automated testing was done . All manual testing was done and screenshots attached 
-
-The Guest Account  Managment Milestone was created with two user stories and both were tracked in Github issues 
-As a guest I should be able to sign-up to the restaurant portal with a unique username and password. 
-As an guest, I should be able to login in to the restaurant portal based on my previous sign-up
-![username_passwd_already_exists](readme.doc/username_passwd_already_exists.png)
-![wrong_username_password.png](readme.doc/wrong_username_password.png)
-
-## Guest Reservation Managment  
-
-No automated testing was done . All manual testing was done and screenshots attached 
-
-The Guest Reservation Managment Milestone was created with three user stories and tracked in Github issues 
-
-### As a guest I should be able to login in and create a reservation. 
-
-As a guest, I should be able to login in to update my reservation.
-As a guest, I should be able to login in to cancel my reservation.
-
-  
-
-
-
-
-
 ### Test and Validate CSS file ###
+
 - Link https://jigsaw.w3.org/css-validator/validator
 
 ![style_css_validated](readme.doc/style_css_validated.png)
@@ -511,7 +478,7 @@ As a guest, I should be able to login in to cancel my reservation.
 
 ### Python File validation ###
 
--Settings.py A note of caution here to the reader of this file. In the code-institue linter the lines which are flagged of as too long, when corrected produce an error when we run python3 manage.py runserver 
+- Settings.py A note of caution here to the reader of this file. In the code-institue linter the lines which are flagged of as too long, when corrected produce an error when we run python3 manage.py runserver 
 
 Screenshot show the out put of the linter after the changes were carried out. A few need to be changed in the ide setup. 
 
