@@ -1,7 +1,8 @@
 
-## PROJECT4_ROSHAN - The Soul of India
+# PROJECT4_ROSHAN - The Soul of India
 
 ## Introduction-Purpose of the Project
+
 This project is based on a popular western India Maharashtrian hotel named Mai's Kitchen which traditionally serves authenticic and mouth watering cusine. The name **MAI** means **mother** in ***Marathi*** language.
 The client can reserve a table online at a date and time of their choice and based on circumstances can change or delete the reservations.
 The website is responsive, based on agile methodology and uses frontend development tools and technologies to provide a good UI/UX experience. 
@@ -25,12 +26,13 @@ The website is responsive, based on agile methodology and uses frontend developm
 - Templates (HTML)
   - base.html: Master layout (header, footer)
   - index.html: Homepage
-  - reservation_form.html: reservation form
-  - reservation_list.html: Display reservations made by the user
-  - update_reservation.html: Edit form that helps logged in user update their own reservation
-  - confirm_delete.html: Delete a users own reservations after login
   - about.html: Feedback form
   - contact.html: Contact and map
+  - reservation_form.html: reservation form
+  - reservation_list.html: Display reservations made by the logged in  user
+  - update_reservation.html: Edit form that helps logged in user update their own reservation
+  - confirm_delete.html: Delete a users own reservations after login
+  - 
 
 - Models 
   - Reservation: Stores booking info, ensures rules (no past date, max 10 guests)
@@ -58,142 +60,198 @@ The website is responsive, based on agile methodology and uses frontend developm
   - ReservationForm: Collects name, email, time, date, guests
   - FeedbackForm: Collects guest/user opinion
 
-
 ### Logic Explained 
 
 - Each step below shows what the user sees or can do:
   - Homepage: This is where users start. It shows information about the restaurant.
   - Login / Signup: Required before making any reservations.
   - Make a Reservation: Form is displayed only after login. Requires date, time, guests.
-  - View My Reservations: Displays all bookings created by the current user.
-  - Edit Reservation: Allows the user to change date/time of their booking.
-  - Delete Reservation: Lets the user cancel their booking after confirmation.
+  - View My Reservations: Displays all bookings created by the logged in user.
+  - Edit Reservation: Allows the logged in user to change date/time of their booking.
+  - Delete Reservation: Lets the logged in user cancel their booking after confirmation.
   - Feedback: Open to all. Logged-in users link it to their booking.
   - Contact Page: Public page showing contact information and map.
 
+## Features
+
+- Core Feature  
+  - Online Reservation System
+    - Users can book a table with their name, email, date, time, guest count, and a message.
+  - Form validations ensure:
+    - No past dates allowed
+    - Guest count must be between 1 and 10
+    - Reservations are saved to the database and associated with the logged-in user if authenticated.
+
+  - Update & Cancel Reservations
+    - Logged-in users can:
+      - Edit existing reservations (date, time, guests, etc.)
+      - Cancel/delete reservations with confirmation prompts
+      - Access to these views is protected with @login_required for security.
+
+  - Feedback Submission
+    - Any visitor (guest or registered user) can leave feedback
+    - Feedback is stored and shown on the “About” page
+    - If logged in, the feedback is attributed to the user
+
+  - Reservation List Dashboard
+    - Logged-in users can view a personalized list of all their reservations
+    - Reservation statuses (e.g., “Requested”, “Confirmed”) are clearly shown
+    - Options to update or delete directly from the table
+
+  - Contact & Location Page
+    - Displays the restaurant's physical location using an embedded Google Map
+    - Shows operating hours, email address, and phone number
+
+  - User Authentication
+    - Integrated with django-allauth to support:
+      - Sign up
+      - Login
+      - Logout
+    - Protected views like “reservation list”, “update”, and “delete” are restricted to logged-in users
+
+- Security and Validation.
+  - CSRF protection included in all forms.
+  - ***@login_required*** decorator,a built-in Django tool used to restrict access to certain views unless the user is authenticated applied above function-based view (FBV)
+  - Login required for updating, deleting, and viewing reservations.
+  - Model-level validation to prevent past dates and excessive guests.
+  - Feedback can be submitted anonymously or by logged-in users.
+- DRY - “Don’t Repeat Yourself”, software development principle to minimize code duplication and centralize logic deployed
+  - Reusable Forms with Django’s ModelForm
+  - Template Inheritance - A single base.html file defines the common layout (header, footer, Bootstrap inclusion, etc.), which is extended by all other templates using ***{% extends "base.html" %}***
+  - Reusable Views and Logic
+    - Using ListView for the homepage (PostList) to list reservations.
+    - Wrap views (ike update/delete) with ***@login_required***, reducing the need to write authentication checks manually.
+    - Validate model rules (e.g., date/time restrictions, guest limits) using clean() in the Reservation model, so that the logic is reused automatically in all views and forms.
+  - Centralized Validation Logic
+    - All business rules (like ensuring the reservation isn’t in the past and guest limits are respected) are placed inside the clean() method of the Reservation model. This means whether data comes from the admin panel, the form, or a script — the same validation applies universally.
+- Mobile-Friendly & Responsive UI
+  - Uses Bootstrap and Crispy Forms for:
+    - Clean, responsive forms
+    - Mobile-first design
+    - Stylish layout with minimal effort
+    - CSS media queries for different screen sizes.
+- Admin Panel Integration
+  - Reservations and feedback entries are accessible in Django’s admin interface
+  - Admins can review, update, or moderate user submissions
+- Footer Layout  
+  - Social Media  
+    - External links to Facebook, X(formerly twitter),Linkedin,Instagram, and Youtube pages in the website footer.
+    - Each link configured to open in a new tab.
+    - "Hover" property to hightlight social media icons.
+  - Menu.
+    - External link to download the menu in a PDF format.
+- Others
+  - Choice of foreground and background colors provide right contrast for a rich UI/UX experience .  
+  - Aria accessibility for screen readers.
+  - "Read More" buttons under "highlights section" of home page open in to external links. 
 
 ## Website Structure and feature description 
 
 ### HTML File Breakdown
 
-- File : Base.html (The Template Foundation-Master Layout)
-- Purpose : 
-  - The navigation bar (menu at the top)
-  - Footer (social media links and copyright)
-  - Common design (fonts, colors, CSS, JavaScript)
-  - The {% block content %} section where other pages add their unique content
+- Base.html 
+  - Purpose : The Template Foundation-Master Layout
+    - The navigation bar (menu at the top)
+    - Footer (social media links and copyright)
+    - Common design (fonts, colors, CSS, JavaScript)
+    - The {% block content %} section where other pages add their unique content
 
- - File : index.html - the Homepage 
-- Purpose : 
-  - Shows a big welcome message (jumbotron)
-  - Has a "Reservations" button that displays a popup modal for login/signup
-  - Shows Update/Delete Reservation buttons
-  - Displays Customer reviews and Restaurant highlights
-- Who can view this?
-  - Everyone. No login needed.
+- index.html - the Homepage.
+  - Purpose :  Show off the restaurant
+    - Shows a big welcome message (jumbotron)
+    - Has a "Reserve Now" button that displays a popup modal for login/signup
+    - Shows View/Update/Delete Reservation buttons
+    - Displays Customer reviews and Restaurant highlights
+  - Who can view this?
+    - Everyone. No login needed.
 
-- File :about.html
-- Purpose :
-  - Lets users submit feedback
-  - Shows past feedback messages (with name and time)
-- Who can view this?
-  - Everyone. No login needed.
+- about.html
+  - Purpose :Page for users to leave and view feedback.
+    - Lets guests and logged in users submit feedback
+    - Shows past feedback messages (with name and time)
+  - Who can view this?
+    - Everyone. No login needed.
 
-- File : contact.html
-- Purpose : 
-  - Shows Google Map of Abu Dhabi location
-  - Provides contact details like phone, email, timings
-- Who can view this?
-  - Everyone. No login needed.
+- contact.html
+  - Purpose : Shows location and contact info of the restaurant.
+    - Shows Google Map of Abu Dhabi location
+    - Provides contact details like phone, email, timings
+  - Who can view this?
+    - Everyone. No login needed.
 
-- File :reservation_form.html	
-- Purpose: 
-  - Form to make a new reservation.
-- Who can view this?
-  - Everyone. No login needed.
+- reservation_form.html	
+  - Purpose: Page to fill out a reservation form.
+    - Simple form using Django’s crispy formatting
+    - Collects user info and saves it when submitted
+  - Who can view this?
+    - Only logged in users
 
 - File :reservation_list.html	
-- Purpose: 
-  - Displays all reservations made by the logged-in user.
-- Who can view this?
-  - Only logged in users
+  - Purpose: Show a list of reservations for the logged-in user.
+    - Displays all reservations made by the logged-in user.
+    - If there are reservations, it shows them in a table
+    - If not, it says “You have no reservations yet.”
+    - Buttons to update or delete each reservation 
+  - Who can view this?
+    - Only logged in users
 
-- File :update_reservation.html	
-- Purpose: 
-  - Lists reservations with update/delete actions.
-- Who can view this?
-  - Only logged in users
+- update_reservation.html	
+  - Purpose: Allows user to edit a reservation.
+    - Shows a form with current reservation details
+    - Lets you change the date, time, guest count, etc. 
+  - Who can view this?
+    - Only logged in users
   
-- File :confirm_delete.html	
-- Purpose:
-  - Confirms cancellation before deleting a reservation.
-  - Asks: “Are you sure you want to cancel?”
-  - Has two buttons: Yes (cancel) and No (go back) 
-- Who can view this?
-  - Only logged in users
+- confirm_delete.html	
+  - Purpose: Confirmation page before deleting a reservation.
+    - Confirms cancellation before deleting a reservation.
+    - Asks: “Are you sure you want to cancel?”
+    - Offers "Yes" (delete) and "No" (go back) buttons
+  - Who can view this?
+    - Only logged in users
 
 
-## Features
+## Tools and Technology.
 
-- The project code is written in fron end development tools- HtML, CSS, Bootstrap,Django framework inside the code institute IDE.   
-- Github is used to host the repository.  
-- Heroku the dynamic websites platform is used to host backend language python.  
-- PEP8 style guide was referenced to style the code
-- The website offers simplicity and consistency within its structure.  Its structure was designed to be responsive on screens from 320px up to 2560px.
-- The website is designed using the **"Mobile First"** Responsive approach using a structured layout and "meta" tags.
-- The website has three pages including the landing page.  **"Home", "Register", "Login"**.
-- The header includes the title of the website **" Taj Mahal- An Eternal Calling** and is common across all pages     
-- The footer includes the **"copyright"** and **"social media icons"** and **link to download the menu**.  
-- The chocie of foreground and background colors have the right contrast providing a rich user experience .  
-- External links open in a seperate tab **social media"** and **link to download the menu** in the footer. 
-- CSS media queries are used where appropriate for different screen sizes.  
-- Relative paths are used for refering to folders and files.  
-- **"Hover"** property used to hightlight pages on navigation bar, and social media icons in the footer.
-- Bootstrap framework based on version 4.6.x https://getbootstrap.com/docs/4.6/getting-started/introduction/ is used extenstively. 
-- Aria accessibility for screen readers.   
-
-## Font family and colors.
-- Google fonts used for styling. Download link:
-  "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-- Font-family used for styling : **Roboto**, **sans-serif**
-- Colors used for styling:  #042a49, white, black,  brown, blue, #f05f40, #042a49
-        
-## Technology used in development and testing.
-
-- **Google Chrome** as the Browser.
-- Cloud-based platform **gitpod.io** and **github** used for designing and hosting the website.
-- Bootstrap Framework v4.6.x- https://getbootstrap.com/docs/4.6/getting-started/introduction/
-- Heroku - Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps — we're the fastest way to go from idea to URL, bypassing all those infrastructure headaches. https://dashboard.heroku.com/apps/roshanproject4
-- Devices with different viewports for testing the responsiveness - **Galaxy A54, iPhone 14 Pro, Galaxy A25, Asus AMD Ryzen7 4800H with 
-  Radeon Graphics**.
-- Django Framework based on Python 3.12.2.
-- Linters - https://pep8ci.herokuapp.com/# 
-
-### Libraries & Frameworks
-
-- Django Framework based on Python 3.12.2.(https://www.djangoproject.com/) - Free and open source Python Web Framework
-- Gunicorn (https://gunicorn.org/) - A Python WSGI HTTP server compatible with Django and used to run the project on Heroku
-- PostgreSQL 0.5.x (https://www.postgresql.org/) - A powerful, open-source object-relational database system
-- Pyscopg2 2.9.5 (https://www.psycopg.org/docs/) - A PostgreSQL database adapter for Python
-- Heroku (https://www.heroku.com) - A cloud platform as a service
-- Django Allauth (https://django-allauth.readthedocs.io/en/latest/) - Integrated set of Django applications addressing authentication and registration
-- Bootstrap 4.6.2 (https://getbootstrap.com/docs/4.6/getting-started/introduction/) - A Framework for building responsive, mobile-fist sites
-- whitenoise==5.3.0 (https://whitenoise.readthedocs.io/en/latest/) - WhiteNoise is used for serving static files in a Django application.
-- sqlparse==0.5.0(https://pypi.org/project/sqlparse/) - SQLParse is a library used for parsing SQL queries in Python.
+- Backend Framework
+  - Django – Python web framework used for building views, models, authentication, and routing
+- Python Packages
+  - dj-database-url – Parses database URLs (used for Postgres)
+  - python-dotenv – Loads environment variables from .env/env.py for secure configuration
+  - psycopg2 / psycopg2-binary – PostgreSQL database adapter for Django
+  - Gunicorn - A Python WSGI HTTP server compatible with Django and used to run the project on Heroku
+  - whitenoise – Serves static files in production 
+  - django-crispy-forms – Renders Bootstrap-styled Django forms more cleanly
+  - crispy-bootstrap5 – Bootstrap 5 theme support for crispy-forms
+  - django-allauth – Handles user registration, login, logout, and account management
+- Frontend
+  - Bootstrap 4.6 – For responsive design, layout, and UI components
+  - HTML5 + CSS3 – Used in custom templates
+  - Font Awesome – For icons and visuals
+  - Google Fonts - Roboto , sans-serif
+  - Colors used for styling:  #042a49, white, black,  brown, blue, #f05f40, #042a49
+- Database
+  - PostgreSQL – Relational database used via Neon DB as a cloud provider
+  - Managed using Django ORM and models.py
+- Hosting & Deployment
+  - Heroku – Platform-as-a-Service (PaaS) used for deploying the Django application
+  - Code Institute IDE / Gitpod – Cloud-based development environments used during build/testing
+- Authentication
+  - Django's built-in @login_required decorators – Used to protect views and ensure secure access
+  - Allauth – Provides login, signup, logout, email handling 
+- Mapping & Location
+  - Google Maps iframe – Embedded map to display restaurant location (Abu Dhabi)
+- Dev Tools
+  - VS Code – Recommended IDE for Django development
+  - GitHub  – For repository hosting and collaboration
+  - Linters - https://pep8ci.herokuapp.com/# 
+  - Broswer - Google Chrome
 
 ## staticfiles 
 
 All static files were consolidated and brough a sibgle folder to allow to be accessed by the Heroku App
 
 ![static_files](readme.doc/static_files.png)
-
-## Website Structure and feature description 
-- The Django Design Philosopies are widely implmented to acheive the fundamental goals of **Loose Coupling, Less Code, Quick Development and Don't Repeat yourself (DRY), Explicit is better than Implicit and Consistency**.https://docs.djangoproject.com/en/4.2/misc/design-philosophies/
-- The Structure is defined accordingly. The **Base.HTML** includes the **Head, Navbar** and **Footer** Sections.
-- The **Home page** or **Index.HTML** includes the content - **Callout, Customer Reviews and Highlights**.
-- The **login page** allows the guest to **login** to the **SQLite database** to reserve a table and **change** or **cancel** a reservation
-- The **Register** page allows the guest to **sign up** at the restaurant website.
-- Bootstrap framework based on version 4.6.x https://getbootstrap.com/docs/4.6/getting-started/introduction/ is used extenstively. 
 
 
 ## Website pages and feature description
