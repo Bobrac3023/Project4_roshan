@@ -473,33 +473,70 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
     - Under ***Branch*** dropdown, change to ***Main*** from ***none***
     - From the ***Actions*** tab, select ***Deployment*** to check deployment status
 
-# Test and Validate - Code
+# Code Validation
 
-- Code and functions were tested and validated using the three tools listed below:-  
+- Code was validated using CSS, HTML and Python Linters  
 - gitpod IDE environment    https://bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net/
 - Python Linter - https://pep8ci.herokuapp.com
 
-### Test and Validate CSS file ###
+## CSS File Validation
 
 - Link https://jigsaw.w3.org/css-validator/validator
 
-![style_css_validated](readme.doc/style_css_validated.png)
-
-### Code insititute IDE output ###
-
-![code_ide.png](readme.doc/code_ide.png)
-
-### Python File validation ###
-
-- Settings.py A note of caution here to the reader of this file. In the code-institue linter the lines which are flagged of as too long, when corrected produce an error when we run python3 manage.py runserver 
-
-Screenshot show the out put of the linter after the changes were carried out. A few need to be changed in the ide setup. 
-
-![setting_py.png](readme.doc/settings_py_linter.png)
+![](readme,doc/)
 
 
-![manage_py_linter.png](readme.doc/manage_py_linter.png)
-![models_py_linter.png](readme.doc/models_py_linter.png)
-![forms_py_linter.png](readme.doc/forms_py_linter.png)
-![urls_py_linter.png](readme.doc/urls_py_linter.png)
+## Reservation_app python files validation 
 
+
+![](readme.doc/)
+
+![](readme.doc/)
+
+![](readme.doc/)
+
+![](readme.doc/)
+
+# Credits
+
+## Code 
+
+- Django Documentation:
+  - https://docs.djangoproject.com/en/4.2/misc/design-philosophies/
+  -  https://docs.djangoproject.com/en/4.2/ref/models/fields/#choices
+  - https://docs.djangoproject.com/en/4.2/ref/models/fields/#model-field-types
+- Django Allauth : https://docs.allauth.org/en/latest/
+- Google : https://www.google.com/
+- Stackoverflow.com:
+  - https://stackoverflow.com/questions/58563294/how-does-return-renderrequest-path-path-works-in-django
+  - https://stackoverflow.com/questions/69866848/i-am-confused-while-rendering-my-views-py-django?rq=3
+- Bootstrap Documentation:
+  - https://getbootstrap.com/docs/4.6/getting-started/introduction/
+  - https://getbootstrap.com/docs/4.6/components/modal/
+- API:
+  - https://en.wikipedia.org/wiki/ProgrammableWeb
+  - SWAPI The Star Wars API  https://ci-swapi.herokuapp.com/
+  - List of HTTP status codes  https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+  - HTTP Cats  https://http.cat/
+- Sample ERD Tools
+  - https://www.smartdraw.com/entity-relationship-diagram/er-diagram-tool.htm
+  - https://www.edrawmax.com/online/en/
+  - https://creately.com/lp/er-diagram-tool-online/
+  - https://erdplus.com/standalone
+- Flask Framework:
+  - https://github.com/Code-Institute-Solutions/FlaskFramework/blob/master/05-DeployingOurProjectToHeroku/04-pushing_to_heroku/Heroku_CLI_commands.md
+- Migration Guides:
+  - Migration Guide 1 - 
+  https://docs.google.com/document/d/e/2PACX-1vTrL4s5fkIY_SJXjazXiAd6LDKjS7uZMHwY9XW6REJ2T_DyCGRRjjmW-0p4NnkomUwAAru0vLYALohw/pub
+  - Migration Guide 2 
+https://docs.google.com/document/d/e/2PACX-1vRfWv2mSizbxD_QjmDlF-g87-WuKnaO6tAiJf6XrkgLZO6laULxBKPGgd9pB9v8q0TC_huVYJjSuwOp/pub
+
+- PostgressSQL  - https://dbs.ci-dbs.net/manage/ee5ZQon8w65PKf3j/
+- Heroku app : https://roshanproject4-8e7fe177e877.herokuapp.com/
+
+
+## Acknowledgments
+
+- Code Insititute: The teachning staff at Code Institute for the videos and other contents 
+- My Mentor : Mr Rohit, who provided valualble guidance in project preparations
+- My family: My wofe, daughter and son who helped me in testing the features and providding timely feedback.

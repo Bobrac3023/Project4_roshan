@@ -14,7 +14,7 @@
         <hr class="block-divider block-divider--orange" />
         <!--Make paragraph stand out by adding lead class-->
         <p class="lead">
-          Experience Mouth Watering ,Soul Stirring "Maharashtrian Delicacies"
+          Experience Mouth Watering,Soul Stirring "Maharashtrian Delicacies"
         </p>
         <!--Primary Call for Action button, styled through css-->
         <p>
@@ -22,8 +22,7 @@
             class="btn btn-lg btn--cta btn--red"
             data-toggle="modal"
             data-target="#signUpModal"
-            href=""
-          >
+            type="button">
             Reserve Now
           </button>
         </p>
@@ -32,15 +31,13 @@
           class="btn btn-light btn-md active mb-2"
           role="button"
           aria-pressed="true"
-          >View/Update reservations</a
-        >
+          >View/Update reservations</a>
         <a
           href="{% url 'confirm_delete' pk=1 %}"
           class="btn btn-light btn-md active mb-2"
           role="button"
           aria-pressed="true"
-          >Delete reservations</a
-        >
+          >Delete reservations</a>
         <!--btn-success class for green color ,Data target id matches modal id-->
         <!--END of btn-success class for green color ,Data target id matches modal id-->
       </section>
@@ -79,7 +76,7 @@
         <blockquote class="blockquote">
           <p>
             I highly recommend this place for anyone who craves for authentic
-            Maharastrian food. My favourite dishes are misal pav and techa.
+            Maharashtrian food. My favourite dishes are misal pav and techa.
           </p>
           <p>Ritesh Deshmukh - Bollywood actor</p>
         </blockquote>
@@ -119,8 +116,7 @@
                 href="https://en.wikipedia.org/wiki/Maharashtrian_cuisine"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Read More</a
-              >
+                >Read More</a>
             </p>
             <!--Button for user to read more-->
           </div>
@@ -169,7 +165,7 @@
     </section>
   </div>
 </div>
-<!-- /.end of highlighs section-->
+<!-- /.end of highlights section-->
 
 <!--modal section for reservations and login-->
 <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
@@ -188,12 +184,14 @@
       <div class="modal-body">
         <h4>Reserve your Table today</h4>
         <p>
-          <a class="link" href="/accounts/login/">login</a>
-          <a class="link" href="/accounts/signup/">Signup </a>
+          <a class="link" href="/accounts/login/">Login</a>
+          <a class="link" href="/accounts/signup/">Signup</a>
         </p>
         <!--start Django form element-->
-        <form method="post">
-          {{ reservation_form | crispy }} {% csrf_token %}
+        <form method="post" action=".">
+          {% csrf_token %}
+          {{ reservation_form | crispy }} 
+          
         </form>
       </div>
       <!--end of Django form element-->
