@@ -20,6 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),  # allauth login/signup/logout
-    #path('about/', include('about_app.urls')),   # clean about app URL
+    # path('about/', include('about_app.urls')),   # clean about app URL
     path('', include('reservation_app.urls')),   # home & reservation
 ]

@@ -486,16 +486,41 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 ![](readme,doc/)
 
 
+## Project4_Roshan python files validation
+
+- Manage.py
+
+![validation_project_manage_py](readme.doc/validation_project_manage_py.png)
+
+- URLS.py
+
+![validation_project_urls](readme.doc/validation_project_urls.png)
+
+- Env.py
+
+![validation_env_py](readme.doc/validation_env_py.png)
+
 ## Reservation_app python files validation 
 
+- Admin.py
 
-![](readme.doc/)
+![validation_admin_py](readme.doc/validation_admin_py.png)
 
-![](readme.doc/)
+- Forms.py
 
-![](readme.doc/)
+![validation_forms_py](readme.doc/validation_forms_py.png)
 
-![](readme.doc/)
+- Models.py
+
+![validation_models_py](readme.doc/validation_models_py.png)
+
+- URLS.py
+
+![validaion_urls_py](readme.doc/validaion_urls_py.png)
+
+- Views.py
+
+![validation_views_py](readme.doc/validation_views_py.png)
 
 # Credits
 
@@ -533,10 +558,11 @@ https://docs.google.com/document/d/e/2PACX-1vRfWv2mSizbxD_QjmDlF-g87-WuKnaO6tAiJ
 
 - PostgressSQL  - https://dbs.ci-dbs.net/manage/ee5ZQon8w65PKf3j/
 - Heroku app : https://roshanproject4-8e7fe177e877.herokuapp.com/
+- ChatGPT - For general guidance https://chatgpt.com/
 
 
 ## Acknowledgments
 
 - Code Insititute: The teachning staff at Code Institute for the videos and other contents 
-- My Mentor : Mr Rohit, who provided valualble guidance in project preparations
-- My family: My wofe, daughter and son who helped me in testing the features and providding timely feedback.
+- My Mentor : Mr Rohit, who provided valuable guidance in project preparations
+- My family: My wife, daughter and son who helped me in testing the features and providding timely feedback.
