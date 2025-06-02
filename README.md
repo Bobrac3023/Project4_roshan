@@ -506,9 +506,6 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 ![validation_project_urls](readme.doc/validation_project_urls.png)
 
-- Env.py
-
-![validation_env_py](readme.doc/validation_env_py.png)
 
 ## Reservation_app python files validation 
 
