@@ -83,6 +83,16 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
   - Feedback: Open to all. Logged-in users link it to their booking.
   - Contact Page: Public page showing contact information and map.
 
+![wireframe_1_container](readme.doc/wireframe_1_container.jpg)
+
+![user_story_1_component](readme.doc/user_story_1_component.jpg)
+
+![user_story_2_component](readme.doc/user_story_2_component.jpg)
+
+![user_story_admin](readme.doc/user_story_admin.jpg)
+
+![user_story_guest](readme.doc/user_story_guest.jpg)
+
 ![reservation_logic_steps.png](readme.doc/reservation_logic_steps.png)
 
 ## Features
