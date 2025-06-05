@@ -30,6 +30,8 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
     - Forms to submit reservations and feedback.
     - Views for form handling, CRUD operations, and displaying data.
 
+## MVC Architecture Breakdown
+
 - Templates (HTML)
   - base.html: Master layout (header, footer)
   - index.html: Homepage
@@ -67,31 +69,50 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
   - ReservationForm: Collects name, email, time, date, guests
   - FeedbackForm: Collects guest/user opinion
 
+
+- 📂 Project Structure
+
+![project4_reservation_system_project_structure](readme.doc/project4_reservation_system_project_structure.png)
+
+## Agile Development Flow
+
+- Sprint 1: Core Setup
+  - Project & app planning
+  - Models + Admin setup
+  - Database configuration (PostgreSQL)
+
+- Sprint 2: Reservation CRUD
+  - Reservation form (create)
+  - Reservation list (view)
+  - Update/Delete functionality
+
+- Sprint 3: Authentication & Feedback
+  - Allauth integration
+  - Feedback form and list
+  - User ownership filtering
+
+- Sprint 4: UI Polish & Deployment
+  - Bootstrap + Crispy Forms styling
+  - Modal for quick booking
+  - Heroku-ready deployment settings
+
 ## Wireframes
 
 Wireframes were first sketched with pen and drawn using Microsoft Powerpoint 
 
 ### Logic Explained 
 
-- Each step below shows what the user sees or can do:
-  - Homepage: This is where users start. It shows information about the restaurant.
-  - Login / Signup: Required before making any reservations.
-  - Make a Reservation: Form is displayed only after login. Requires date, time, guests.
-  - View My Reservations: Displays all bookings created by the logged in user.
-  - Edit Reservation: Allows the logged in user to change date/time of their booking.
-  - Delete Reservation: Lets the logged in user cancel their booking after confirmation.
-  - Feedback: Open to all. Logged-in users link it to their booking.
-  - Contact Page: Public page showing contact information and map.
+- User Visit Homepage → PostList → index.html ->This is where users start. It shows information about the restaurant.
+- Clicks Modal to Reserve → reservation_form() → reservation_form.html-> Login / Signup: Required before making any reservations.
+- Views Their Reservations → reservation_list() → reservation_list.html -> Displays all bookings created by the logged in user.
+- Updates/Deletes → update_reservation() / delete_reservation() -> Allows the logged in user to update/delte their booking.
+- Leaves Feedback → about_me() → about.html -> Open to all. Logged-in users link it to their booking.
+- Reads Contact Info → contact_us() → contact.html -> Public page showing contact information and map.
+
+ 
+![restaurant_wireframes_1](readme.doc/restaurant_wireframes_1.png)
 
 ![wireframe_1_container](readme.doc/wireframe_1_container.jpg)
-
-![user_story_1_component](readme.doc/user_story_1_component.jpg)
-
-![user_story_2_component](readme.doc/user_story_2_component.jpg)
-
-![user_story_admin](readme.doc/user_story_admin.jpg)
-
-![user_story_guest](readme.doc/user_story_guest.jpg)
 
 ![reservation_logic_steps.png](readme.doc/reservation_logic_steps.png)
 
@@ -341,6 +362,14 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 - For user story concepts based on **Must Have**, **Should Have** ,**Could Have** ,**Won’t Have**, a reference was made to ***MoSCoW Method of Prioritisation***(https://www.agilebusiness.org/dsdm-project-framework/moscow-prioririsation.html).
 - No automated testing was done . Manual testing was conducted to validate - screenshots in ***"Test and Validate-Functions"*** section
 
+![user_story_1_component](readme.doc/user_story_1_component.jpg)
+
+![user_story_2_component](readme.doc/user_story_2_component.jpg)
+
+![user_story_admin](readme.doc/user_story_admin.jpg)
+
+![user_story_guest](readme.doc/user_story_guest.jpg)
+
 ### Github project snapshot
 
 ![projects_snapshot.png](readme.doc/projects_snapshot.png)
@@ -497,6 +526,10 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 
 ## Project4_Roshan python files validation
+
+- Settings.py
+
+![validation_settings_py](readme.doc/validation_settings_py.png)
 
 - Manage.py
 
