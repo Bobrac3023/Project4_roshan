@@ -155,16 +155,16 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 - Security and Validation.
   - CSRF protection included in all forms.
-  - ***@login_required*** decorator,a built-in Django tool used to restrict access to certain views unless the user is authenticated applied above function-based view (FBV)
+  - ***login_required*** decorator,a built-in Django tool used to restrict access to certain views unless the user is authenticated applied above function-based view (FBV)
   - Login required for updating, deleting, and viewing reservations.
   - Model-level validation to prevent past dates and excessive guests.
   - Feedback can be submitted anonymously or by logged-in users.
 - DRY - “Don’t Repeat Yourself”, software development principle to minimize code duplication and centralize logic deployed
   - Reusable Forms with Django’s ModelForm
-  - Template Inheritance - A single base.html file defines the common layout (header, footer, Bootstrap inclusion, etc.), which is extended by all other templates using ***{% extends "base.html" %}***
+  - Template Inheritance - A single base.html file defines the common layout (header, footer, Bootstrap inclusion, etc.), which is extended by all other templates using ***extends base.html***
   - Reusable Views and Logic
     - Using ListView for the homepage (PostList) to list reservations.
-    - Wrap views (ike update/delete) with ***@login_required***, reducing the need to write authentication checks manually.
+    - Wrap views (ike update/delete) with ***login decorators***, reducing the need to write authentication checks manually.
     - Validate model rules (e.g., date/time restrictions, guest limits) using clean() in the Reservation model, so that the logic is reused automatically in all views and forms.
   - Centralized Validation Logic
     - All business rules (like ensuring the reservation isn’t in the past and guest limits are respected) are placed inside the clean() method of the Reservation model. This means whether data comes from the admin panel, the form, or a script — the same validation applies universally.
@@ -201,7 +201,7 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
     - The navigation bar (menu at the top)
     - Footer (social media links and copyright)
     - Common design (fonts, colors, CSS, JavaScript)
-    - The {% block content %} section where other pages add their unique content
+    - The ***block content*** section where other pages add their unique content
 
 - index.html - the Homepage.
   - Purpose :  Show off the restaurant
@@ -295,7 +295,7 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
     - Contact page (contact_us)
     - Reservation creation, update, deletion, and listing
   - Key Features:
-    - Uses @login_required to restrict sensitive views
+    - Uses ***login_required*** to restrict sensitive views
     - Enforces model-level validation
     - Uses Django's messages framework for user feedback (success/error)
 
@@ -311,8 +311,9 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 ## Features to implement later
 
-- Use API to implement google map with markers
+- Use API to implement google map with markers- the js files are placed in a new app ***about**
 - Implement through API Integration an external email system like sendemail to receive guest feedback.
+the js files are placed in a new app ***about***
 - Menu Page - A page to display ***dish of the week*** and ***"what's special"***.
 - Forgot/Reset password functionality
 
@@ -511,6 +512,18 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
     - select ***"Deploy from branch"***
     - Under ***Branch*** dropdown, change to ***Main*** from ***none***
     - From the ***Actions*** tab, select ***Deployment*** to check deployment status
+
+## Deployment Errors 
+
+- Liquid Template Syntax: 
+  - README.md processed by Jekyll for GitHub Pages includes Django/Jinja-style Liquid template syntax that GitHub Pages' Jekyll does not recognize.
+- Solution: 
+  - replaced or stylized all Django-style template tags using:
+  - Triple asterisks (***...***) → renders as bold-italic text
+  - No raw blocks that would be processed by Jekyll
+  - No unescaped or raw HTML that conflicts with Markdown rendering
+  - All code-like syntax like in safe inline format
+
 
 # Code Validation
 
