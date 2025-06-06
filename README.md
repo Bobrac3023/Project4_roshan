@@ -30,18 +30,7 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
     - Forms to submit reservations and feedback.
     - Views for form handling, CRUD operations, and displaying data.
 
-## MVC Architecture Breakdown
-
-- Templates (HTML)
-  - base.html: Master layout (header, footer)
-  - index.html: Homepage
-  - about.html: Feedback form
-  - contact.html: Contact and map
-  - reservation_form.html: reservation form
-  - reservation_list.html: Display reservations made by the logged in  user
-  - update_reservation.html: Edit form that helps logged in user update their own reservation
-  - confirm_delete.html: Delete a users own reservations after login
-  - 
+## MVT Architecture Breakdown
 
 - Models 
   - Reservation: Stores booking info, ensures rules (no past date, max 10 guests)
@@ -56,6 +45,16 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
   - delete_reservation: Confirm and delete a users own reservations
   - reservation_list: Display user’s rservations only
 
+- Templates (HTML)
+  - base.html: Master layout (header, footer)
+  - index.html: Homepage
+  - about.html: Feedback form
+  - contact.html: Contact and map
+  - reservation_form.html: reservation form
+  - reservation_list.html: Display reservations made by the logged in  user
+  - update_reservation.html: Edit form that helps logged in user update their own reservation
+  - confirm_delete.html: Delete a users own reservations after login
+  
 - URLs 
   - /       → Home (PostList)
   - /about/ → Feedback (about_me)
@@ -73,6 +72,26 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
 - 📂 Project Structure
 
 ![project4_reservation_system_project_structure](readme.doc/project4_reservation_system_project_structure.png)
+
+## CRUD Requirements 
+
+- The application provides Create, Read, Update, Delete functionality for Reservations and Feedback:
+
+- CRUD
+  - Create
+    - Feature: Reservation & Feedback Forms	 
+    - Implementation : reservation_form, about_me views
+  - Read	
+    - Feature : View reservations & feedbacks
+    - Implementation: reservation_list, feedback display in about.html
+  - Update
+    - Feature: Modify existing reservation
+    - Implementation: update_reservation view and template
+  - Delete
+    - Feature: Cancel reservation	
+    - Implementation: delete_reservation with confirm_delete.html
+
+- Security Note: Update/Delete operations are login-protected, as an excellent practice. The project also includes form validation (full_clean) and user ownership checks.
 
 ## Agile Development Flow
 
@@ -159,7 +178,7 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
   - Login required for updating, deleting, and viewing reservations.
   - Model-level validation to prevent past dates and excessive guests.
   - Feedback can be submitted anonymously or by logged-in users.
-- DRY - “Don’t Repeat Yourself”, software development principle to minimize code duplication and centralize logic deployed
+- ***DRY - “Don’t Repeat Yourself”***, software development principle to minimize code duplication and centralize logic deployed
   - Reusable Forms with Django’s ModelForm
   - Template Inheritance - A single base.html file defines the common layout (header, footer, Bootstrap inclusion, etc.), which is extended by all other templates using ***extends base.html***
   - Reusable Views and Logic
@@ -351,7 +370,10 @@ the js files are placed in a new app ***about***
   - VS Code – Recommended IDE for Django development
   - GitHub  – For repository hosting and collaboration
   - Linters - https://pep8ci.herokuapp.com/# 
+- Other tools 
   - Broswer - Google Chrome
+  - Mindmanger
+  - Microsoft Powerpoint
 
 
 # Github issues - User Stories and Methodology
@@ -581,7 +603,7 @@ the js files are placed in a new app ***about***
 
 - Settings.py
 
-![validation_settings_py](readme.doc/validation_settings_py.png)
+![validation_setting_py](readme.doc/validation_setting_py.png)
 
 - Manage.py
 
