@@ -20,7 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'project4_reservation/templates')
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4%%+oncli72x76x5qstr)(7@)fb=x0!_n+tn5ua$@xk4^!^%gi'
+SECRET_KEY = os.getenv('SECRET_KEY')
+#SECRET_KEY = 'django-insecure-4%%+oncli72x76x5qstr)(7@)fb=x0!_n+tn5ua$@xk4^!^%gi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
