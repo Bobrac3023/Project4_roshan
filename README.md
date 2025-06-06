@@ -513,6 +513,19 @@ the js files are placed in a new app ***about***
     - Under ***Branch*** dropdown, change to ***Main*** from ***none***
     - From the ***Actions*** tab, select ***Deployment*** to check deployment status
 
+# Errors and Fixes
+
+
+## HTML file creation 
+
+- AttributeError – Missing View Function
+- Error: 
+  - AttributeError: module 'reservation_app.views' has no attribute 'contact_us'
+- Fix: 
+  - The contact_us view function was missing or misnamed in views.py. 
+  - Corrected the view function and ensured it matched the name in urls.py.
+
+
 ## Deployment Errors 
 
 - Liquid Template Syntax: 
@@ -524,6 +537,24 @@ the js files are placed in a new app ***about***
   - No unescaped or raw HTML that conflicts with Markdown rendering
   - All code-like syntax like in safe inline format
 
+## HTML Code Validation 
+
+- Issue :
+  - Presence of Django templating does not pass the HTML validator at "https://validator.w3.org/nu/#textarea"
+
+- Why it fails:
+  - Django templates are not HTML by themselves — they are pre-processed by Django before the browser ever sees the output. 
+  - The validator only sees literal text, so ***block content*** is treated as a syntax error, because it is  not seen as valid HTML.
+  - The validator only understands pure HTML — not Django Template Language (DTL), Jinja, or other server-side syntax.
+
+- How to validate correctly:
+  - To validate your HTML:
+    - Run your Django project locally (e.g., with python manage.py runserver)
+    - Open the page in your browser (e.g., http://127.0.0.1:8000/)
+    - Right-click on the page → "View Page Source"
+    - Copy the fully-rendered HTML
+    - Paste it into https://validator.w3.org/nu/#textarea
+    - This lets you validate the actual HTML output, not the template.
 
 # Code Validation
 
@@ -531,11 +562,19 @@ the js files are placed in a new app ***about***
 - gitpod IDE environment    https://bobrac3023-project4rosh-u31s29dj3zv.ws.codeinstitute-ide.net/
 - Python Linter - https://pep8ci.herokuapp.com
 
+## HTML OUTPUT validation
+
+![vlidation_html_view_source](readme.doc/vlidation_html_view_source.png)
+
+![validation_html_source_file](readme.doc/validation_html_source_file.png)
+
+![validation_html_validator](readme.doc/validation_html_validator.png)
+
 ## CSS File Validation
 
-- Link https://jigsaw.w3.org/css-validator/validator
+- Link https://jigsaw.w3.org/css-validator/validator#css
 
-![](readme,doc/)
+![readme.doc/validation_css](readme.doc/validation_css.png)
 
 
 ## Project4_Roshan python files validation
