@@ -172,6 +172,26 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
       - Logout
     - Protected views like “reservation list”, “update”, and “delete” are restricted to logged-in users
 
+- Responsive Data manipulations
+    - Users see updated content after submission
+    - No manual refresh is needed
+    - Modal is used for reservation form on home page → good UX design
+  
+  - **User Actions Receive Immediate Feedback**
+    - All core actions (Create, Update, Delete) are:
+      - Form-based, using POST methods
+      - Backed with messages like:
+        - messages.success(request, "Reservation submitted successfully!")
+        - messages.error(request, "Reservation not found")
+    - This provides real-time confirmation to the user.
+
+  - **Views Render Updated Data Immediately**
+    - After creating a reservation → user is redirected to the reservation list with updated info.
+    - After updating or deleting → same pattern: redirect and update.
+    - Feedback entries are immediately visible due to:
+      - feedbacks = Feedback.objects.order_by('-created_on')
+    - The latest data is shown right after submission.
+
 - Security and Validation.
   - CSRF protection included in all forms.
   - ***login_required*** decorator,a built-in Django tool used to restrict access to certain views unless the user is authenticated applied above function-based view (FBV)
@@ -385,15 +405,15 @@ the js files are placed in a new app ***about***
 - For user story concepts based on **Must Have**, **Should Have** ,**Could Have** ,**Won’t Have**, a reference was made to ***MoSCoW Method of Prioritisation***(https://www.agilebusiness.org/dsdm-project-framework/moscow-prioririsation.html).
 - No automated testing was done . Manual testing was conducted to validate - screenshots in ***"Test and Validate-Functions"*** section
 
-![user_story_1_component](readme.doc/user_story_1_component.jpg)
+![user_story_1_component](readme.doc/user_story_1_component.jpg) 
 
 ![user_story_2_component](readme.doc/user_story_2_component.jpg)
 
-![user_story_admin](readme.doc/user_story_admin.jpg)
+![user_story_admin](readme.doc/user_story_admin.jpg) 
 
 ![user_story_guest](readme.doc/user_story_guest.jpg)
 
-### Github project snapshot
+### Github project snapshot.
 
 ![projects_snapshot.png](readme.doc/projects_snapshot.png)
 
@@ -434,7 +454,13 @@ the js files are placed in a new app ***about***
 
 ![sign_up_page](readme.doc/sign_up_page.png)
 
+- The guest tries to sign-up using an existing username
+- The website presents a user friendly error messages.
+
 ![username_valiadtion_signup](readme.doc/username_valiadtion_signup.png)
+
+- The guest tries to sign-up using an invalid password.
+- The website presents a user friendly error messages.
 
 ![password_validation_signup](readme.doc/password_validation_signup.png)
 
@@ -448,6 +474,9 @@ the js files are placed in a new app ***about***
 ![reserve_now_modal](readme.doc/reserve_now_modal.png)
 
 ![sign_in_page](readme.doc/sign_in_page.png)
+
+- The guest tries to login/sign-in using an invalid username.
+- The website presents a user friendly error messages.
 
 ![sign_in_validation](readme.doc/sign_in_validation.png)
 
@@ -498,7 +527,6 @@ the js files are placed in a new app ***about***
 
 ![django_admin_panel](readme.doc/django_admin_panel.png)
 
-
 ### Django Portal- view reservation list
 
 ![django_reservation_list](readme.doc/django_reservation_list.png)
@@ -510,6 +538,67 @@ the js files are placed in a new app ***about***
 ### View reservation list with user2 logged in
 
 !![confirm_resevartion_user2_login](readme.doc/confirm_resevartion_user2_login.png)
+
+### Feedback form view
+
+- View feedback from Django portal 
+
+![view_delete_save_feedback.png](readme.doc/view_delete_save_feedback.png)
+
+- Save or Delete Feedback 
+
+![change_delete_feedback](readme.doc/change_delete_feedback.png)
+
+
+## iPhone Testing 
+
+- View from a Iphone 14 Pro.
+
+![rachel_iphone_1](readme.doc/rachel_iphone_1.jpg)
+
+- Login through a Iphone 14 Pro using username ***user1*** and password
+
+![rachel_iphone_1](readme.doc/rachel_iphone_2.jpg)
+
+- Make a reservation under the name ***Rachel Sequeira***
+
+![rachel_iphone_1](readme.doc/rachel_iphone_3.jpg)
+
+- Update reservation using username ***user1*** and password
+- Note : The name under which the reservation done is different ***Pramika Satish***
+
+![rachel_iphone_1](readme.doc/rachel_iphone_4.jpg).
+
+- user1 is asked for confirmation to cancel the reservation
+
+![rachel_iphone_1](readme.doc/rachel_iphone_5.jpg)
+
+## SAMSUNG A25 Testing
+
+- The guest tries to login using an invalid username syntax.
+- The website presents a user friendly error messages.
+
+![samsunga25_signin_with_wrong_username.jpg](readme.doc/samsunga25_signin_with_wrong_username.jpg)
+
+- Using the sign-up features with a usename/email already configured in the system.
+- The website presents user friendly error messages.
+
+![samsunga25_signup_with_exisiting_username.jpg](readme.doc/samsunga25_signup_with_exisiting_username.jpg)
+
+- View the existing reservation made under the name of ***Shaun Harris***.
+
+![samsunga25_reservation_list_shaun](readme.doc/samsunga25_reservation_list_shaun.jpg)
+
+
+- The website presents a user friendly message " confirm cancellation"
+
+![samsunga25_reservation_list_shaun_delete](readme.doc/samsunga25_reservation_list_shaun_delete.jpg)
+
+- After an existing reservation is deleted.
+- The website presents a user friendly messages.
+
+![samsunga25_reservation_list_shaun_delete_1](readme.doc/samsunga25_reservation_list_shaun_delete_1.jpg)
+
 
 # Deployment 
 
@@ -677,6 +766,7 @@ https://docs.google.com/document/d/e/2PACX-1vRfWv2mSizbxD_QjmDlF-g87-WuKnaO6tAiJ
 
 ## Acknowledgments
 
-- Code Insititute: The teachning staff at Code Institute for the videos and other contents 
+- Code Insititute: The teachinng staff at Code Institute for the videos and other contents 
 - My Mentor : Mr Rohit, who provided valuable guidance in project preparations
-- My family: My wife, daughter and son who helped me in testing the features and providding timely feedback.
+- My family: My wife, daughter and son who helped me in testing the features and providing timely feedback.
+- A fellow student Pramila Shamugam -  https://github.com/Pramilashanmugam/Restaurant
