@@ -20,7 +20,7 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
     - View homepage content and reviews.
     - Make table reservations online
     - View their upcoming reservations
-    - Update or cancel their bookings as needed
+    - Update or cancel their reservations as needed
     - Submit feedback. ( with and without login)
     - View contact info. ( embedded google map , email,contact number and timing)
 
@@ -33,7 +33,7 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
 ## MVT Architecture Breakdown
 
 - Models 
-  - Reservation: Stores booking info, ensures rules (no past date, max 10 guests)
+  - Reservation: Stores reservation info, ensures rules (no past date, max 10 guests)
   - Feedback: Stores messages tied to reservation or user
 
 - Views
@@ -41,7 +41,7 @@ This project is a Django-based restaurant reservation system built for "Mai's Ki
   - about_me: Saves or shows feedback
   - contact_us: Displays contact info
   - reservation_form: Save reservations after validation
-  - update_reservation: Let user edit their own reservations
+  - update_reservation: Lets user edit their own reservations
   - delete_reservation: Confirm and delete a users own reservations
   - reservation_list: Display user’s rservations only
 
@@ -124,7 +124,7 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 - User Visit Homepage → PostList → index.html ->This is where users start. It shows information about the restaurant.
 - Clicks Modal to Reserve → reservation_form() → reservation_form.html-> Login / Signup: Required before making any reservations.
 - Views Their Reservations → reservation_list() → reservation_list.html -> Displays all bookings created by the logged in user.
-- Updates/Deletes → update_reservation() / delete_reservation() -> Allows the logged in user to update/delte their booking.
+- Updates/Deletes → update_reservation() / delete_reservation() -> Allows the logged in user to update/delete their booking.
 - Leaves Feedback → about_me() → about.html -> Open to all. Logged-in users link it to their booking.
 - Reads Contact Info → contact_us() → contact.html -> Public page showing contact information and map.
 
@@ -139,7 +139,7 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 - Core Feature  
   - Online Reservation System
-    - Users can book a table with their name, email, date, time, guest count, and a message.
+    - Users can reserve a table with their name, email, date, time, guest count, and a message.
   - Form validations ensure:
     - No past dates allowed
     - Guest count must be between 1 and 10
@@ -149,16 +149,16 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
     - Logged-in users can:
       - Edit existing reservations (date, time, guests, etc.)
       - Cancel/delete reservations with confirmation prompts
-      - Access to these views is protected with @login_required for security.
+      - Access to these views is protected with ***login_required*** for security.
 
   - Feedback Submission
     - Any visitor (guest or registered user) can leave feedback
-    - Feedback is stored and shown on the “About” page
+    - Feedback is stored and shown on the ***“About” page***
     - If logged in, the feedback is attributed to the user
 
   - Reservation List Dashboard
     - Logged-in users can view a personalized list of all their reservations
-    - Reservation statuses (e.g., “Requested”, “Confirmed”) are clearly shown
+    - Reservation status (e.g., “Requested”, “Confirmed”) are clearly shown
     - Options to update or delete directly from the table
 
   - Contact & Location Page
@@ -168,9 +168,9 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
   - User Authentication
     - Integrated with django-allauth to support:
       - Sign up
-      - Login
+      - Sign-in/ Login
       - Logout
-    - Protected views like “reservation list”, “update”, and “delete” are restricted to logged-in users
+    - Protected views like ***“reservation list”, “update”, and “delete”*** are restricted to logged-in users
 
 - Responsive Data manipulations
     - Users see updated content after submission
@@ -179,7 +179,7 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
   
   - **User Actions Receive Immediate Feedback**
     - All core actions (Create, Update, Delete) are:
-      - Form-based, using POST methods
+      - Form-based, using ***POST*** methods
       - Backed with messages like:
         - messages.success(request, "Reservation submitted successfully!")
         - messages.error(request, "Reservation not found")
@@ -194,19 +194,24 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 
 - Security and Validation.
   - CSRF protection included in all forms.
-  - ***login_required*** decorator,a built-in Django tool used to restrict access to certain views unless the user is authenticated applied above function-based view (FBV)
+  - ***login_required*** decorator,a built-in Django tool used to restrict access to certain views unless the user is authenticated, applied above function-based view (FBV)
   - Login required for updating, deleting, and viewing reservations.
   - Model-level validation to prevent past dates and excessive guests.
   - Feedback can be submitted anonymously or by logged-in users.
+
 - ***DRY - “Don’t Repeat Yourself”***, software development principle to minimize code duplication and centralize logic deployed
   - Reusable Forms with Django’s ModelForm
-  - Template Inheritance - A single base.html file defines the common layout (header, footer, Bootstrap inclusion, etc.), which is extended by all other templates using ***extends base.html***
+  
+  - ***Template Inheritance*** - A single base.html file defines the common layout (header, footer, Bootstrap inclusion, etc.), which is extended by all other templates using ***extends base.html***
+  
   - Reusable Views and Logic
     - Using ListView for the homepage (PostList) to list reservations.
     - Wrap views (ike update/delete) with ***login decorators***, reducing the need to write authentication checks manually.
     - Validate model rules (e.g., date/time restrictions, guest limits) using clean() in the Reservation model, so that the logic is reused automatically in all views and forms.
+  
   - Centralized Validation Logic
     - All business rules (like ensuring the reservation isn’t in the past and guest limits are respected) are placed inside the clean() method of the Reservation model. This means whether data comes from the admin panel, the form, or a script — the same validation applies universally.
+
 - Mobile-Friendly & Responsive UI
   - Uses Bootstrap and Crispy Forms for:
     - Clean, responsive forms
@@ -218,15 +223,15 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
   - Admins can review, update, or moderate user submissions
 - Footer Layout  
   - Social Media  
-    - External links to Facebook, X(formerly twitter),Linkedin,Instagram, and Youtube pages in the website footer.
+    - External links to Facebook, **X** (formerly twitter),Linkedin,Instagram, and Youtube pages in the website footer.
     - Each link configured to open in a new tab.
-    - "Hover" property to hightlight social media icons.
+    - ***"Hover"*** property to hightlight social media icons.
   - Menu.
     - External link to download the menu in a PDF format.
 - Others
   - Choice of foreground and background colors provide right contrast for a rich UI/UX experience .  
   - Aria accessibility for screen readers.
-  - "Read More" buttons under "highlights section" of home page open in to external links. 
+  - ***"Read More"*** buttons under "highlights section" of home page open in to external links. 
 
 ## Website Structure and feature description 
 
@@ -245,8 +250,8 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 - index.html - the Homepage.
   - Purpose :  Show off the restaurant
     - Shows a big welcome message (jumbotron)
-    - Has a "Reserve Now" button that displays a popup modal for login/signup
-    - Shows View/Update/Delete Reservation buttons
+    - Has a ***"Reserve Now"*** button that displays a popup modal for login/signup
+    - Shows ***View/Update/Delete*** Reservation buttons
     - Displays Customer reviews and Restaurant highlights
   - Who can view this?
     - Everyone. No login needed.
@@ -284,7 +289,7 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
   - Purpose: Show a list of reservations for the logged-in user.
     - Displays all reservations made by the logged-in user.
     - If there are reservations, it shows them in a table
-    - If not, it says “You have no reservations yet.”
+    - If not, it says ***“You have no reservations yet.”***
     - Buttons to update or delete each reservation 
   - Who can view this?
     - Only logged in users
@@ -301,8 +306,8 @@ Wireframes were first sketched with pen and drawn using Microsoft Powerpoint
 - confirm_delete.html	
   - Purpose: Confirmation page before deleting a reservation.
     - Confirms cancellation before deleting a reservation.
-    - Asks: “Are you sure you want to cancel?”
-    - Offers "Yes" (delete) and "No" (go back) buttons
+    - Asks: ***“Are you sure you want to cancel?”***
+    - Offers ***"Yes" (delete)*** and ***"No" (go back)*** buttons
   - Who can view this?
     - Only logged in users
 
@@ -446,8 +451,8 @@ the js files are placed in a new app ***about***
 ### Test and Validate Sign-up function.
 
 - The sign-up form can be reached from two areas. 
-  - when the user clicks on the "reserve now" button on the home page
-  - from the sign-up page on the navbar.
+  - when the user clicks on the ***"reserve now"*** button on the home page
+  - from the ***sign-up*** page on the navbar.
 - The sign-up form has validation checks for usernames and passwords.  
 
 ![reserve_now_modal](readme.doc/reserve_now_modal.png)
@@ -455,20 +460,20 @@ the js files are placed in a new app ***about***
 ![sign_up_page](readme.doc/sign_up_page.png)
 
 - The guest tries to sign-up using an existing username
-- The website presents a user friendly error messages.
+- The website presents a user friendly error message.
 
 ![username_valiadtion_signup](readme.doc/username_valiadtion_signup.png)
 
 - The guest tries to sign-up using an invalid password.
-- The website presents a user friendly error messages.
+- The website presents a user friendly error message.
 
 ![password_validation_signup](readme.doc/password_validation_signup.png)
 
 ### Test and Validate Sign-in function
 
 - The sign-in form can be reached from two areas. 
-  - when the user clicks on the "reserve now" button on the home page
-  - from the sign-up page on the navbar.
+  - when the user clicks on the ***"reserve now"*** button on the home page
+  - from the ***sign-up*** page on the navbar.
 - The sign-in form has validation checks for usernames and passwords.  
 
 ![reserve_now_modal](readme.doc/reserve_now_modal.png)
@@ -476,17 +481,17 @@ the js files are placed in a new app ***about***
 ![sign_in_page](readme.doc/sign_in_page.png)
 
 - The guest tries to login/sign-in using an invalid username.
-- The website presents a user friendly error messages.
+- The website presents a user friendly error message.
 
 ![sign_in_validation](readme.doc/sign_in_validation.png)
 
 ### Test and Validate reservation-form function
 
-- Once a user signs-up or signs-in, they are redirected to the rservation form.
+- Once a user signs-up or signs-in, they are redirected to the reservation form.
 - Users can book a table with their name, email, date, time, guest count, and a message.
 - Form validations ensure:
-  - No past dates allowed
-  - Guest count must be between 1 and 10
+  - ***No past dates allowed***
+  - ***Guest count must be between 1 and 10***
 - Reservations are saved to the database and associated with the logged-in user if authenticated.
 
 ![reservation_form](readme.doc/reservation_form.png)
@@ -506,7 +511,7 @@ the js files are placed in a new app ***about***
 - Once the signed in user submits the reservation, they are directed to the reservation list as show below.
 - The guest can see only reservations made under the username they are logged in
 - The guest can make mulitple reservations under different names and email addresses.
-- The status shows "requested" as the admin is yet to confirm the booking.
+- The status shows ***"requested"*** as the admin is yet to confirm the booking.
 
 ![reservation_list_success.png](readme.doc/reservation_list_success.png)
 
@@ -523,7 +528,9 @@ the js files are placed in a new app ***about***
 
 ![post_update.png](readme.doc/post_update.png)
 
-### Django Admin Portal.
+## Django Admin Portal.
+
+- The admin portal on Heroku app can be accessed here https://roshanproject4-8e7fe177e877.herokuapp.com/admin/login/?next=/admin/
 
 ![django_admin_panel](readme.doc/django_admin_panel.png)
 
@@ -537,9 +544,9 @@ the js files are placed in a new app ***about***
 
 ### View reservation list with user2 logged in
 
-!![confirm_resevartion_user2_login](readme.doc/confirm_resevartion_user2_login.png)
+![confirm_resevartion_user2_login](readme.doc/confirm_resevartion_user2_login.png)
 
-### Feedback form view
+## Django Feedback form view
 
 - View feedback from Django portal 
 
@@ -550,13 +557,17 @@ the js files are placed in a new app ***about***
 ![change_delete_feedback](readme.doc/change_delete_feedback.png)
 
 
-## iPhone Testing 
+## iPhone Testing- Mobile-Friendly & Responsive UI
 
-- View from a Iphone 14 Pro.
+- View from a iPhone 14 Pro.
+- Responsive Data manipulations
+  - After updating or deleting → same pattern: redirect and update.
+  - Users see updated content after submission
+  - No manual refresh is needed
 
 ![rachel_iphone_1](readme.doc/rachel_iphone_1.jpg)
 
-- Login through a Iphone 14 Pro using username ***user1*** and password
+- Login through a iPhone 14 Pro using username ***user1*** and password
 
 ![rachel_iphone_1](readme.doc/rachel_iphone_2.jpg)
 
@@ -573,10 +584,15 @@ the js files are placed in a new app ***about***
 
 ![rachel_iphone_1](readme.doc/rachel_iphone_5.jpg)
 
-## SAMSUNG A25 Testing
+## SAMSUNG A25 Testing - Mobile-Friendly & Responsive UI
+
+- Responsive Data manipulations
+  - After updating or deleting → same pattern: redirect and update.
+  - Users see updated content after submission
+  - No manual refresh is needed
 
 - The guest tries to login using an invalid username syntax.
-- The website presents a user friendly error messages.
+- The website presents a user friendly error message.
 
 ![samsunga25_signin_with_wrong_username.jpg](readme.doc/samsunga25_signin_with_wrong_username.jpg)
 
@@ -595,7 +611,7 @@ the js files are placed in a new app ***about***
 ![samsunga25_reservation_list_shaun_delete](readme.doc/samsunga25_reservation_list_shaun_delete.jpg)
 
 - After an existing reservation is deleted.
-- The website presents a user friendly messages.
+- The website presents a user friendly message.
 
 ![samsunga25_reservation_list_shaun_delete_1](readme.doc/samsunga25_reservation_list_shaun_delete_1.jpg)
 
@@ -604,7 +620,7 @@ the js files are placed in a new app ***about***
 
 ## Staticfiles
 
-- All static files were consolidated under a single folder to allow to be accessed by the Heroku App
+- All static files were consolidated under a single folder to allow the Heroku App to access them. 
 
 ![static_files](readme.doc/static_files.png)
 
@@ -643,10 +659,10 @@ the js files are placed in a new app ***about***
   - README.md processed by Jekyll for GitHub Pages includes Django/Jinja-style Liquid template syntax that GitHub Pages' Jekyll does not recognize.
 - Solution: 
   - replaced or stylized all Django-style template tags using:
-  - Triple asterisks (***...***) → renders as bold-italic text
-  - No raw blocks that would be processed by Jekyll
-  - No unescaped or raw HTML that conflicts with Markdown rendering
-  - All code-like syntax like in safe inline format
+    - Triple asterisks (***...***) → renders as bold-italic text
+    - No raw blocks that would be processed by Jekyll
+    - No unescaped or raw HTML that conflicts with Markdown rendering
+    - All code-like syntax like in safe inline format
 
 ## HTML Code Validation 
 
@@ -659,13 +675,13 @@ the js files are placed in a new app ***about***
   - The validator only understands pure HTML — not Django Template Language (DTL), Jinja, or other server-side syntax.
 
 - How to validate correctly:
-  - To validate your HTML:
-    - Run your Django project locally (e.g., with python manage.py runserver)
-    - Open the page in your browser (e.g., http://127.0.0.1:8000/)
+  - To validate HTML files used for this project:
+    - Run Django project locally (e.g: with python manage.py runserver)
+    - Open the page in browser (e.g., http://127.0.0.1:8000/)
     - Right-click on the page → "View Page Source"
     - Copy the fully-rendered HTML
     - Paste it into https://validator.w3.org/nu/#textarea
-    - This lets you validate the actual HTML output, not the template.
+    - This validates the actual HTML output, not the template.
 
 # Code Validation
 
